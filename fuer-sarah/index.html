@@ -6,11 +6,11 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
-<title>Sarah 49 · Gent & Brügge</title>
+<title>Geburtstagswochenende in Belgien</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Sarah 49">
+<meta name="apple-mobile-web-app-title" content="Belgien">
 <meta name="theme-color" content="#1b2a6b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,7 +61,7 @@ button{font:inherit;color:inherit}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .hero .wrap{position:relative;padding-block:28px 22px;min-height:236px;display:flex;flex-direction:column;justify-content:flex-end}
 .eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.9}
-.hero h1{font:800 clamp(40px,12vw,64px)/.92 var(--f-display);letter-spacing:-.02em;margin:10px 0 8px;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+.hero h1{font:800 clamp(34px,10vw,58px)/.95 var(--f-display);hyphens:manual;letter-spacing:-.02em;margin:10px 0 8px;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.25)}
 .hero h1 em{font-style:normal;color:var(--gold)}
 .hero p{margin:0;max-width:34ch;font-size:15px;opacity:.95;text-shadow:0 1px 10px rgba(0,0,0,.35)}
 .hero .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
@@ -173,8 +173,8 @@ nav.tabs button[aria-current="page"]{color:var(--accent)}
 <header class="hero" aria-label="Geburtstagsreise">
   <canvas id="heroArt" aria-hidden="true"></canvas>
   <div class="wrap">
-    <div class="eyebrow">13.–16. November 2026 · Gent → Brügge</div>
-    <h1>Sarah wird <em>49</em></h1>
+    <div class="eyebrow">Für Sarah · 13.–16. November</div>
+    <h1>Geburtstags&shy;wochenende in <em>Belgien</em></h1>
     <p id="heroLine">Vier Tage Kunst, Kanäle und gutes Essen. Diese App zeigt euch jederzeit, was als Nächstes kommt.</p>
     <div class="meta"><span class="pill" id="clockPill">--:--</span><span class="pill" id="cityPill">Dinslaken</span></div>
   </div>
@@ -212,6 +212,8 @@ nav.tabs button[aria-current="page"]{color:var(--accent)}
     <div class="artbox"><canvas id="giftArt" aria-label="Abstrakte Komposition, jeden Tag neu"></canvas></div>
     <div class="artcap" id="artCap"></div>
     <div class="actions" style="margin-top:10px"><button class="btn small" id="newArt" type="button">Neu komponieren</button></div>
+    <h2>Für unterwegs: Hören</h2>
+    <div class="tips" id="audioList"></div>
     <h2>Gut zu wissen</h2>
     <div id="knowhow"></div>
   </section>
@@ -243,14 +245,14 @@ window.TRIP = {
      check:["Auto für die Umweltzone Gent registrieren (kostenlos, Pflicht für deutsche Kennzeichen)","Antwerpen hat auch eine Umweltzone: nur relevant, wenn ihr am Montag dort haltet","Zeitfenster für den Genter Altar am Samstag 14:15 gebucht","Tisch fürs Geburtstagsdinner am Samstag bestätigt","Sekt, zwei Gläser und eine Kerze für Mitternacht eingepackt"],
      url:"https://stad.gent/nl/mobiliteit-openbare-werken/lage-emissiezone/deze-voertuigen-kan-je-registreren/registratie-lez-voertuig-met-buitenlandse-nummerplaat",urlLabel:"Umweltzone Gent"},
     {id:"f1",day:"fr",start:"14:00",end:"17:15",title:"Abfahrt nach Gent",place:"Dinslaken → Gent, ca. 230 km",q:"Vlaanderenstraat 26, 9000 Gent",mode:"driving",prio:"must",tags:["logistik"],
-     text:"Rund 2:45 bis 3:15 Stunden über Venlo, Eindhoven und Antwerpen. Navi direkt auf die Hotelgarage stellen, nicht auf die Hoteladresse.",
+     text:"Rund 2:45 bis 3:15 Stunden über Venlo, Eindhoven und Antwerpen. Navi direkt auf die Hotelgarage stellen, nicht auf die Hoteladresse. Hörtipps für die Fahrt stehen unter „Für dich“.",
      tip:"Freitags staut es am Antwerpener Ring. Zeigt Google Maps rund um den Kennedytunnel Rot, nehmt den Liefkenshoektunnel (mautpflichtig, ein paar Euro). Das spart oft 30 Minuten.",
      alts:[{title:"Kaffeepause unterwegs",text:"Gute Stelle: rund um Eindhoven, ungefähr bei Halbzeit.",q:"Eindhoven"}]},
     {id:"f2",day:"fr",start:"17:15",end:"18:00",title:"Check-in Yalo Urban Boutique Hotel",place:"Brabantdam 33 · Garage: Vlaanderenstraat 26",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent",mode:"walking",prio:"must",tags:["logistik"],
      text:"Check-in ab 16 Uhr. Das Hotel hat eine eigene kostenpflichtige Tiefgarage, Zufahrt über die Vlaanderenstraat 26. Ab hier ist alles zu Fuß erreichbar, das Auto bleibt bis Sonntag stehen.",
      tip:"Ausweichgaragen in Laufweite: Parking De Reep und Parking Zuid (4 bis 6 Minuten zu Fuß)."},
     {id:"f3",day:"fr",start:"18:00",end:"19:15",title:"Erster Spaziergang: Gent bei Nacht",place:"Kouter → Korenmarkt → Sint-Michielsbrug",q:"Sint-Michielsbrug, Gent",mode:"walking",prio:"top",tags:["klassiker","kunst"],
-     text:"Gent hat einen eigenen Lichtplan: Türme, Giebel und Brücken werden abends gezielt angestrahlt. Von der Sint-Michielsbrug seht ihr die drei Türme von Sint-Niklaas, Belfried und Sint-Baafs in einer Linie.",
+     text:"Tipp: Hier startet auch der deutsche Audioguide (siehe „Für dich“). Gent hat einen eigenen Lichtplan: Türme, Giebel und Brücken werden abends gezielt angestrahlt. Von der Sint-Michielsbrug seht ihr die drei Türme von Sint-Niklaas, Belfried und Sint-Baafs in einer Linie.",
      tip:"Rund 15 Minuten vom Hotel. Weiter auf der Graslei am Wasser entlang zurück Richtung Abendessen."},
     {id:"f4",day:"fr",start:"19:15",end:"21:15",title:"Abendessen im Holy Food Market",place:"Food-Hall in einer Kapelle aus dem 16. Jh.",q:"Holy Food Market, Beverhoutplein, Gent",mode:"walking",prio:"top",tags:["food"],
      text:"Eine alte Kapelle voller Food-Stände: jeder isst, worauf er Lust hat, ohne Reservierung. Locker für den ersten Abend.",
@@ -282,19 +284,20 @@ window.TRIP = {
      url:"https://mskgent.be",urlLabel:"mskgent.be",
      alts:[{title:"Design Museum Gent",text:"Erst im Oktober 2026 nach vier Jahren Umbau mit neuem Flügel wiedereröffnet. Ideal, falls euch mehr nach Design als nach Gemälden ist.",q:"Design Museum Gent, Jan Breydelstraat 5, Gent",url:"https://www.designmuseumgent.be"}]},
     {id:"s4",day:"sa",start:"13:00",end:"14:05",title:"Mittagessen",place:"Pakhuis, nahe Korenmarkt",q:"Pakhuis, Schuurkenstraat, Gent",mode:"walking",prio:"top",tags:["food"],
-     text:"Brasserie im ehemaligen Lagerhaus: Fischsuppe, Garnelenkroketten, Flämisches. Mit dem Rad oder Tram zurück ins Zentrum, dann liegt die Kathedrale nur 5 Minuten entfernt.",
+     text:"Brasserie im ehemaligen Lagerhaus: Fischsuppe, Garnelenkroketten, Flämisches. Vom Citadelpark rund 20 Minuten zu Fuß oder ein paar Stationen mit der Tram. Danach sind es nur 5 Minuten zur Kathedrale.",
      alts:[
       {title:"Balls & Glory",text:"Belgische Fleischbällchen, schnell und gut.",q:"Balls & Glory, Gent"},
       {title:"Le Botaniste",text:"Pflanzliche Bio-Küche, falls es leichter sein soll.",q:"Le Botaniste, Gent"}]},
     {id:"s5",day:"sa",start:"14:15",end:"15:30",title:"Der Genter Altar · Van Eyck",place:"Sint-Baafskathedraal",q:"Sint-Baafskathedraal, Gent",mode:"walking",prio:"must",tags:["kunst","klassiker"],
-     text:"„Die Anbetung des Lammes“ von 1432, eines der wichtigsten Gemälde der Welt. Einige der oberen Tafeln sind gerade im MSK in Restaurierung und hier als hochwertige Reproduktion zu sehen. Die habt ihr am Vormittag im Original gesehen.",
+     text:"„Die Anbetung des Lammes“ von 1432, eines der wichtigsten Gemälde der Welt. Einige der oberen Tafeln sind gerade im MSK in Restaurierung und hier als hochwertige Reproduktion zu sehen. Mit etwas Glück habt ihr am Vormittag im MSK schon Tafeln im Original gesehen.",
      tip:"Zeitfenster vorab online buchen, am Wochenende ist es oft ausverkauft. Das Ticket mit AR-Tour lohnt sich.",
      url:"https://www.sintbaafskathedraal.be",urlLabel:"Tickets & Infos"},
     {id:"s6",day:"sa",start:"15:40",end:"16:30",title:"Belfried: Gent von oben",place:"Mit Aufzug, gegenüber der Kathedrale",q:"Belfort Gent, Sint-Baafsplein",mode:"walking",prio:"top",tags:["klassiker"],
      text:"Zur goldenen Stunde über den Dächern stehen. Ein Aufzug fährt fast bis oben.",
      alts:[
       {title:"Werregarenstraatje",text:"Die Graffiti-Gasse: legal besprüht und ständig neu übermalt. Lebendige Gegenwartskunst, 5 Minuten entfernt.",q:"Werregarenstraatje, Gent"},
-      {title:"Gravensteen",text:"Die Wasserburg der Grafen von Flandern, mit witziger Audiotour.",q:"Gravensteen, Gent"}]},
+      {title:"Gravensteen",text:"Die Wasserburg der Grafen von Flandern, mit witziger Audiotour.",q:"Gravensteen, Gent"},
+      {title:"Shopping-Runde",text:"Billierose (der schönste Concept Store der Stadt), Au Nom Du Pied (Mode mit Pariser Flair) und die kleinen Läden in Serpentstraat und Onderbergen.",q:"Billierose, Gent"}]},
     {id:"s7",day:"sa",start:"16:35",end:"17:15",title:"Sonnenuntergang an der Sint-Michielsbrug",place:"Graslei & Korenlei",q:"Sint-Michielsbrug, Gent",mode:"walking",prio:"must",tags:["klassiker","bday"],
      text:"Sonnenuntergang ist gegen 16:55 Uhr. Danach gehen die Lichter an: das schönste Geburtstagsfoto des Wochenendes.",
      tip:"Bestes Foto: von der Brücke Richtung Graslei, wenn der Himmel noch blau ist."},
@@ -335,7 +338,8 @@ window.TRIP = {
      text:"Noch einmal in Ruhe essen, bevor es nach Brügge geht. Das Hotel in Brügge nimmt erst ab 14 Uhr Gäste auf.",
      alts:[{title:"Snack und direkt los",text:"Belgische Fritten auf die Hand und früher nach Brügge, dann bleibt mehr Zeit im Groeningemuseum.",q:"frituur Gent centrum"}]},
     {id:"u6",day:"so",start:"13:15",end:"14:10",title:"Fahrt nach Brügge",place:"ca. 50 km, 45 bis 55 Min.",q:"Kanunnik Duclosstraat 1, 8000 Brugge",mode:"driving",prio:"must",tags:["logistik"],
-     text:"Über die E40. Das Jonojé liegt am Stadtrand, also kein Stress mit der autofreien Altstadt."},
+     text:"Über die E40. Das Jonojé liegt am Stadtrand, also kein Stress mit der autofreien Altstadt.",
+     tip:"Passt genau in die Fahrtzeit: „The Rest Is History“, Folge 271 über Jan van Eyck (43 Min., englisch). Danach seht ihr im Groeningemuseum seine Madonna."},
     {id:"u7",day:"so",start:"14:10",end:"14:45",title:"Check-in Jonojé Luxury Suites",place:"Designsuiten von Studio LOHO",q:"Jonojé Luxury Suites, Kanunnik Duclosstraat 1, 8000 Brugge",mode:"driving",prio:"must",tags:["logistik"],
      text:"Check-in von 14 bis 21 Uhr. Rund 75 m² große Suiten mit freistehenden Lehmbadewannen, selbst ein kleines Designstück.",
      tip:"Ins Zentrum: Taxi rufen lassen oder mit dem Auto zum Parkplatz Centrum-Station fahren. Dort ist das Parken günstig und der Bus in die Altstadt ist im Preis enthalten."},
@@ -376,7 +380,8 @@ window.TRIP = {
      text:"30 Minuten Brügge vom Wasser aus, unter tiefen Brücken hindurch. Im November wetterabhängig, also einfach am Steg fragen."},
     {id:"m4",day:"mo",start:"11:15",end:"12:00",title:"Belfried erklimmen",place:"366 Stufen am Markt",q:"Belfort, Markt 7, Brugge",mode:"walking",prio:"optional",tags:["klassiker"],
      text:"Auch montags geöffnet. Oben der Blick bis zur Küste, wenn es klar ist.",
-     alts:[{title:"Letzte Einkäufe",text:"Diksmuids Boterhuis (Käse und Butter) und die Läden in Geldmuntstraat und Noordzandstraat.",q:"Diksmuids Boterhuis, Geldmuntstraat, Brugge"}]},
+     alts:[{title:"Letzte Einkäufe",text:"Jūttu (Concept Store mit jungen belgischen Labels) in der Noordzandstraat, Goûts et Couleurs (nordisches Design), Diksmuids Boterhuis (Käse und Butter).",q:"Juttu, Noordzandstraat, Brugge"},
+      {title:"Sint-Anna-Viertel",text:"Das Viertel der Einheimischen: Café Vlissinghe (Kneipe seit 1515), das Kantcentrum mit echter Brügger Spitze und die Windmühlen am Kruisvest.",q:"Café Vlissinghe, Blekersstraat, Brugge"}]},
     {id:"m5",day:"mo",start:"12:00",end:"13:00",title:"Mittag: Fritten oder Brunch",place:"Chez Vincent",q:"Chez Vincent, Sint-Salvatorskerkhof, Brugge",mode:"walking",prio:"top",tags:["food"],
      text:"Belgische Fritten, zweimal frittiert, mit hausgemachten Saucen. Gilt als eine der besten Frittenbuden der Stadt.",
      alts:[
@@ -415,6 +420,15 @@ window.TRIP = {
     {city:"Gent",cat:"Läden",name:"Tierenteyn-Verlent",text:"Senf seit 1790, aus dem Holzfass abgefüllt.",q:"Tierenteyn-Verlent, Gent"},
     {city:"Gent",cat:"Läden",name:"Serpentstraat & Onderbergen",text:"Kleine Boutiquen und Concept Stores abseits der Veldstraat.",q:"Serpentstraat, Gent"},
     {city:"Gent",cat:"Läden",name:"Blumenmarkt Kouter",text:"Sonntagvormittag, mit Sekt am Kiosk.",q:"Kouter, Gent"},
+    {city:"Gent",cat:"Läden",name:"Billierose",text:"Gilt bei Gentern als schönster Concept Store der Stadt: Mode, Interior, Geschenke.",q:"Billierose, Gent"},
+    {city:"Gent",cat:"Läden",name:"Au Nom Du Pied",text:"Mode-Concept-Store mit Pariser Flair.",q:"Au Nom Du Pied, Gent"},
+    {city:"Gent",cat:"Läden",name:"Koperhuis",text:"Design- und Lifestyle-Laden, von Locals empfohlen.",q:"Koperhuis, Gent"},
+    {city:"Gent",cat:"Läden",name:"Atelier Vera Vermeersch",text:"Handgeknüpfte Teppiche als Kunstwerke, mit Concept Store und kleiner Bar.",q:"Atelier Vera Vermeersch, Gent"},
+    {city:"Gent",cat:"Läden",name:"Design Museum Shop",text:"Nach der Wiedereröffnung: belgisches Design zum Mitnehmen.",q:"Design Museum Gent"},
+    {city:"Gent",cat:"Insider",name:"Der Cuberdon-Krieg",text:"Am Groentenmarkt stehen zwei Wagen mit Gentse Neuzen, deren Besitzer sich seit Jahren öffentlich streiten. Probiert bei beiden und stimmt ab.",q:"Groentenmarkt, Gent"},
+    {city:"Gent",cat:"Insider",name:"Himschoot",text:"Älteste Bäckerei der Stadt im Gewölbe am Groentenmarkt. Ein Mastel (Zimtbrötchen) für unterwegs.",q:"Himschoot, Groentenmarkt, Gent"},
+    {city:"Gent",cat:"Insider",name:"Patershol am Abend",text:"Das alte Gerberviertel: Kopfsteinpflaster, kleine Restaurants hinter jeder Tür. Ideal für eine spontane Gastro-Runde mit Aperitif hier und Dessert dort.",q:"Patershol, Gent"},
+    {city:"Gent",cat:"Insider",name:"Lichtplan nach 22 Uhr",text:"Gent beleuchtet seine Gebäude nach einem eigenen Plan. Spät am Abend an der Korenlei ist es fast menschenleer.",q:"Korenlei, Gent"},
     {city:"Brügge",cat:"Kunst",name:"Groeningemuseum",text:"Van Eyck, Memling, Bosch, dann Magritte und Delvaux. Montags zu.",q:"Groeningemuseum, Brugge",url:"https://www.museabrugge.be"},
     {city:"Brügge",cat:"Kunst",name:"Sint-Janshospitaal",text:"Memling im mittelalterlichen Spital. Montags zu.",q:"Sint-Janshospitaal, Brugge"},
     {city:"Brügge",cat:"Kunst",name:"Arentshof",text:"Kleiner Garten mit den Bronzereitern von Rik Poot, frei zugänglich.",q:"Arentshof, Brugge"},
@@ -433,7 +447,28 @@ window.TRIP = {
     {city:"Brügge",cat:"Bars",name:"Le Trappiste",text:"Gewölbekeller aus dem 13. Jahrhundert.",q:"Le Trappiste, Brugge"},
     {city:"Brügge",cat:"Bars",name:"’t Brugs Beertje",text:"Klein, legendär, kundig.",q:"t Brugs Beertje, Brugge"},
     {city:"Brügge",cat:"Läden",name:"Diksmuids Boterhuis",text:"Käse und Butter in altem Laden.",q:"Diksmuids Boterhuis, Brugge"},
-    {city:"Brügge",cat:"Läden",name:"Brauerei De Halve Maan",text:"Führung und Shop, Brugse Zot.",q:"De Halve Maan, Brugge",url:"https://www.halvemaan.be"}
+    {city:"Brügge",cat:"Läden",name:"Brauerei De Halve Maan",text:"Führung und Shop, Brugse Zot.",q:"De Halve Maan, Brugge",url:"https://www.halvemaan.be"},
+    {city:"Brügge",cat:"Läden",name:"Jūttu",text:"Concept Store mit kleinen, jungen Labels, Noordzandstraat.",q:"Juttu, Noordzandstraat, Brugge"},
+    {city:"Brügge",cat:"Läden",name:"Goûts et Couleurs",text:"Zwei Läden von Innenarchitekten, nordisches Design und Accessoires.",q:"Goûts et Couleurs, Brugge"},
+    {city:"Brügge",cat:"Läden",name:"Atelier Twee",text:"Concept Store mit Handwerk und Nachhaltigkeit.",q:"Atelier Twee, Brugge"},
+    {city:"Brügge",cat:"Läden",name:"Frida Simone",text:"Kleiner Vintage-Laden mit Designerkleidung, Taschen und Deko.",q:"Frida Simone, Brugge"},
+    {city:"Brügge",cat:"Läden",name:"De Reyghere",text:"Traditionsbuchhandlung direkt am Markt. Schöne Kunstbücher.",q:"De Reyghere, Markt, Brugge"},
+    {city:"Brügge",cat:"Läden",name:"Kantcentrum",text:"Echte Brügger Spitze von Klöpplerinnen statt Importware aus Souvenirläden.",q:"Kantcentrum, Brugge"},
+    {city:"Brügge",cat:"Insider",name:"Café Vlissinghe",text:"Älteste Kneipe der Stadt, seit 1515. Im Sint-Anna-Viertel, wo kaum Touristen hinkommen.",q:"Café Vlissinghe, Brugge"},
+    {city:"Brügge",cat:"Insider",name:"Windmühlen am Kruisvest",text:"Spaziergang auf dem alten Stadtwall mit vier Mühlen. Schön im Morgenlicht.",q:"Sint-Janshuismolen, Brugge"},
+    {city:"Brügge",cat:"Insider",name:"Die Bier-Pipeline",text:"De Halve Maan pumpt ihr Bier durch eine 3 km lange Leitung unter der Altstadt zur Abfüllung. Bei der Führung erzählen sie die Geschichte.",q:"De Halve Maan, Brugge"},
+    {city:"Brügge",cat:"Insider",name:"Katelijnestraat & Langestraat",text:"Katelijnestraat für Schokolade, Spitze und Antiquitäten. Langestraat für Bücher, Vintage und kleine Lokale der Einheimischen.",q:"Langestraat, Brugge"},
+    {city:"Brügge",cat:"Insider",name:"Sonntags einkaufen",text:"Viele kleine Läden haben sonntags und teils auch montags zu. Die größte Auswahl habt ihr Samstag in Gent. In Brügge vorher über „Öffnungszeiten“ prüfen.",q:"Noordzandstraat, Brugge"}
+  ],
+  audio:[
+    {when:"Hinfahrt Fr · ca. 3 Std.",name:"Augen zu (ZEIT)",text:"Florian Illies und Giovanni di Lorenzo plaudern über Künstlerleben, auf Deutsch. Zwei, drei Folgen zu modernen Malern aussuchen, das passt zu S.M.A.K. und MSK.",url:"https://open.spotify.com/search/Augen%20zu%20Zeit%20Kunst/podcasts"},
+    {when:"Hinfahrt Fr",name:"The Low Countries: Jan van Eyck – The Man and the Myth",text:"Kurze Serie über den Maler des Genter Altars (englisch). Gute Vorbereitung auf Samstag.",url:"https://www.the-low-countries.com/article/podcast-jan-van-eyck-the-man-and-the-myth"},
+    {when:"Gent → Brügge So · 45 Min.",name:"The Rest Is History #271: History’s Greatest Artist",text:"Mit dem flämischen Autor Bart van Loo über Jan van Eyck (43 Min., englisch). Läuft genau so lange wie die Fahrt.",url:"https://open.spotify.com/search/The%20Rest%20Is%20History%20Belgium%20Greatest%20Artist/episodes"},
+    {when:"Heimfahrt Mo",name:"Bart van Loo: Burgund. Das verschwundene Reich",text:"Das Buch zur Geschichte von Flandern und Burgund, auf Deutsch erschienen. Als Hörbuch oder Lesestoff für danach.",url:"https://open.spotify.com/search/Bart%20van%20Loo%20Burgund"},
+    {when:"Audioguide Gent · Stadtrundgang",name:"Gent Sightseeing Tour (TouringBee-App)",text:"Selbstgeführter Rundgang auf Deutsch, startet an der Sint-Michielsbrug, rund 3 Stunden, ab ca. 7 €. Ideal für Sonntagvormittag oder in Etappen. Funktioniert per GPS, Kopfhörer einpacken.",url:"https://www.musement.com/de/gent/selbstgefuhrter-rundgang-durch-gent-mit-audio-app-508570/"},
+    {when:"Audioguide Gent · Alternative",name:"Historische und moderne Highlights",text:"Andere Audio-Tour mit Deutsch, die auch neue Architektur und Street-Art mitnimmt. Passt zu Sarahs Faible für moderne Kunst.",url:"https://www.musement.com/de/gent/self-guided-audio-tour-of-ghent-s-historic-and-modern-highlights-488630/"},
+    {when:"Audioguide Gent · Kathedrale",name:"Genter Altar mit AR-Tour",text:"Das Ticket mit Augmented-Reality-Tour gibt es auch auf Deutsch. Lohnt sich mehr als jeder Podcast.",url:"https://www.sintbaafskathedraal.be"},
+    {when:"Audioguide Brügge",name:"Stadtrundgang aufs Handy",text:"Selbstgeführte Audio-Touren durch die Altstadt gibt es auf Deutsch für ein paar Euro, z. B. über Musement. Kopfhörer einpacken.",url:"https://www.musement.com/de/brugge/self-guided-audio-tour-of-historic-bruges-488623/"}
   ],
   knowhow:[
     ["Umweltzone","Gent (und Antwerpen) haben eine Umweltzone. Ausländische Autos müssen vorher registriert werden, das ist kostenlos. Brügge hat keine Umweltzone."],
@@ -595,7 +630,7 @@ function renderNow(){
 
 /* ---------- TIPS view ---------- */
 function renderTips(){
-  const cats=["Alle","Kunst","Essen","Süßes","Kaffee","Bars","Läden"];
+  const cats=["Alle","Insider","Kunst","Essen","Süßes","Kaffee","Bars","Läden"];
   $("#cityFilter").innerHTML=["Gent","Brügge"].map(c=>`<button class="fchip" type="button" aria-pressed="${store.city===c}" data-city="${c}">${c}</button>`).join("");
   $("#catFilter").innerHTML=cats.map(c=>`<button class="fchip" type="button" aria-pressed="${store.cat===c}" data-cat="${c}">${c}</button>`).join("");
   const list=T.tips.filter(t=>t.city===store.city&&(store.cat==="Alle"||t.cat===store.cat));
@@ -611,6 +646,7 @@ function renderYou(){
   <p style="margin:0 0 12px">Ich mag unser Leben in allen Größen: Ausmisten und Sperrmüll, tiefe Gespräche über alles Mögliche, unser Spiel, uns Geschichten zu erzählen, gern auch zum zweiten oder dritten Mal. Ich mag unseren gemeinsamen Humor und dass wir trotzdem ganz verschiedene Interessen haben, digitale und sehr analoge. Genau so ergänzen wir uns.</p>
   <p style="margin:0">Ich bin glücklich, dich auf diese andere Weise kennengelernt zu haben, und freue mich auf die nächsten Jahre und Jahrzehnte mit dir, ab sofort. Möge dieses Wochenende ein weiteres Puzzlestück für unsere Zukunft sein und eine kleine Flucht aus dem Alltag, die du von der ersten bis zur letzten Minute genießt.</p>
   <div class="sig">Alles Gute zum 49., Honey.<br>Dein Alexander</div>`;
+  $("#audioList").innerHTML=T.audio.map(a=>`<div class="tipc"><div class="top"><h4>${esc(a.name)}</h4></div><span class="cat">${esc(a.when)}</span><p>${esc(a.text)}</p><div class="row"><a class="btn small" href="${esc(a.url)}" target="_blank" rel="noopener">${ico.link}Öffnen</a></div></div>`).join("");
   $("#knowhow").innerHTML=`<div class="tipc" style="margin-bottom:10px"><h4>Erinnerungen aufs Handy</h4><p>Alle Programmpunkte als Kalendertermine, jeweils mit Erinnerung 15 Minuten vorher. Einmal öffnen und „Alle hinzufügen“ tippen.</p><div class="row"><a class="btn small primary" href="https://alexanderwskowronek-cloud.github.io/fuer-sarah/reise.ics" target="_blank" rel="noopener">${ico.link}In den Kalender</a></div></div><ol class="tl">${T.knowhow.map(([h,t])=>`<li class="item" style="grid-template-columns:1fr"><div class="c" style="padding:12px 14px"><h3>${esc(h)}</h3><div class="place" style="font-size:14px">${esc(t)}</div></div></li>`).join("")}</ol>`;
   paintGift();
 }
