@@ -226,7 +226,7 @@ nav.tabs button[aria-current="page"]::before{content:"";position:absolute;top:-3
   <!-- UNTERWEGS -->
   <section class="view" id="v-road" hidden aria-labelledby="h-road">
     <h2 id="h-road">Unterwegs</h2>
-    <p class="sub">Podcasts fürs Auto, Audioguides für die Städte und alle Termine für den Kalender.</p>
+    <p class="sub">Kostenlose Podcasts für jede Fahrt, alle in Spotify oder jeder Podcast-App. Vorher herunterladen, dann laufen sie auch ohne Netz. Dazu alle Termine für den Kalender.</p>
     <div id="calBox" style="margin-top:12px"></div>
     <h2>Hören</h2>
     <div class="tips" id="audioList"></div>
@@ -268,14 +268,14 @@ window.TRIP = {
      check:["Auto für die Umweltzone Gent registrieren (kostenlos, Pflicht für deutsche Kennzeichen)","Antwerpen hat auch eine Umweltzone: nur relevant, wenn ihr am Montag dort haltet","Zeitfenster für den Genter Altar am Samstag 14:15 gebucht","Lieblingsplätze für das spontane Geburtstagsdinner im Kopf (siehe Samstag)","Sekt, zwei Gläser und eine Kerze für Mitternacht eingepackt"],
      url:"https://stad.gent/nl/mobiliteit-openbare-werken/lage-emissiezone/deze-voertuigen-kan-je-registreren/registratie-lez-voertuig-met-buitenlandse-nummerplaat",urlLabel:"Umweltzone Gent"},
     {id:"f1",day:"fr",start:"14:00",end:"17:15",title:"Abfahrt nach Gent",place:"Dinslaken → Gent, ca. 230 km",q:"Vlaanderenstraat 26, 9000 Gent",mode:"driving",prio:"must",tags:["logistik"],
-     text:"Rund 2:45 bis 3:15 Stunden über Venlo, Eindhoven und Antwerpen. Navi direkt auf die Hotelgarage stellen, nicht auf die Hoteladresse. Hörtipps für die Fahrt stehen unter „Für dich“.",
+     text:"Rund 2:45 bis 3:15 Stunden über Venlo, Eindhoven und Antwerpen. Navi direkt auf die Hotelgarage stellen, nicht auf die Hoteladresse. Hörtipps für die Fahrt stehen unter „Unterwegs“.",
      tip:"Freitags staut es am Antwerpener Ring. Zeigt Google Maps rund um den Kennedytunnel Rot, nehmt den Liefkenshoektunnel (mautpflichtig, ein paar Euro). Das spart oft 30 Minuten.",
      alts:[{title:"Kaffeepause unterwegs",text:"Gute Stelle: rund um Eindhoven, ungefähr bei Halbzeit.",q:"Eindhoven"}]},
     {id:"f2",day:"fr",start:"17:15",end:"18:00",title:"Check-in Yalo Urban Boutique Hotel",place:"Brabantdam 33 · Garage: Vlaanderenstraat 26",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent",mode:"walking",prio:"must",tags:["logistik"],
      text:"Check-in ab 16 Uhr. Das Hotel hat eine eigene kostenpflichtige Tiefgarage, Zufahrt über die Vlaanderenstraat 26. Ab hier ist alles zu Fuß erreichbar, das Auto bleibt bis Sonntag stehen.",
      tip:"Ausweichgaragen in Laufweite: Parking De Reep und Parking Zuid (4 bis 6 Minuten zu Fuß)."},
     {id:"f3",day:"fr",start:"18:00",end:"19:15",title:"Erster Spaziergang: Gent bei Nacht",place:"Kouter → Korenmarkt → Sint-Michielsbrug",q:"Sint-Michielsbrug, Gent",mode:"walking",prio:"top",tags:["klassiker","kunst"],
-     text:"Tipp: Hier startet auch der deutsche Audioguide (siehe „Für dich“). Gent hat einen eigenen Lichtplan: Türme, Giebel und Brücken werden abends gezielt angestrahlt. Von der Sint-Michielsbrug seht ihr die drei Türme von Sint-Niklaas, Belfried und Sint-Baafs in einer Linie.",
+     text:"Gent hat einen eigenen Lichtplan: Türme, Giebel und Brücken werden abends gezielt angestrahlt. Von der Sint-Michielsbrug seht ihr die drei Türme von Sint-Niklaas, Belfried und Sint-Baafs in einer Linie.",
      tip:"Rund 15 Minuten vom Hotel. Weiter auf der Graslei am Wasser entlang zurück Richtung Abendessen."},
     {id:"f4",day:"fr",start:"19:15",end:"21:15",title:"Abendessen im Holy Food Market",place:"Food-Hall in einer Kapelle aus dem 16. Jh.",q:"Holy Food Market, Beverhoutplein, Gent",mode:"walking",prio:"top",tags:["food"],
      text:"Eine alte Kapelle voller Food-Stände: jeder isst, worauf er Lust hat, ohne Reservierung. Locker für den ersten Abend.",
@@ -529,11 +529,7 @@ window.TRIP = {
     {when:"Gent → Brügge So · Alternative",name:"Travel with Rick Steves #779: Bruges",text:"Der Brügge-Teil mit dem Brügger Stadtführer Nico Favoreel: was Einheimische an ihrer Stadt lieben (englisch, ca. 15 Min. Brügge-Teil).",url:"https://www.ricksteves.com/watch-read-listen/audio/radio/programs/program-779"},
     {when:"Heimfahrt Mo",name:"Augen zu (ZEIT)",text:"Kunstpodcast auf Deutsch mit Florian Illies und Giovanni di Lorenzo. Zum Nachklingen nach S.M.A.K. und Groeninge: einfach in der App nach Magritte oder Ensor suchen.",url:"https://open.spotify.com/search/Augen%20zu%20Zeit/podcasts"},
     {when:"Heimfahrt Mo · zum Weiterhören",name:"Bart van Loo: „Burgund. Das verschwundene Reich“",text:"Die Geschichte, warum Gent und Brügge einmal das Zentrum Europas waren, auf Deutsch. In Spotify oder der Hörbuch-App suchen.",url:"https://open.spotify.com/search/Bart%20van%20Loo%20Burgund"},
-    {when:"Audioguide Gent · Stadtrundgang",name:"Gent Sightseeing Tour (TouringBee-App)",text:"Selbstgeführter Rundgang auf Deutsch, startet an der Sint-Michielsbrug, rund 3 Stunden, ab ca. 7 €. Ideal für Sonntagvormittag oder in Etappen. Funktioniert per GPS, Kopfhörer einpacken.",url:"https://www.musement.com/de/gent/selbstgefuhrter-rundgang-durch-gent-mit-audio-app-508570/"},
-    {when:"Audioguide Gent · Alternative",name:"Historische und moderne Highlights",text:"Andere Audio-Tour mit Deutsch, die auch neue Architektur und Street-Art mitnimmt. Passt zu Sarahs Faible für moderne Kunst.",url:"https://www.musement.com/de/gent/self-guided-audio-tour-of-ghent-s-historic-and-modern-highlights-488630/"},
-    {when:"Audioguide Gent · Kathedrale",name:"Genter Altar mit AR-Tour",text:"Das Ticket mit Augmented-Reality-Tour gibt es auch auf Deutsch. Lohnt sich mehr als jeder Podcast.",url:"https://www.sintbaafskathedraal.be"},
-    {when:"Audioguide Brügge · Stadtrundgang",name:"Historisches Brügge aufs Handy",text:"Selbstgeführte Audio-Tour auf Deutsch für ein paar Euro. Passt am Sonntag zwischen Groeninge und Belfried oder am Montagmorgen ab dem Beginenhof.",url:"https://www.musement.com/de/brugge/self-guided-audio-tour-of-historic-bruges-488623/"},
-    {when:"Audioguide Brügge · Museum",name:"Audioguide im Groeningemuseum",text:"An der Kasse gibt es den Museums-Audioguide, auch auf Deutsch. Zu Van Eyck, Memling und Bosch lohnt er sich.",url:"https://www.museabrugge.be"}
+    {when:"Extra für Brügge · ca. 15 Min.",name:"Travel with Rick Steves #664: Bruges",text:"Ein belgischer Guide erzählt, was Besucher an der mittelalterlichen Altstadt am meisten lieben (englisch). Gut für die letzten Minuten vor Brügge oder am Montagmorgen beim Frühstück.",url:"https://playpodcasts.com/podcasts/travel-with-rick-steves/664-tblisi-bruges-milan"}
   ],
   knowhow:[
     {group:"Gent",items:[
