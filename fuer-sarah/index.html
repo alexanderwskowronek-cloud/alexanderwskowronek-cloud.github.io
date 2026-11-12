@@ -305,12 +305,15 @@ window.TRIP = {
     {id:"s9",day:"sa",start:"18:00",end:"19:15",title:"Durchatmen und umziehen",place:"Hotel",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent",mode:"walking",prio:"optional",tags:["logistik"],
      text:"Kurz ausruhen, Torte probieren, schick machen."},
     {id:"s10",day:"sa",start:"19:30",end:"22:00",title:"Geburtstagsdinner",place:"Vrijmoed · 2 Min. vom Hotel",q:"Vrijmoed, Vlaanderenstraat, Gent",mode:"walking",prio:"must",tags:["bday","food"],
-     text:"Michelin-Stern, präzise und modern, ohne Steifheit. Der Höhepunkt des Tages.",
-     tip:"Nur mit Reservierung. Falls Vrijmoed voll ist, sind die Alternativen unten genauso gute Abende.",
+     text:"Gents höchstdekorierte Küche: Michelin-Sterne, gemüsebetont und modern, ohne Steifheit. Der Höhepunkt des Tages, zwei Minuten vom Hotel.",
+     tip:"Nur mit Reservierung. Die Alternativen unten sind genauso schöne Geburtstagsabende, jeweils in einem anderen Stil.",
      alts:[
+      {title:"Rizoom",text:"Intimer Raum mit offenem Feuer und Fermentation. Gault&Millau „Ten to Taste Gent“. Modern und sehr persönlich.",q:"Rizoom, Gent"},
       {title:"De Vitrine",text:"Brasserie von Spitzenkoch Kobe Desramaults am Brabantdam, um die Ecke vom Hotel. Lässiger, aber auf hohem Niveau.",q:"De Vitrine, Brabantdam, Gent"},
-      {title:"Publiek",text:"Michelin-Stern von Olly Ceulenaere: kreativ, gemüsestark, warme Atmosphäre.",q:"Publiek, Ham, Gent"},
-      {title:"Belga Queen",text:"Klassisch belgisch mit Blick auf die Graslei. Leichter zu bekommen.",q:"Belga Queen, Graslei, Gent"}]},
+      {title:"Boris & Maurice",text:"Französisch geprägtes Bistro im Patershol, Bib Gourmand. Romantisch, kerzenlichtig, nur mit Reservierung.",q:"Boris & Maurice, Gent"},
+      {title:"Publiek",text:"Michelin-Stern von Olly Ceulenaere: kreativ, warm, unprätentiös.",q:"Publiek, Ham, Gent"},
+      {title:"Bar Bask",text:"Baskischer Grill in einer ehemaligen Tankstelle an der Schelde, Bib Gourmand. Lebendig statt leise.",q:"Bar Bask, Gent"},
+      {title:"Belga Queen",text:"Klassisch belgisch mit Blick auf die Graslei. Großes Haus, kurzfristig am ehesten zu bekommen.",q:"Belga Queen, Graslei, Gent"}]},
     {id:"s11",day:"sa",start:"22:15",end:"23:59",title:"Live-Jazz im Hot Club de Gand",place:"Winzige Gasse am Groentenmarkt",q:"Hot Club de Gand, Gent",mode:"walking",prio:"optional",tags:["bday"],
      text:"Gypsy-Jazz in einem versteckten Hinterhof. Man findet ihn nur, wenn man weiß, wo die Gasse ist.",
      alts:[
@@ -391,7 +394,11 @@ window.TRIP = {
     {city:"Gent",cat:"Kunst",name:"Design Museum Gent",text:"Seit Oktober 2026 mit neuem Flügel wiedereröffnet. Belgiens größtes Designmuseum.",q:"Design Museum Gent",url:"https://www.designmuseumgent.be"},
     {city:"Gent",cat:"Kunst",name:"MSK Gent",text:"Bosch bis Moderne, plus das Restaurierungsatelier des Genter Altars.",q:"MSK Gent",url:"https://mskgent.be"},
     {city:"Gent",cat:"Kunst",name:"Werregarenstraatje",text:"Legale Graffiti-Gasse, jede Woche anders.",q:"Werregarenstraatje, Gent"},
-    {city:"Gent",cat:"Essen",name:"Vrijmoed",text:"Michelin-Stern, modern, direkt beim Hotel. Reservieren.",q:"Vrijmoed, Gent"},
+    {city:"Gent",cat:"Essen",name:"Vrijmoed",text:"Michelin-Sterne, gemüsebetont, direkt beim Hotel. Reservieren.",q:"Vrijmoed, Gent"},
+    {city:"Gent",cat:"Essen",name:"Rizoom",text:"Offenes Feuer, Fermentation, intimer Raum.",q:"Rizoom, Gent"},
+    {city:"Gent",cat:"Essen",name:"Boris & Maurice",text:"Romantisches Bistro im Patershol, Bib Gourmand.",q:"Boris & Maurice, Gent"},
+    {city:"Gent",cat:"Essen",name:"Bar Bask",text:"Baskischer Grill in alter Tankstelle an der Schelde.",q:"Bar Bask, Gent"},
+    {city:"Gent",cat:"Essen",name:"Commotie",text:"Gault&Millau-Tipp im Patershol.",q:"Commotie, Gent"},
     {city:"Gent",cat:"Essen",name:"De Vitrine",text:"Brasserie von Kobe Desramaults am Brabantdam.",q:"De Vitrine, Brabantdam, Gent"},
     {city:"Gent",cat:"Essen",name:"Publiek",text:"Michelin-Stern, kreativ und gemüsestark.",q:"Publiek, Gent"},
     {city:"Gent",cat:"Essen",name:"Holy Food Market",text:"Food-Hall in einer Kapelle aus dem 16. Jahrhundert.",q:"Holy Food Market, Gent"},
@@ -598,10 +605,12 @@ function renderTips(){
 
 /* ---------- FOR YOU ---------- */
 function renderYou(){
-  $("#letter").innerHTML=`<p style="margin:0 0 12px">Liebe Sarah,</p>
-  <p style="margin:0 0 12px">49 Jahre, und ich finde, du solltest sie an einem Ort feiern, an dem Van Eyck vor 600 Jahren gemalt hat und heute immer noch die mutigste Gegenwartskunst gezeigt wird. Genau wie du: klassisch und modern zugleich.</p>
-  <p style="margin:0">Diese kleine App begleitet uns durch die vier Tage. Du entscheidest, was wir machen, auslassen oder tauschen. Hauptsache, wir genießen es zusammen.</p>
-  <div class="sig">Alles Liebe, Alexander</div>`;
+  $("#letter").innerHTML=`<p style="margin:0 0 12px">Liebe kleine Möwe,</p>
+  <p style="margin:0 0 12px">wir haben das Kosenamen-Spiel oft genug gespielt, um zu wissen: Die üblichen Namen passen nicht zu uns. Möwe trifft es am besten, Honey auch. Zu einem Lebensweg wie unserem gehören eben eigene Namen.</p>
+  <p style="margin:0 0 12px">Angefangen hat alles auf dem Feierabendmarkt in Dinslaken. Wir dachten, wir wüssten schon ein bisschen voneinander, und waren dann überrascht, wie viel Charakter und Tiefe hinter der Fassade des anderen steckt. Seitdem ging es schnell: spontane Städtereisen durch Holland, jetzt Belgien, und immer die Zeit füreinander.</p>
+  <p style="margin:0 0 12px">Ich mag unser Leben in allen Größen: Ausmisten und Sperrmüll, tiefe Gespräche über alles Mögliche, unser Spiel, uns Geschichten zu erzählen, gern auch zum zweiten oder dritten Mal. Ich mag unseren gemeinsamen Humor und dass wir trotzdem ganz verschiedene Interessen haben, digitale und sehr analoge. Genau so ergänzen wir uns.</p>
+  <p style="margin:0">Ich bin glücklich, dich auf diese andere Weise kennengelernt zu haben, und freue mich auf die nächsten Jahre und Jahrzehnte mit dir, ab sofort. Möge dieses Wochenende ein weiteres Puzzlestück für unsere Zukunft sein und eine kleine Flucht aus dem Alltag, die du von der ersten bis zur letzten Minute genießt.</p>
+  <div class="sig">Alles Gute zum 49., Honey.<br>Dein Alexander</div>`;
   $("#knowhow").innerHTML=`<div class="tipc" style="margin-bottom:10px"><h4>Erinnerungen aufs Handy</h4><p>Alle Programmpunkte als Kalendertermine, jeweils mit Erinnerung 15 Minuten vorher. Einmal öffnen und „Alle hinzufügen“ tippen.</p><div class="row"><a class="btn small primary" href="https://alexanderwskowronek-cloud.github.io/fuer-sarah/reise.ics" target="_blank" rel="noopener">${ico.link}In den Kalender</a></div></div><ol class="tl">${T.knowhow.map(([h,t])=>`<li class="item" style="grid-template-columns:1fr"><div class="c" style="padding:12px 14px"><h3>${esc(h)}</h3><div class="place" style="font-size:14px">${esc(t)}</div></div></li>`).join("")}</ol>`;
   paintGift();
 }
