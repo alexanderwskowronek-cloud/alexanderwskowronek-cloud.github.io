@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Sarah 49 · Gent & Brügge</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Sarah 49">
+<meta name="theme-color" content="#1b2a6b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one-column phone app. Generative abstract header (Flemish gables + colour fields), sticky day tabs, bottom nav. */
+:root{
+  --paper:#f2f3ef;        /* cool limestone */
+  --card:#ffffff;
+  --ink:#16192a;
+  --muted:#5b6070;
+  --line:#dfe1dc;
+  --ultramarine:#2340a8;  /* Van-Eyck-Blau */
+  --gold:#d9a21b;         /* Ocker / Goldgrund */
+  --brick:#b5452e;        /* Backstein der Trapgiebel */
+  --canal:#1f5b57;        /* Grachtengrün */
+  --rose:#e9a7a0;
+  --accent:var(--ultramarine);
+  --accent-ink:#ffffff;
+  --done:#2f7d4f;
+  --chip:#e8eaf4;
+  --shadow:0 1px 2px rgba(22,25,42,.06),0 6px 20px rgba(22,25,42,.06);
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Instrument Sans","Helvetica Neue",Arial,system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#11131b;--card:#1a1d28;--ink:#eef0f6;--muted:#a3a8b8;--line:#2a2e3c;
+  --ultramarine:#7f97ff;--gold:#f0bf45;--brick:#e8735a;--canal:#4fb3a9;--rose:#f0b9b2;
+  --accent:#8ea3ff;--accent-ink:#0d1020;--done:#5ec98a;--chip:#232838;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11131b;--card:#1a1d28;--ink:#eef0f6;--muted:#a3a8b8;--line:#2a2e3c;
+  --ultramarine:#7f97ff;--gold:#f0bf45;--brick:#e8735a;--canal:#4fb3a9;--rose:#f0b9b2;
+  --accent:#8ea3ff;--accent-ink:#0d1020;--done:#5ec98a;--chip:#232838;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{background:var(--paper)}
+body{color:var(--ink);font:16px/1.5 var(--f-body);-webkit-font-smoothing:antialiased;padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:6px}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* Header art */
+.hero{position:relative;overflow:hidden;background:#1b2a6b;color:#fff}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .wrap{position:relative;padding-block:28px 22px;min-height:236px;display:flex;flex-direction:column;justify-content:flex-end}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.9}
+.hero h1{font:800 clamp(40px,12vw,64px)/.92 var(--f-display);letter-spacing:-.02em;margin:10px 0 8px;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.25)}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{margin:0;max-width:34ch;font-size:15px;opacity:.95;text-shadow:0 1px 10px rgba(0,0,0,.35)}
+.hero .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.pill{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--f-mono);padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);color:#fff}
+
+/* Views */
+main{padding-block:18px}
+.view[hidden]{display:none!important}
+h2{font:700 22px/1.15 var(--f-display);margin:22px 0 10px;text-wrap:balance}
+h3{font:700 18px/1.2 var(--f-display);margin:0}
+.sub{color:var(--muted);font-size:14px;margin:0}
+
+/* NOW card */
+.now{background:var(--card);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
+.now .band{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;background:var(--ink);color:var(--paper);font:500 12px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase}
+.now .band b{color:var(--gold);font-weight:500}
+.now .body{padding:18px 16px 16px;display:grid;gap:10px}
+.now .time{font:500 14px/1 var(--f-mono);color:var(--muted)}
+.now h3{font-size:26px;line-height:1.08}
+.now p{margin:0;color:var(--muted)}
+.count{font:800 34px/1 var(--f-display);font-variant-numeric:tabular-nums;color:var(--accent)}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{appearance:none;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 16px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;background:var(--chip);color:var(--ink)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;border:1.5px solid var(--line)}
+.btn.small{min-height:36px;padding:7px 12px;font-size:14px;border-radius:10px}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* Day tabs */
+.days{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);padding-block:10px;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.day{flex:1 1 0;min-width:72px;border:0;cursor:pointer;background:var(--card);border-radius:14px;padding:9px 10px;text-align:left;box-shadow:var(--shadow)}
+.day span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.day b{display:block;font:700 15px/1.1 var(--f-display)}
+.day span{font:500 11px/1.3 var(--f-mono);color:var(--muted)}
+.day[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.day[aria-selected="true"] span{color:var(--gold)}
+.dayhead{display:grid;gap:4px;margin:14px 0 6px}
+.dayhead h2{margin:0}
+
+/* Timeline */
+.tl{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:10px}
+.item{background:var(--card);border-radius:16px;box-shadow:var(--shadow);display:grid;grid-template-columns:62px 1fr;overflow:hidden;position:relative}
+.item .t{padding:14px 0 14px 14px;font:500 14px/1.2 var(--f-mono);font-variant-numeric:tabular-nums}
+.item .t small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.item .c{padding:12px 14px 12px 4px;min-width:0}
+.item summary{list-style:none;cursor:pointer}
+.item summary::-webkit-details-marker{display:none}
+.item h3{font-size:17px;display:flex;gap:8px;align-items:flex-start}
+.item .place{font-size:13px;color:var(--muted);margin-top:2px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.b{font:500 11px/1 var(--f-mono);letter-spacing:.04em;padding:5px 8px;border-radius:999px;background:var(--chip);color:var(--ink)}
+.b.must{background:var(--brick);color:#fff}
+.b.top{background:var(--gold);color:#1a1405}
+.b.opt{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.b.bday{background:var(--rose);color:#3a1210}
+.item .more{display:grid;gap:10px;margin-top:10px;font-size:15px}
+.item .more p{margin:0}
+.tip{background:var(--chip);border-radius:12px;padding:10px 12px;font-size:14px}
+.tip b{font-family:var(--f-mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:2px}
+.alts{display:grid;gap:8px}
+.alt{border:1.5px dashed var(--line);border-radius:12px;padding:10px 12px;display:grid;gap:6px}
+.alt .row{display:flex;gap:8px;flex-wrap:wrap}
+.alt h4{margin:0;font:600 15px/1.25 var(--f-body)}
+.alt p{font-size:14px;color:var(--muted)}
+.item.is-now{outline:2.5px solid var(--accent)}
+.item.is-done{opacity:.55}
+.item.is-done h3 .title{text-decoration:line-through}
+.item.is-skip{opacity:.45}
+.item.is-skip h3 .title{text-decoration:line-through dotted}
+.stripe{position:absolute;left:0;top:0;bottom:0;width:4px}
+.check{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.check label{display:flex;gap:10px;align-items:flex-start;font-size:15px;cursor:pointer}
+.check input{width:20px;height:20px;margin-top:2px;accent-color:var(--accent);flex:none}
+
+/* Tips */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 12px}
+.fchip{border:1.5px solid var(--line);background:transparent;border-radius:999px;padding:7px 12px;cursor:pointer;font-size:14px}
+.fchip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tips{display:grid;gap:8px}
+.tipc{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:12px 14px;display:grid;gap:4px}
+.tipc .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.tipc h4{margin:0;font:600 16px/1.25 var(--f-body)}
+.tipc .cat{font:500 11px/1 var(--f-mono);color:var(--muted);white-space:nowrap}
+.tipc p{margin:0;font-size:14px;color:var(--muted)}
+.tipc .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+
+/* For you */
+.letter{background:var(--card);border-radius:22px;box-shadow:var(--shadow);padding:22px 18px;font-size:17px;line-height:1.6}
+.letter .sig{font:700 20px/1 var(--f-display);margin-top:14px}
+.artbox{border-radius:22px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/5;max-width:100%;position:relative;background:var(--card)}
+.artbox canvas{width:100%;height:100%;display:block}
+.artcap{font:500 12px/1.4 var(--f-mono);color:var(--muted);margin-top:8px}
+
+.note{font-size:13px;color:var(--muted)}
+.weather{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.wx{background:var(--card);box-shadow:var(--shadow);border-radius:12px;padding:8px 12px;font:500 13px/1.3 var(--f-mono)}
+
+/* Bottom nav */
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+nav.tabs .in{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+nav.tabs button{border:0;background:none;cursor:pointer;display:grid;justify-items:center;gap:3px;padding:10px 4px 9px;font:500 11px/1 var(--f-mono);color:var(--muted);letter-spacing:.04em}
+nav.tabs button svg{width:24px;height:24px}
+nav.tabs button[aria-current="page"]{color:var(--accent)}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:12px;font-size:14px;z-index:30;max-width:calc(100% - 32px)}
+@media (prefers-reduced-motion:no-preference){.now,.item,.tipc{transition:transform .15s ease}.btn:active{transform:scale(.97)}}
+</style>
+
+<header class="hero" aria-label="Geburtstagsreise">
+  <canvas id="heroArt" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="eyebrow">13.–16. November 2026 · Gent → Brügge</div>
+    <h1>Sarah wird <em>49</em></h1>
+    <p id="heroLine">Vier Tage Kunst, Kanäle und gutes Essen. Diese App zeigt euch jederzeit, was als Nächstes kommt.</p>
+    <div class="meta"><span class="pill" id="clockPill">--:--</span><span class="pill" id="cityPill">Dinslaken</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- JETZT -->
+  <section class="view" id="v-now" aria-labelledby="h-now">
+    <h2 id="h-now" style="margin-top:4px">Jetzt</h2>
+    <div id="nowCard"></div>
+    <div id="nowRest"></div>
+    <div class="weather" id="weather"></div>
+  </section>
+
+  <!-- PLAN -->
+  <section class="view" id="v-plan" hidden aria-labelledby="h-plan">
+    <div class="days" role="tablist" id="dayTabs" aria-label="Tage"></div>
+    <div id="dayView"></div>
+  </section>
+
+  <!-- TIPPS -->
+  <section class="view" id="v-tips" hidden aria-labelledby="h-tips">
+    <h2 id="h-tips">Insider-Tipps</h2>
+    <p class="sub">Kunst, Essen, Süßes, Bars und Läden. Alles mit Route ab eurem Standort.</p>
+    <div class="filters" id="cityFilter"></div>
+    <div class="filters" id="catFilter"></div>
+    <div class="tips" id="tipList"></div>
+  </section>
+
+  <!-- FÜR DICH -->
+  <section class="view" id="v-you" hidden aria-labelledby="h-you">
+    <h2 id="h-you">Für dich, Sarah</h2>
+    <div class="letter" id="letter"></div>
+    <h2>Dein Bild für heute</h2>
+    <div class="artbox"><canvas id="giftArt" aria-label="Abstrakte Komposition, jeden Tag neu"></canvas></div>
+    <div class="artcap" id="artCap"></div>
+    <div class="actions" style="margin-top:10px"><button class="btn small" id="newArt" type="button">Neu komponieren</button></div>
+    <h2>Gut zu wissen</h2>
+    <div id="knowhow"></div>
+  </section>
+</main>
+
+<nav class="tabs" aria-label="Bereiche">
+  <div class="in">
+    <button type="button" data-view="now" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Jetzt</button>
+    <button type="button" data-view="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Plan</button>
+    <button type="button" data-view="tips"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Tipps</button>
+    <button type="button" data-view="you"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11h16v9H4zM3 7h18v4H3zM12 7v13M12 7c-2-4-6-3-5 0M12 7c2-4 6-3 5 0"/></svg>Für dich</button>
+  </div>
+</nav>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script id="trip-data">
+window.TRIP = {
+  tz:"+01:00",
+  days:[
+    {id:"fr",date:"2026-11-13",label:"Freitag",short:"Fr 13.",city:"Anreise · Gent",motto:"Ankommen, Gent bei Nacht, um Mitternacht anstoßen."},
+    {id:"sa",date:"2026-11-14",label:"Samstag",short:"Sa 14.",city:"Gent",motto:"Dein Geburtstag: moderne Kunst am Morgen, Van Eyck am Nachmittag, Dinner am Abend."},
+    {id:"so",date:"2026-11-15",label:"Sonntag",short:"So 15.",city:"Gent → Brügge",motto:"Blumenmarkt, Street-Art, dann Flämische Meister und blaue Stunde in Brügge."},
+    {id:"mo",date:"2026-11-16",label:"Montag",short:"Mo 16.",city:"Brügge → Heimweg",motto:"Stilles Brügge am Morgen, mittags Richtung Heimat, optional mit Zwischenstopp."}
+  ],
+  items:[
+    /* ---------- FREITAG ---------- */
+    {id:"f0",day:"fr",start:"12:00",end:"14:00",title:"Vor der Abfahrt",place:"Zuhause",prio:"must",tags:["logistik"],
+     text:"Fünf Dinge, die den Trip entspannt machen.",
+     check:["Auto für die Umweltzone Gent registrieren (kostenlos, Pflicht für deutsche Kennzeichen)","Antwerpen hat auch eine Umweltzone: nur relevant, wenn ihr am Montag dort haltet","Zeitfenster für den Genter Altar am Samstag 14:15 gebucht","Tisch fürs Geburtstagsdinner am Samstag bestätigt","Sekt, zwei Gläser und eine Kerze für Mitternacht eingepackt"],
+     url:"https://stad.gent/nl/mobiliteit-openbare-werken/lage-emissiezone/deze-voertuigen-kan-je-registreren/registratie-lez-voertuig-met-buitenlandse-nummerplaat",urlLabel:"Umweltzone Gent"},
+    {id:"f1",day:"fr",start:"14:00",end:"17:15",title:"Abfahrt nach Gent",place:"Dinslaken → Gent, ca. 230 km",q:"Vlaanderenstraat 26, 9000 Gent",mode:"driving",prio:"must",tags:["logistik"],
+     text:"Rund 2:45 bis 3:15 Stunden über Venlo, Eindhoven und Antwerpen. Navi direkt auf die Hotelgarage stellen, nicht auf die Hoteladresse.",
+     tip:"Freitags staut es am Antwerpener Ring. Zeigt Google Maps rund um den Kennedytunnel Rot, nehmt den Liefkenshoektunnel (mautpflichtig, ein paar Euro). Das spart oft 30 Minuten.",
+     alts:[{title:"Kaffeepause unterwegs",text:"Gute Stelle: rund um Eindhoven, ungefähr bei Halbzeit.",q:"Eindhoven"}]},
+    {id:"f2",day:"fr",start:"17:15",end:"18:00",title:"Check-in Yalo Urban Boutique Hotel",place:"Brabantdam 33 · Garage: Vlaanderenstraat 26",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent",mode:"walking",prio:"must",tags:["logistik"],
+     text:"Check-in ab 16 Uhr. Das Hotel hat eine eigene kostenpflichtige Tiefgarage, Zufahrt über die Vlaanderenstraat 26. Ab hier ist alles zu Fuß erreichbar, das Auto bleibt bis Sonntag stehen.",
+     tip:"Ausweichgaragen in Laufweite: Parking De Reep und Parking Zuid (4 bis 6 Minuten zu Fuß)."},
+    {id:"f3",day:"fr",start:"18:00",end:"19:15",title:"Erster Spaziergang: Gent bei Nacht",place:"Kouter → Korenmarkt → Sint-Michielsbrug",q:"Sint-Michielsbrug, Gent",mode:"walking",prio:"top",tags:["klassiker","kunst"],
+     text:"Gent hat einen eigenen Lichtplan: Türme, Giebel und Brücken werden abends gezielt angestrahlt. Von der Sint-Michielsbrug seht ihr die drei Türme von Sint-Niklaas, Belfried und Sint-Baafs in einer Linie.",
+     tip:"Rund 15 Minuten vom Hotel. Weiter auf der Graslei am Wasser entlang zurück Richtung Abendessen."},
+    {id:"f4",day:"fr",start:"19:15",end:"21:15",title:"Abendessen im Holy Food Market",place:"Food-Hall in einer Kapelle aus dem 16. Jh.",q:"Holy Food Market, Beverhoutplein, Gent",mode:"walking",prio:"top",tags:["food"],
+     text:"Eine alte Kapelle voller Food-Stände: jeder isst, worauf er Lust hat, ohne Reservierung. Locker für den ersten Abend.",
+     alts:[
+      {title:"Pakhuis",text:"Große Brasserie in einem alten Lagerhaus, Klassiker der Genter Gastro. Reservieren.",q:"Pakhuis, Schuurkenstraat, Gent"},
+      {title:"Roots",text:"Kleines Bistro im Patershol, ehrliche Küche zu fairen Preisen. Reservieren.",q:"Roots restaurant Patershol Gent"},
+      {title:"Belga Queen",text:"Belgische Klassiker in einem Speicherhaus direkt an der Graslei.",q:"Belga Queen, Graslei, Gent"}]},
+    {id:"f5",day:"fr",start:"21:30",end:"23:40",title:"Belgisches Bier am Wasser",place:"Het Waterhuis aan de Bierkant",q:"Het Waterhuis aan de Bierkant, Groentenmarkt, Gent",mode:"walking",prio:"optional",tags:["food"],
+     text:"Gemütliche Bierkneipe an der Leie mit großer Fass- und Flaschenauswahl.",
+     alts:[
+      {title:"Dulle Griet",text:"Über 250 Biere am Vrijdagmarkt. Wer den 1,2-Liter-„Max“ bestellt, gibt einen Schuh als Pfand ab.",q:"Dulle Griet, Vrijdagmarkt, Gent"},
+      {title:"’t Dreupelkot",text:"Winzige Jeneverbar mit über 100 Sorten, direkt am Wasser.",q:"t Dreupelkot, Groentenmarkt, Gent"}]},
+    {id:"f6",day:"fr",start:"23:50",end:"23:59",title:"Mitternacht: Sarah wird 49",place:"Graslei oder im Hotel",q:"Graslei, Gent",mode:"walking",prio:"must",tags:["bday"],
+     text:"Um 0:00 Uhr mit Sekt anstoßen. Draußen an der beleuchteten Graslei oder gemütlich im Zimmer mit Kerze.",
+     tip:"Am Wasser ist es nachts ruhig und die Fassaden sind angestrahlt. Jacke mitnehmen, Mitte November sind es nachts um die 5 °C."},
+
+    /* ---------- SAMSTAG ---------- */
+    {id:"s1",day:"sa",start:"08:45",end:"09:45",title:"Geburtstagsfrühstück",place:"Im Hotel",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent",mode:"walking",prio:"must",tags:["bday","food"],
+     text:"Ganz in Ruhe in den Tag starten. Heute gibt es keine Eile.",
+     alts:[
+      {title:"Café Labath",text:"Specialty Coffee und Frühstück in der Innenstadt, bei Gentern sehr beliebt.",q:"Café Labath, Gent"},
+      {title:"Mokabon",text:"Kaffeehaus seit 1937 in einer kleinen Gasse, sehr Old-School.",q:"Mokabon, Donkersteeg, Gent"}]},
+    {id:"s2",day:"sa",start:"10:00",end:"11:45",title:"S.M.A.K. · Museum für zeitgenössische Kunst",place:"Citadelpark · 20 Min. zu Fuß",q:"S.M.A.K., Jan Hoetplein 1, 9000 Gent",mode:"walking",prio:"must",tags:["kunst"],
+     text:"Belgiens wichtigstes Haus für Gegenwartskunst. Im November laufen Ana Lupas (große Einzelausstellung der rumänischen Künstlerin), Bendt Eyckermans (erste Museumsschau in Belgien) und das Jubiläum „Chambres d’Amis 40“, die Rückschau auf das legendäre Projekt von 1986, bei dem Kunst in Genter Wohnungen gezeigt wurde.",
+     tip:"Morgens ist es am leersten. Tickets online kaufen spart die Schlange.",
+     url:"https://smak.be",urlLabel:"smak.be"},
+    {id:"s3",day:"sa",start:"11:45",end:"12:45",title:"MSK · Museum der Schönen Künste",place:"Direkt gegenüber im Citadelpark",q:"MSK Gent, Fernand Scribedreef 1, 9000 Gent",mode:"walking",prio:"top",tags:["kunst","klassiker"],
+     text:"Von Bosch bis zur belgischen Moderne. Besonderheit: Hier werden die Tafeln des Genter Altars restauriert, hinter Glas könnt ihr den Restauratoren zuschauen. Am Nachmittag seht ihr dann den Altar selbst.",
+     url:"https://mskgent.be",urlLabel:"mskgent.be",
+     alts:[{title:"Design Museum Gent",text:"Erst im Oktober 2026 nach vier Jahren Umbau mit neuem Flügel wiedereröffnet. Ideal, falls euch mehr nach Design als nach Gemälden ist.",q:"Design Museum Gent, Jan Breydelstraat 5, Gent",url:"https://www.designmuseumgent.be"}]},
+    {id:"s4",day:"sa",start:"13:00",end:"14:05",title:"Mittagessen",place:"Pakhuis, nahe Korenmarkt",q:"Pakhuis, Schuurkenstraat, Gent",mode:"walking",prio:"top",tags:["food"],
+     text:"Brasserie im ehemaligen Lagerhaus: Fischsuppe, Garnelenkroketten, Flämisches. Mit dem Rad oder Tram zurück ins Zentrum, dann liegt die Kathedrale nur 5 Minuten entfernt.",
+     alts:[
+      {title:"Balls & Glory",text:"Belgische Fleischbällchen, schnell und gut.",q:"Balls & Glory, Gent"},
+      {title:"Le Botaniste",text:"Pflanzliche Bio-Küche, falls es leichter sein soll.",q:"Le Botaniste, Gent"}]},
+    {id:"s5",day:"sa",start:"14:15",end:"15:30",title:"Der Genter Altar · Van Eyck",place:"Sint-Baafskathedraal",q:"Sint-Baafskathedraal, Gent",mode:"walking",prio:"must",tags:["kunst","klassiker"],
+     text:"„Die Anbetung des Lammes“ von 1432, eines der wichtigsten Gemälde der Welt. Einige der oberen Tafeln sind gerade im MSK in Restaurierung und hier als hochwertige Reproduktion zu sehen. Die habt ihr am Vormittag im Original gesehen.",
+     tip:"Zeitfenster vorab online buchen, am Wochenende ist es oft ausverkauft. Das Ticket mit AR-Tour lohnt sich.",
+     url:"https://www.sintbaafskathedraal.be",urlLabel:"Tickets & Infos"},
+    {id:"s6",day:"sa",start:"15:40",end:"16:30",title:"Belfried: Gent von oben",place:"Mit Aufzug, gegenüber der Kathedrale",q:"Belfort Gent, Sint-Baafsplein",mode:"walking",prio:"top",tags:["klassiker"],
+     text:"Zur goldenen Stunde über den Dächern stehen. Ein Aufzug fährt fast bis oben.",
+     alts:[
+      {title:"Werregarenstraatje",text:"Die Graffiti-Gasse: legal besprüht und ständig neu übermalt. Lebendige Gegenwartskunst, 5 Minuten entfernt.",q:"Werregarenstraatje, Gent"},
+      {title:"Gravensteen",text:"Die Wasserburg der Grafen von Flandern, mit witziger Audiotour.",q:"Gravensteen, Gent"}]},
+    {id:"s7",day:"sa",start:"16:35",end:"17:15",title:"Sonnenuntergang an der Sint-Michielsbrug",place:"Graslei & Korenlei",q:"Sint-Michielsbrug, Gent",mode:"walking",prio:"must",tags:["klassiker","bday"],
+     text:"Sonnenuntergang ist gegen 16:55 Uhr. Danach gehen die Lichter an: das schönste Geburtstagsfoto des Wochenendes.",
+     tip:"Bestes Foto: von der Brücke Richtung Graslei, wenn der Himmel noch blau ist."},
+    {id:"s8",day:"sa",start:"17:15",end:"18:00",title:"Geburtstags-Patisserie bei Joost Arijs",place:"Vlaanderenstraat, neben dem Hotel",q:"Joost Arijs, Vlaanderenstraat, Gent",mode:"walking",prio:"top",tags:["bday","food","shopping"],
+     text:"Einer der besten Pâtissiers und Chocolatiers Belgiens. Kleine Törtchen wie Skulpturen. Perfekt als Geburtstagskuchen fürs Zimmer.",
+     tip:"Schließt am frühen Abend. Wenn es knapp wird: vor dem Sonnenuntergang hingehen.",
+     alts:[{title:"Temmerman",text:"Altes Süßwarengeschäft am Kraanlei, hier gibt es die Gentse Neuzen (Cuberdons).",q:"Temmerman, Kraanlei, Gent"}]},
+    {id:"s9",day:"sa",start:"18:00",end:"19:15",title:"Durchatmen und umziehen",place:"Hotel",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent",mode:"walking",prio:"optional",tags:["logistik"],
+     text:"Kurz ausruhen, Torte probieren, schick machen."},
+    {id:"s10",day:"sa",start:"19:30",end:"22:00",title:"Geburtstagsdinner",place:"Vrijmoed · 2 Min. vom Hotel",q:"Vrijmoed, Vlaanderenstraat, Gent",mode:"walking",prio:"must",tags:["bday","food"],
+     text:"Michelin-Stern, präzise und modern, ohne Steifheit. Der Höhepunkt des Tages.",
+     tip:"Nur mit Reservierung. Falls Vrijmoed voll ist, sind die Alternativen unten genauso gute Abende.",
+     alts:[
+      {title:"De Vitrine",text:"Brasserie von Spitzenkoch Kobe Desramaults am Brabantdam, um die Ecke vom Hotel. Lässiger, aber auf hohem Niveau.",q:"De Vitrine, Brabantdam, Gent"},
+      {title:"Publiek",text:"Michelin-Stern von Olly Ceulenaere: kreativ, gemüsestark, warme Atmosphäre.",q:"Publiek, Ham, Gent"},
+      {title:"Belga Queen",text:"Klassisch belgisch mit Blick auf die Graslei. Leichter zu bekommen.",q:"Belga Queen, Graslei, Gent"}]},
+    {id:"s11",day:"sa",start:"22:15",end:"23:59",title:"Live-Jazz im Hot Club de Gand",place:"Winzige Gasse am Groentenmarkt",q:"Hot Club de Gand, Gent",mode:"walking",prio:"optional",tags:["bday"],
+     text:"Gypsy-Jazz in einem versteckten Hinterhof. Man findet ihn nur, wenn man weiß, wo die Gasse ist.",
+     alts:[
+      {title:"Jigger’s",text:"Eine der besten Cocktailbars Belgiens. Klingeln, reservieren empfohlen.",q:"Jigger's, Oudburg, Gent"},
+      {title:"Dulle Griet",text:"Falls es doch Bier sein soll.",q:"Dulle Griet, Vrijdagmarkt, Gent"}]},
+
+    /* ---------- SONNTAG ---------- */
+    {id:"u1",day:"so",start:"09:00",end:"09:50",title:"Frühstück und Koffer packen",place:"Hotel",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent",mode:"walking",prio:"must",tags:["logistik"],
+     text:"Check-out ist bis 12 Uhr. Gepäck schon mal fertig machen."},
+    {id:"u2",day:"so",start:"10:00",end:"10:45",title:"Blumenmarkt auf dem Kouter",place:"Nur sonntags, ca. 7 bis 13 Uhr",q:"Kouter, Gent",mode:"walking",prio:"top",tags:["bday","klassiker","shopping"],
+     text:"Genter Sonntagsritual: Blumen kaufen und am Kiosk ein Glas Sekt oder Weißwein trinken, gern mit ein paar Austern. Nimm dir einen Geburtstagsstrauß mit.",
+     tip:"Nur 5 Minuten vom Hotel."},
+    {id:"u3",day:"so",start:"10:50",end:"11:40",title:"Street-Art, Senf und Gentse Neuzen",place:"Werregarenstraatje · Groentenmarkt · Patershol",q:"Werregarenstraatje, Gent",mode:"walking",prio:"top",tags:["kunst","shopping","food"],
+     text:"Die Graffiti-Gasse, dann am Groentenmarkt die lila Cuberdons vom Wagen und Senf bei Tierenteyn-Verlent (seit 1790, abgefüllt aus dem Fass). Zurück durch die Gassen des Patershol.",
+     alts:[{title:"Gravensteen",text:"Wer die Burg noch sehen möchte: öffnet um 10 Uhr, rund eine Stunde einplanen.",q:"Gravensteen, Gent"}]},
+    {id:"u4",day:"so",start:"11:45",end:"12:00",title:"Check-out",place:"Yalo · Garage Vlaanderenstraat 26",q:"Vlaanderenstraat 26, 9000 Gent",mode:"walking",prio:"must",tags:["logistik"],
+     text:"Auschecken, Auto aus der Garage holen."},
+    {id:"u5",day:"so",start:"12:00",end:"13:10",title:"Mittagessen in Gent",place:"Holy Food Market oder Patershol",q:"Holy Food Market, Beverhoutplein, Gent",mode:"walking",prio:"optional",tags:["food"],
+     text:"Noch einmal in Ruhe essen, bevor es nach Brügge geht. Das Hotel in Brügge nimmt erst ab 14 Uhr Gäste auf.",
+     alts:[{title:"Snack und direkt los",text:"Belgische Fritten auf die Hand und früher nach Brügge, dann bleibt mehr Zeit im Groeningemuseum.",q:"frituur Gent centrum"}]},
+    {id:"u6",day:"so",start:"13:15",end:"14:10",title:"Fahrt nach Brügge",place:"ca. 50 km, 45 bis 55 Min.",q:"Kanunnik Duclosstraat 1, 8000 Brugge",mode:"driving",prio:"must",tags:["logistik"],
+     text:"Über die E40. Das Jonojé liegt am Stadtrand, also kein Stress mit der autofreien Altstadt."},
+    {id:"u7",day:"so",start:"14:10",end:"14:45",title:"Check-in Jonojé Luxury Suites",place:"Designsuiten von Studio LOHO",q:"Jonojé Luxury Suites, Kanunnik Duclosstraat 1, 8000 Brugge",mode:"driving",prio:"must",tags:["logistik"],
+     text:"Check-in von 14 bis 21 Uhr. Rund 75 m² große Suiten mit freistehenden Lehmbadewannen, selbst ein kleines Designstück.",
+     tip:"Ins Zentrum: Taxi rufen lassen oder mit dem Auto zum Parkplatz Centrum-Station fahren. Dort ist das Parken günstig und der Bus in die Altstadt ist im Preis enthalten."},
+    {id:"u8",day:"so",start:"15:00",end:"16:30",title:"Groeningemuseum",place:"Dijver 12",q:"Groeningemuseum, Dijver 12, Brugge",mode:"walking",prio:"must",tags:["kunst","klassiker"],
+     text:"Flämische Primitive: Van Eycks „Madonna des Kanonikus van der Paele“, Memling, Bosch. Danach belgische Moderne mit Magritte, Delvaux und Permeke, also von Gold bis Abstraktion in einem Haus.",
+     tip:"Sonntag bis 17 Uhr geöffnet, montags geschlossen. Darum heute.",
+     url:"https://www.museabrugge.be",urlLabel:"museabrugge.be",
+     alts:[{title:"Sint-Janshospitaal",text:"Mittelalterliches Spital mit den Memling-Werken, kleiner und ruhiger.",q:"Sint-Janshospitaal, Mariastraat, Brugge"}]},
+    {id:"u9",day:"so",start:"16:30",end:"17:30",title:"Blaue Stunde: Rozenhoedkaai, Burg, Markt",place:"Die Postkarten-Runde",q:"Rozenhoedkaai, Brugge",mode:"walking",prio:"must",tags:["klassiker"],
+     text:"Der berühmteste Blick Brügges: Belfried über dem Kanal. Dann über den Burg zum Markt, wenn die Lichter angehen.",
+     tip:"Der Weihnachtsmarkt und das Lichtfestival Winter Glow starten erst am 20. November. Dafür ist es jetzt angenehm leer."},
+    {id:"u10",day:"so",start:"17:30",end:"18:15",title:"The Chocolate Line",place:"Simon Stevinplein",q:"The Chocolate Line, Simon Stevinplein, Brugge",mode:"walking",prio:"top",tags:["food","shopping","kunst"],
+     text:"Dominique Persoone, der „Shock-o-latier“: Pralinen mit ungewöhnlichen Aromen wie Wasabi, Speck oder Cola. Schokolade als Konzeptkunst.",
+     alts:[{title:"Dumon",text:"Klassische, handgemachte Pralinen. Familienbetrieb.",q:"Chocolatier Dumon, Brugge"}]},
+    {id:"u11",day:"so",start:"18:15",end:"19:15",title:"Aperitif in De Garre",place:"Versteckt in einer Gasse am Markt",q:"De Garre, Brugge",mode:"walking",prio:"top",tags:["food"],
+     text:"Winzige Kneipe in einem schmalen Durchgang. Hier gibt es die hauseigene Tripel van de Garre (11 %) mit einem Stück Käse.",
+     alts:[
+      {title:"Le Trappiste",text:"Bierbar in einem Gewölbekeller aus dem 13. Jahrhundert.",q:"Le Trappiste, Kemelstraat, Brugge"},
+      {title:"’t Brugs Beertje",text:"Legendäres Bierlokal, sehr klein und sehr kundig.",q:"t Brugs Beertje, Brugge"}]},
+    {id:"u12",day:"so",start:"19:30",end:"21:30",title:"Abendessen in Brügge",place:"Assiette Blanche, am Burg",q:"Assiette Blanche, Brugge",mode:"walking",prio:"must",tags:["food"],
+     text:"Bei Einheimischen beliebt, feine saisonale Küche ohne Touristenrummel.",
+     tip:"Sonntags haben viele gute Restaurants Ruhetag. Vorher reservieren und Öffnung prüfen.",
+     alts:[
+      {title:"Locàle",text:"Neues Bistro mit Michelin-Empfehlung, lokale und saisonale Produkte.",q:"Locàle, Brugge"},
+      {title:"De Vlaamsche Pot",text:"Flämische Klassiker wie Stoofvlees und Waterzooi im gusseisernen Topf.",q:"De Vlaamsche Pot, Helmstraat, Brugge"},
+      {title:"Cambrinus",text:"Bierbrasserie mit großer Karte, Kochen mit Bier.",q:"Cambrinus, Philipstockstraat, Brugge"}]},
+    {id:"u13",day:"so",start:"21:30",end:"22:15",title:"Nachtspaziergang Groenerei",place:"Bonifaciusbrug · Groenerei",q:"Groenerei, Brugge",mode:"walking",prio:"optional",tags:["klassiker"],
+     text:"Die stillste und romantischste Ecke Brügges, nachts fast menschenleer. Danach mit dem Taxi zurück ins Jonojé."},
+
+    /* ---------- MONTAG ---------- */
+    {id:"m1",day:"mo",start:"08:30",end:"09:30",title:"Frühstück und Check-out",place:"Jonojé",q:"Jonojé Luxury Suites, Kanunnik Duclosstraat 1, 8000 Brugge",mode:"driving",prio:"must",tags:["logistik"],
+     text:"Gepäck ins Auto. Zum Parkplatz Centrum-Station fahren, von dort sind es 7 Minuten zu Fuß zum Minnewater.",
+     tip:"Montags haben die Musea Brugge (Groeninge, Sint-Janshospitaal) geschlossen. Darum liegt der Montag auf Atmosphäre und Ausblicken."},
+    {id:"m2",day:"mo",start:"09:45",end:"10:30",title:"Minnewater und Beginenhof",place:"Morgenstille im Weltkulturerbe",q:"Begijnhof, Brugge",mode:"walking",prio:"must",tags:["klassiker"],
+     text:"Weiße Häuser, Bäume, Stille: morgens, bevor die Busgruppen kommen, ist der Beginenhof am schönsten. Am Minnewater, dem „See der Liebe“, schwimmen die Schwäne.",
+     alts:[{title:"Brauerei De Halve Maan",text:"Führung durch die letzte Brauerei in der Altstadt, mit Dachblick. Ganz in der Nähe.",q:"De Halve Maan, Walplein 26, Brugge",url:"https://www.halvemaan.be"}]},
+    {id:"m3",day:"mo",start:"10:40",end:"11:10",title:"Bootsfahrt über die Grachten",place:"Anleger am Rozenhoedkaai",q:"Rozenhoedkaai, Brugge",mode:"walking",prio:"top",tags:["klassiker"],
+     text:"30 Minuten Brügge vom Wasser aus, unter tiefen Brücken hindurch. Im November wetterabhängig, also einfach am Steg fragen."},
+    {id:"m4",day:"mo",start:"11:15",end:"12:00",title:"Belfried erklimmen",place:"366 Stufen am Markt",q:"Belfort, Markt 7, Brugge",mode:"walking",prio:"optional",tags:["klassiker"],
+     text:"Auch montags geöffnet. Oben der Blick bis zur Küste, wenn es klar ist.",
+     alts:[{title:"Letzte Einkäufe",text:"Diksmuids Boterhuis (Käse und Butter) und die Läden in Geldmuntstraat und Noordzandstraat.",q:"Diksmuids Boterhuis, Geldmuntstraat, Brugge"}]},
+    {id:"m5",day:"mo",start:"12:00",end:"13:00",title:"Mittag: Fritten oder Brunch",place:"Chez Vincent",q:"Chez Vincent, Sint-Salvatorskerkhof, Brugge",mode:"walking",prio:"top",tags:["food"],
+     text:"Belgische Fritten, zweimal frittiert, mit hausgemachten Saucen. Gilt als eine der besten Frittenbuden der Stadt.",
+     alts:[
+      {title:"Li O Lait",text:"Kaffee und Brunch, wird noch für Einheimische gemacht.",q:"Li O Lait, Dweersstraat, Brugge"},
+      {title:"Waffel bei Chez Albert",text:"Für eine süße Belgische Waffel zum Abschluss.",q:"Chez Albert, Breidelstraat, Brugge"}]},
+    {id:"m6",day:"mo",start:"13:15",end:"16:30",title:"Heimfahrt nach Dinslaken",place:"ca. 300 km, ca. 3:15 Std. ohne Stopp",q:"Dinslaken",mode:"driving",prio:"must",tags:["logistik"],
+     text:"Direkt nach Hause bedeutet Ankunft gegen 16:30 Uhr. Oder ihr wählt unten einen Zwischenstopp.",
+     alts:[
+      {title:"Stopp in Antwerpen (ca. 2 Std.)",text:"Liebfrauenkathedrale mit Rubens’ Kreuzabnahme (auch montags geöffnet), Grote Markt, Kaffee im Viertel Het Zuid. Achtung: Antwerpen hat eine Umweltzone, das Auto vorher registrieren. Ankunft zuhause gegen 19 Uhr.",q:"Onze-Lieve-Vrouwekathedraal, Antwerpen"},
+      {title:"Stopp in Sluis, NL (ca. 1,5 Std.)",text:"Hübsches Grenzstädtchen 25 Minuten von Brügge, Läden auch montags offen. Danach durch den Westerscheldetunnel (Maut) nach Hause und so den Antwerpener Ring umfahren.",q:"Sluis, Nederland"},
+      {title:"Stopp in Eindhoven, Strijp-S",text:"Ehemaliges Philips-Gelände, heute Design- und Kreativviertel mit Cafés und Läden. Liegt direkt auf der Strecke.",q:"Strijp-S, Eindhoven"}]}
+  ],
+  tips:[
+    {city:"Gent",cat:"Kunst",name:"S.M.A.K.",text:"Gegenwartskunst, im November: Ana Lupas, Bendt Eyckermans, Chambres d’Amis 40.",q:"S.M.A.K., Gent",url:"https://smak.be"},
+    {city:"Gent",cat:"Kunst",name:"Design Museum Gent",text:"Seit Oktober 2026 mit neuem Flügel wiedereröffnet. Belgiens größtes Designmuseum.",q:"Design Museum Gent",url:"https://www.designmuseumgent.be"},
+    {city:"Gent",cat:"Kunst",name:"MSK Gent",text:"Bosch bis Moderne, plus das Restaurierungsatelier des Genter Altars.",q:"MSK Gent",url:"https://mskgent.be"},
+    {city:"Gent",cat:"Kunst",name:"Werregarenstraatje",text:"Legale Graffiti-Gasse, jede Woche anders.",q:"Werregarenstraatje, Gent"},
+    {city:"Gent",cat:"Essen",name:"Vrijmoed",text:"Michelin-Stern, modern, direkt beim Hotel. Reservieren.",q:"Vrijmoed, Gent"},
+    {city:"Gent",cat:"Essen",name:"De Vitrine",text:"Brasserie von Kobe Desramaults am Brabantdam.",q:"De Vitrine, Brabantdam, Gent"},
+    {city:"Gent",cat:"Essen",name:"Publiek",text:"Michelin-Stern, kreativ und gemüsestark.",q:"Publiek, Gent"},
+    {city:"Gent",cat:"Essen",name:"Holy Food Market",text:"Food-Hall in einer Kapelle aus dem 16. Jahrhundert.",q:"Holy Food Market, Gent"},
+    {city:"Gent",cat:"Essen",name:"Roots",text:"Bistro im Patershol, ehrlich und fair.",q:"Roots restaurant Patershol Gent"},
+    {city:"Gent",cat:"Süßes",name:"Joost Arijs",text:"Pâtisserie und Pralinen auf Kunstniveau.",q:"Joost Arijs, Gent"},
+    {city:"Gent",cat:"Süßes",name:"Temmerman",text:"Altes Bonbongeschäft, Gentse Neuzen.",q:"Temmerman, Kraanlei, Gent"},
+    {city:"Gent",cat:"Süßes",name:"Max",text:"Waffelhaus seit 1839, hier soll die Brüsseler Waffel erfunden worden sein.",q:"Max, Goudenleeuwplein, Gent"},
+    {city:"Gent",cat:"Kaffee",name:"Café Labath",text:"Specialty Coffee, sehr beliebt bei Gentern.",q:"Café Labath, Gent"},
+    {city:"Gent",cat:"Kaffee",name:"Mokabon",text:"Kaffeehaus seit 1937.",q:"Mokabon, Gent"},
+    {city:"Gent",cat:"Bars",name:"Hot Club de Gand",text:"Live-Gypsy-Jazz in einem versteckten Hof.",q:"Hot Club de Gand, Gent"},
+    {city:"Gent",cat:"Bars",name:"Jigger’s",text:"Cocktails auf Weltklasseniveau. Klingeln.",q:"Jigger's, Gent"},
+    {city:"Gent",cat:"Bars",name:"Dulle Griet",text:"250+ Biere, Schuh als Pfand für den Max.",q:"Dulle Griet, Gent"},
+    {city:"Gent",cat:"Bars",name:"’t Dreupelkot",text:"Jeneverbar am Wasser.",q:"t Dreupelkot, Gent"},
+    {city:"Gent",cat:"Läden",name:"Tierenteyn-Verlent",text:"Senf seit 1790, aus dem Holzfass abgefüllt.",q:"Tierenteyn-Verlent, Gent"},
+    {city:"Gent",cat:"Läden",name:"Serpentstraat & Onderbergen",text:"Kleine Boutiquen und Concept Stores abseits der Veldstraat.",q:"Serpentstraat, Gent"},
+    {city:"Gent",cat:"Läden",name:"Blumenmarkt Kouter",text:"Sonntagvormittag, mit Sekt am Kiosk.",q:"Kouter, Gent"},
+    {city:"Brügge",cat:"Kunst",name:"Groeningemuseum",text:"Van Eyck, Memling, Bosch, dann Magritte und Delvaux. Montags zu.",q:"Groeningemuseum, Brugge",url:"https://www.museabrugge.be"},
+    {city:"Brügge",cat:"Kunst",name:"Sint-Janshospitaal",text:"Memling im mittelalterlichen Spital. Montags zu.",q:"Sint-Janshospitaal, Brugge"},
+    {city:"Brügge",cat:"Kunst",name:"Arentshof",text:"Kleiner Garten mit den Bronzereitern von Rik Poot, frei zugänglich.",q:"Arentshof, Brugge"},
+    {city:"Brügge",cat:"Kunst",name:"Concertgebouw",text:"Moderne Architektur aus Terrakotta-Ziegeln, mit Klang-Parcours und Dachterrasse.",q:"Concertgebouw Brugge"},
+    {city:"Brügge",cat:"Essen",name:"Assiette Blanche",text:"Bei Einheimischen beliebt, am Burg.",q:"Assiette Blanche, Brugge"},
+    {city:"Brügge",cat:"Essen",name:"Locàle",text:"Neues Bistro mit Michelin-Empfehlung.",q:"Locàle, Brugge"},
+    {city:"Brügge",cat:"Essen",name:"Bistro Bruut",text:"Kreatives Bistro am Kanal.",q:"Bistro Bruut, Brugge"},
+    {city:"Brügge",cat:"Essen",name:"De Vlaamsche Pot",text:"Flämische Klassiker im Topf.",q:"De Vlaamsche Pot, Brugge"},
+    {city:"Brügge",cat:"Essen",name:"Franco Belge",text:"Mittagsliebling der Einheimischen.",q:"Franco Belge, Brugge"},
+    {city:"Brügge",cat:"Süßes",name:"The Chocolate Line",text:"Dominique Persoones verrückte Pralinen.",q:"The Chocolate Line, Brugge"},
+    {city:"Brügge",cat:"Süßes",name:"Dumon",text:"Klassische Pralinen vom Familienbetrieb.",q:"Chocolatier Dumon, Brugge"},
+    {city:"Brügge",cat:"Süßes",name:"Chez Vincent",text:"Fritten mit hausgemachten Saucen.",q:"Chez Vincent, Brugge"},
+    {city:"Brügge",cat:"Kaffee",name:"Li O Lait",text:"Kaffee und Brunch, wenig Touristen.",q:"Li O Lait, Brugge"},
+    {city:"Brügge",cat:"Kaffee",name:"Sanseveria Bagelsalon",text:"Kleiner Salon mit Bagels und Kuchen.",q:"Sanseveria Bagelsalon, Brugge"},
+    {city:"Brügge",cat:"Bars",name:"De Garre",text:"Tripel van de Garre, versteckte Gasse.",q:"De Garre, Brugge"},
+    {city:"Brügge",cat:"Bars",name:"Le Trappiste",text:"Gewölbekeller aus dem 13. Jahrhundert.",q:"Le Trappiste, Brugge"},
+    {city:"Brügge",cat:"Bars",name:"’t Brugs Beertje",text:"Klein, legendär, kundig.",q:"t Brugs Beertje, Brugge"},
+    {city:"Brügge",cat:"Läden",name:"Diksmuids Boterhuis",text:"Käse und Butter in altem Laden.",q:"Diksmuids Boterhuis, Brugge"},
+    {city:"Brügge",cat:"Läden",name:"Brauerei De Halve Maan",text:"Führung und Shop, Brugse Zot.",q:"De Halve Maan, Brugge",url:"https://www.halvemaan.be"}
+  ],
+  knowhow:[
+    ["Umweltzone","Gent (und Antwerpen) haben eine Umweltzone. Ausländische Autos müssen vorher registriert werden, das ist kostenlos. Brügge hat keine Umweltzone."],
+    ["Parken Gent","Hotelgarage Yalo: Zufahrt Vlaanderenstraat 26. Nicht die Hoteladresse ins Navi eingeben."],
+    ["Parken Brügge","Die Altstadt ist fast autofrei. Am günstigsten: Parkplatz Centrum-Station, Busticket ins Zentrum ist inklusive."],
+    ["Montags","Die meisten Museen in Gent und Brügge haben montags geschlossen. Der Plan ist darauf ausgelegt."],
+    ["Licht","Sonnenaufgang gegen 8:10 Uhr, Sonnenuntergang gegen 16:55 Uhr. Blaue Stunde bis ca. 17:30 Uhr."],
+    ["Öffnungszeiten","Alle Zeiten sind sorgfältig geplant, Öffnungszeiten können sich aber ändern. Im Zweifel den Link zu Google Maps öffnen und dort nachsehen."]
+  ]
+};
+</script>
+
+<script>
+(function(){
+"use strict";
+const T = window.TRIP;
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
+const esc = s => String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const LS_KEY="sarah49.v1";
+let store={status:{},pick:{},check:{},city:"Gent",cat:"Alle",day:null,view:"now"};
+try{const raw=localStorage.getItem(LS_KEY); if(raw) store=Object.assign(store,JSON.parse(raw));}catch(e){}
+const save=()=>{try{localStorage.setItem(LS_KEY,JSON.stringify(store));}catch(e){}};
+
+/* ---------- time ---------- */
+const dayById=Object.fromEntries(T.days.map(d=>[d.id,d]));
+const at=(day,hm)=>new Date(dayById[day].date+"T"+hm+":00"+T.tz);
+T.items.forEach(it=>{it.s=at(it.day,it.start); it.e=at(it.day,it.end||it.start);});
+const ordered=[...T.items].sort((a,b)=>a.s-b.s);
+const tripStart=at("fr","14:00"), tripEnd=at("mo","16:30");
+let demoOffset=0;
+if(location.hash==="#demo"){demoOffset=at("sa","10:20")-Date.now();}
+const now=()=>new Date(Date.now()+demoOffset);
+const fmtHM=d=>d.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Brussels"});
+const dayOfDate=d=>{const iso=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Brussels"}).format(d); return T.days.find(x=>x.date===iso);};
+
+/* ---------- maps ---------- */
+const mapsDir=(q,mode)=>"https://www.google.com/maps/dir/?api=1&destination="+encodeURIComponent(q)+"&travelmode="+(mode||"walking");
+const mapsSearch=q=>"https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q);
+const ico={
+  nav:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-8-8 18-2-8z"/></svg>',
+  link:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/></svg>',
+  pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'
+};
+const prioBadge={must:'<span class="b must">Muss</span>',top:'<span class="b top">Empfohlen</span>',optional:'<span class="b opt">Optional</span>'};
+const tagLabel={kunst:"Kunst",klassiker:"Klassiker",food:"Essen",shopping:"Shopping",bday:"Geburtstag",logistik:"Logistik"};
+const stripeColor={kunst:"var(--ultramarine)",klassiker:"var(--canal)",food:"var(--gold)",shopping:"var(--rose)",bday:"var(--brick)",logistik:"var(--line)"};
+
+/* effective content incl. chosen alternative */
+function eff(it){
+  const k=store.pick[it.id];
+  if(k!=null && it.alts && it.alts[k]){const a=it.alts[k]; return {title:a.title,place:"Plan B gewählt",text:a.text,q:a.q,url:a.url,urlLabel:a.url?"Website":null,mode:it.mode};}
+  return it;
+}
+const st=it=>store.status[it.id]||"open";
+
+/* ---------- toast ---------- */
+let tt; function toast(msg){const el=$("#toast"); el.textContent=msg; el.hidden=false; clearTimeout(tt); tt=setTimeout(()=>el.hidden=true,2200);}
+
+/* ---------- render: item card ---------- */
+function itemHTML(it,{open=false,isNow=false}={}){
+  const e=eff(it), s=st(it);
+  const tags=(it.tags||[]).filter(t=>t!=="logistik").map(t=>`<span class="b${t==="bday"?" bday":""}">${tagLabel[t]}</span>`).join("");
+  const stripe=stripeColor[(it.tags||["logistik"])[0]]||"var(--line)";
+  const actions=[];
+  if(e.q) actions.push(`<a class="btn small primary" href="${mapsDir(e.q,e.mode)}" target="_blank" rel="noopener">${ico.nav}Route</a>`);
+  if(e.url) actions.push(`<a class="btn small" href="${esc(e.url)}" target="_blank" rel="noopener">${ico.link}${esc(e.urlLabel||"Website")}</a>`);
+  actions.push(`<button class="btn small ghost" type="button" data-act="done" data-id="${it.id}">${s==="done"?"Wieder offen":"Erledigt"}</button>`);
+  actions.push(`<button class="btn small ghost" type="button" data-act="skip" data-id="${it.id}">${s==="skip"?"Doch machen":"Auslassen"}</button>`);
+  let alts="";
+  if(it.alts&&it.alts.length){
+    const picked=store.pick[it.id];
+    alts=`<div class="alts"><div class="tip" style="background:transparent;padding:0"><b>Alternativen</b></div>`+
+      (picked!=null?`<div class="alt"><h4>${esc(it.title)}</h4><p>Ursprünglicher Vorschlag</p><div class="row"><button class="btn small" type="button" data-act="pick" data-id="${it.id}" data-k="">Zurück zum Original</button></div></div>`:"")+
+      it.alts.map((a,k)=>k===picked?"":`<div class="alt"><h4>${esc(a.title)}</h4><p>${esc(a.text)}</p><div class="row">${a.q?`<a class="btn small" href="${mapsSearch(a.q)}" target="_blank" rel="noopener">${ico.pin}Karte</a>`:""}<button class="btn small" type="button" data-act="pick" data-id="${it.id}" data-k="${k}">Stattdessen</button></div></div>`).join("")+`</div>`;
+  }
+  let check="";
+  if(it.check){check=`<ul class="check">`+it.check.map((c,i)=>{const id=`ck-${it.id}-${i}`;return `<li><label for="${id}"><input type="checkbox" id="${id}" data-ck="${it.id}:${i}" ${store.check[it.id+":"+i]?"checked":""}><span>${esc(c)}</span></label></li>`}).join("")+`</ul>`;}
+  return `<li class="item ${isNow?"is-now":""} ${s==="done"?"is-done":""} ${s==="skip"?"is-skip":""}" id="it-${it.id}">
+    <span class="stripe" style="background:${stripe}"></span>
+    <div class="t">${it.start}<small>${it.end&&it.end!==it.start?"bis "+it.end:""}</small></div>
+    <details class="c" ${open?"open":""}>
+      <summary><h3><span class="title">${esc(e.title)}</span></h3><div class="place">${esc(e.place||"")}</div>
+        <div class="badges">${prioBadge[it.prio]||""}${tags}${isNow?'<span class="b" style="background:var(--accent);color:var(--accent-ink)">Jetzt</span>':""}</div></summary>
+      <div class="more">
+        <p>${esc(e.text)}</p>
+        ${it.tip&&e===it?`<div class="tip"><b>Tipp</b>${esc(it.tip)}</div>`:""}
+        ${check}
+        <div class="actions">${actions.join("")}</div>
+        ${alts}
+      </div>
+    </details>
+  </li>`;
+}
+
+/* ---------- PLAN view ---------- */
+function renderDays(){
+  const cur=dayOfDate(now());
+  if(!store.day) store.day=(cur&&cur.id)||"fr";
+  $("#dayTabs").innerHTML=T.days.map(d=>`<button class="day" role="tab" type="button" aria-selected="${d.id===store.day}" data-day="${d.id}"><b>${d.short}</b><span>${esc(d.city)}</span></button>`).join("");
+  const d=dayById[store.day];
+  const list=T.items.filter(i=>i.day===d.id);
+  const n=now(); const curIt=currentItem(n);
+  $("#dayView").innerHTML=`<div class="dayhead"><h2>${d.label}${d.id==="sa"?" · Dein Geburtstag":""}</h2><p class="sub">${esc(d.motto)}</p></div>
+    <ol class="tl">${list.map(it=>itemHTML(it,{isNow:curIt&&curIt.id===it.id,open:curIt&&curIt.id===it.id})).join("")}</ol>
+    <p class="note" style="margin-top:14px">Tippe auf einen Programmpunkt für Details, Route und Alternativen.</p>`;
+}
+
+/* ---------- NOW logic ---------- */
+function currentItem(n){return ordered.find(it=>st(it)==="open"&&it.s<=n&&n<it.e)||null;}
+function nextItem(n,after){return ordered.find(it=>st(it)==="open"&&it.s>n&&(!after||it.id!==after.id))||null;}
+function dur(ms){const m=Math.max(0,Math.round(ms/60000)); const d=Math.floor(m/1440),h=Math.floor(m%1440/60),mm=m%60; return d?`${d} T ${h} Std`:h?`${h} Std ${mm} Min`:`${mm} Min`;}
+
+function renderNow(){
+  const n=now();
+  let html="";
+  if(n<at("fr","12:00")){
+    html=`<div class="now"><div class="band"><span>Countdown</span><b>Abfahrt Fr 14:00</b></div><div class="body">
+      <div class="count" data-count="${tripStart.toISOString()}">${dur(tripStart-n)}</div>
+      <h3>Bald geht es los</h3><p>Freitag um 14 Uhr fahrt ihr nach Gent. Unter „Plan“ siehst du schon alle vier Tage.</p>
+      <div class="actions"><button class="btn primary" type="button" data-go="plan">Ganzen Plan ansehen</button></div></div></div>`;
+  } else if(n>tripEnd && !ordered.some(it=>st(it)==="open"&&it.e>n)){
+    html=`<div class="now"><div class="band"><span>Zuhause</span><b>Danke</b></div><div class="body"><h3>Willkommen zurück</h3><p>Vier Tage Gent und Brügge, ein Geburtstag, sehr viel Kunst. Unter „Für dich“ wartet noch dein Bild.</p></div></div>`;
+  } else {
+    const cur=currentItem(n), nx=nextItem(n,cur);
+    if(cur){
+      const e=eff(cur);
+      html+=`<div class="now"><div class="band"><span>Jetzt · ${cur.start}–${cur.end}</span><b>noch ${dur(cur.e-n)}</b></div><div class="body">
+        <h3>${esc(e.title)}</h3><p>${esc(e.place||"")}</p><p style="color:var(--ink)">${esc(e.text)}</p>
+        <div class="actions">${e.q?`<a class="btn primary" href="${mapsDir(e.q,e.mode)}" target="_blank" rel="noopener">${ico.nav}Route starten</a>`:""}
+        <button class="btn" type="button" data-act="done" data-id="${cur.id}">Erledigt</button>
+        <button class="btn ghost" type="button" data-act="skip" data-id="${cur.id}">Auslassen</button>
+        ${cur.alts?`<button class="btn ghost" type="button" data-jump="${cur.id}">Plan B</button>`:""}</div></div></div>`;
+    }
+    if(nx){
+      const e=eff(nx); const d=dayById[nx.day];
+      html+=`<div class="now" style="margin-top:12px"><div class="band"><span>Als Nächstes · ${d.short} ${nx.start}</span><b>in ${dur(nx.s-n)}</b></div><div class="body">
+        <h3>${esc(e.title)}</h3><p>${esc(e.place||"")}</p>
+        <div class="actions">${e.q?`<a class="btn ${cur?"":"primary"}" href="${mapsDir(e.q,e.mode)}" target="_blank" rel="noopener">${ico.nav}Route</a>`:""}
+        <button class="btn ghost" type="button" data-jump="${nx.id}">Details</button></div></div></div>`;
+    }
+    if(!cur&&!nx) html=`<div class="now"><div class="band"><span>Freie Zeit</span><b></b></div><div class="body"><h3>Gerade nichts geplant</h3><p>Schau in die Tipps für spontane Ideen in der Nähe.</p></div></div>`;
+  }
+  $("#nowCard").innerHTML=html;
+
+  // rest of today
+  const today=dayOfDate(n);
+  if(today && n>=at("fr","12:00")){
+    const rest=T.items.filter(i=>i.day===today.id && i.e>n);
+    $("#nowRest").innerHTML=rest.length?`<h2>Heute noch</h2><ol class="tl">${rest.map(it=>itemHTML(it)).join("")}</ol>`:"";
+  } else if(!today || n<at("fr","12:00")){
+    $("#nowRest").innerHTML=`<h2>Die vier Tage auf einen Blick</h2><ol class="tl">${T.days.map(d=>`<li class="item"><span class="stripe" style="background:${{fr:"var(--canal)",sa:"var(--brick)",so:"var(--ultramarine)",mo:"var(--gold)"}[d.id]}"></span><div class="t">${d.short}</div><div class="c"><h3>${esc(d.city)}</h3><div class="place">${esc(d.motto)}</div></div></li>`).join("")}</ol>`;
+  }
+  $("#clockPill").textContent=(demoOffset?"Demo · ":"")+fmtHM(n);
+  const city = n<at("fr","17:00")?"Dinslaken":n<at("so","13:15")?"Gent":n<at("mo","13:15")?"Brügge":"Heimweg";
+  $("#cityPill").textContent=city;
+  if(today&&today.id==="sa") $("#heroLine").textContent="Alles Gute zum Geburtstag, Sarah. Heute dreht sich alles um dich.";
+}
+
+/* ---------- TIPS view ---------- */
+function renderTips(){
+  const cats=["Alle","Kunst","Essen","Süßes","Kaffee","Bars","Läden"];
+  $("#cityFilter").innerHTML=["Gent","Brügge"].map(c=>`<button class="fchip" type="button" aria-pressed="${store.city===c}" data-city="${c}">${c}</button>`).join("");
+  $("#catFilter").innerHTML=cats.map(c=>`<button class="fchip" type="button" aria-pressed="${store.cat===c}" data-cat="${c}">${c}</button>`).join("");
+  const list=T.tips.filter(t=>t.city===store.city&&(store.cat==="Alle"||t.cat===store.cat));
+  $("#tipList").innerHTML=list.map(t=>`<div class="tipc"><div class="top"><h4>${esc(t.name)}</h4><span class="cat">${esc(t.cat)}</span></div><p>${esc(t.text)}</p>
+    <div class="row"><a class="btn small primary" href="${mapsDir(t.q,"walking")}" target="_blank" rel="noopener">${ico.nav}Route</a><a class="btn small" href="${mapsSearch(t.q)}" target="_blank" rel="noopener">${ico.pin}Öffnungszeiten</a>${t.url?`<a class="btn small" href="${esc(t.url)}" target="_blank" rel="noopener">${ico.link}Website</a>`:""}</div></div>`).join("");
+}
+
+/* ---------- FOR YOU ---------- */
+function renderYou(){
+  $("#letter").innerHTML=`<p style="margin:0 0 12px">Liebe Sarah,</p>
+  <p style="margin:0 0 12px">49 Jahre, und ich finde, du solltest sie an einem Ort feiern, an dem Van Eyck vor 600 Jahren gemalt hat und heute immer noch die mutigste Gegenwartskunst gezeigt wird. Genau wie du: klassisch und modern zugleich.</p>
+  <p style="margin:0">Diese kleine App begleitet uns durch die vier Tage. Du entscheidest, was wir machen, auslassen oder tauschen. Hauptsache, wir genießen es zusammen.</p>
+  <div class="sig">Alles Liebe, Alexander</div>`;
+  $("#knowhow").innerHTML=`<div class="tipc" style="margin-bottom:10px"><h4>Erinnerungen aufs Handy</h4><p>Alle Programmpunkte als Kalendertermine, jeweils mit Erinnerung 15 Minuten vorher. Einmal öffnen und „Alle hinzufügen“ tippen.</p><div class="row"><a class="btn small primary" href="https://alexanderwskowronek-cloud.github.io/fuer-sarah/reise.ics" target="_blank" rel="noopener">${ico.link}In den Kalender</a></div></div><ol class="tl">${T.knowhow.map(([h,t])=>`<li class="item" style="grid-template-columns:1fr"><div class="c" style="padding:12px 14px"><h3>${esc(h)}</h3><div class="place" style="font-size:14px">${esc(t)}</div></div></li>`).join("")}</ol>`;
+  paintGift();
+}
+
+/* ---------- generative art ---------- */
+function rng(seed){let s=seed>>>0;return()=>{s=(s+0x6D2B79F5)>>>0;let t=s;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296;};}
+const cssVar=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function palette(){return[cssVar("--ultramarine"),cssVar("--gold"),cssVar("--brick"),cssVar("--canal"),cssVar("--rose")];}
+function sizeCanvas(c){const r=c.getBoundingClientRect(),dpr=Math.min(2,window.devicePixelRatio||1);c.width=Math.max(1,Math.round(r.width*dpr));c.height=Math.max(1,Math.round(r.height*dpr));const x=c.getContext("2d");x.setTransform(dpr,0,0,dpr,0,0);return{x,w:r.width,h:r.height};}
+function gables(x,w,h,base,col,r){ // Flemish stepped gables skyline
+  x.fillStyle=col; let px=-4;
+  while(px<w){
+    const bw=26+r()*30, bh=base+r()*44, steps=2+Math.floor(r()*3), stepH=7+r()*4, sw=bw/(steps*2+1);
+    const pts=[[px,h],[px,h-bh]]; let y=h-bh;
+    for(let i=0;i<steps;i++){pts.push([px+sw*(i+1),y]); y-=stepH; pts.push([px+sw*(i+1),y]);}
+    for(let i=steps-1;i>=0;i--){pts.push([px+bw-sw*(i+1),y]); y+=stepH; pts.push([px+bw-sw*(i+1),y]);}
+    pts.push([px+bw,h-bh],[px+bw,h]);
+    x.beginPath(); pts.forEach(([a,b],i)=>i?x.lineTo(a,b):x.moveTo(a,b)); x.closePath(); x.fill();
+    px+=bw+1+r()*3;
+  }
+}
+function compose(c,seed,{sky=true}={}){
+  const {x,w,h}=sizeCanvas(c), r=rng(seed), P=palette();
+  x.fillStyle=sky?"#1b2a6b":cssVar("--card"); x.fillRect(0,0,w,h);
+  if(!sky){x.fillStyle=cssVar("--paper");x.fillRect(0,0,w,h);}
+  // colour fields
+  const n=7+Math.floor(r()*5);
+  for(let i=0;i<n;i++){
+    const col=P[Math.floor(r()*P.length)]; x.globalAlpha=sky?0.55+r()*0.35:0.85; x.fillStyle=col;
+    const k=r();
+    if(k<.4){x.beginPath();x.arc(r()*w,r()*h*.8,10+r()*Math.min(w,h)*.32,0,Math.PI*2);x.fill();}
+    else if(k<.75){x.save();x.translate(r()*w,r()*h);x.rotate((r()-.5)*.6);x.fillRect(-r()*80,-r()*40,40+r()*w*.35,14+r()*h*.3);x.restore();}
+    else{x.beginPath();x.arc(r()*w,h*(.3+r()*.5),30+r()*120,Math.PI,Math.PI*2);x.lineWidth=6+r()*10;x.strokeStyle=col;x.stroke();}
+  }
+  x.globalAlpha=1;
+  // thin lines like a Belgian abstract grid
+  x.strokeStyle=sky?"rgba(255,255,255,.35)":cssVar("--ink"); x.lineWidth=1.5;
+  for(let i=0;i<3;i++){const y=h*(.15+r()*.6);x.beginPath();x.moveTo(0,y);x.lineTo(w,y+(r()-.5)*40);x.stroke();}
+  // skyline
+  gables(x,w,h,sky?34:h*.12,sky?"rgba(10,14,40,.82)":cssVar("--ink"),r);
+  // canal reflection
+  if(sky){x.fillStyle="rgba(10,14,40,.9)";x.fillRect(0,h-6,w,6);}
+}
+function paintHero(){
+  const n=now(); const d=dayOfDate(n); const seed=(d?d.date:"2026-11-14").replace(/-/g,"")*1+(d&&d.id==="sa"?49:0);
+  compose($("#heroArt"),seed,{sky:true});
+}
+let giftSeed=null;
+function paintGift(){
+  const c=$("#giftArt"); if(!c.offsetParent)return;
+  if(giftSeed==null){const d=dayOfDate(now()); giftSeed=+((d?d.date:"2026-11-14").replace(/-/g,""))+7;}
+  compose(c,giftSeed,{sky:false});
+  const titles=["Komposition für eine Neunundvierzigjährige","Leie, Licht und Ocker","Gent, Nr. "+(giftSeed%97),"Trapgiebel in Blau","Studie nach Van Eyck, sehr frei"];
+  $("#artCap").textContent="„"+titles[giftSeed%titles.length]+"“ · generiert am "+now().toLocaleDateString("de-DE",{day:"numeric",month:"long",timeZone:"Europe/Brussels"});
+}
+
+/* ---------- weather (works where network allows) ---------- */
+async function loadWeather(){
+  const places=[["Gent",51.054,3.722],["Brügge",51.209,3.224]];
+  try{
+    const out=[];
+    for(const [name,la,lo] of places){
+      const u=`https://api.open-meteo.com/v1/forecast?latitude=${la}&longitude=${lo}&daily=temperature_2m_max,precipitation_probability_max&timezone=Europe%2FBrussels&start_date=2026-11-13&end_date=2026-11-16`;
+      const ctl=new AbortController(); const to=setTimeout(()=>ctl.abort(),4000);
+      const r=await fetch(u,{signal:ctl.signal}); clearTimeout(to); if(!r.ok) throw 0;
+      const j=await r.json(); out.push([name,j.daily]);
+    }
+    const map={fr:["Gent",0],sa:["Gent",1],so:["Brügge",2],mo:["Brügge",3]};
+    $("#weather").innerHTML=T.days.map(d=>{const [c,i]=map[d.id];const dd=out.find(o=>o[0]===c)[1];if(!dd||dd.temperature_2m_max[i]==null)return"";return `<span class="wx">${d.short} ${c}: ${Math.round(dd.temperature_2m_max[i])}° · Regen ${dd.precipitation_probability_max[i]??"–"}%</span>`}).join("");
+  }catch(e){ $("#weather").innerHTML=""; }
+}
+
+/* ---------- views & events ---------- */
+function show(v){
+  store.view=v; save();
+  $$(".view").forEach(s=>s.hidden=s.id!=="v-"+v);
+  $$("nav.tabs button").forEach(b=>{if(b.dataset.view===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
+  if(v==="now")renderNow(); if(v==="plan")renderDays(); if(v==="tips")renderTips(); if(v==="you")renderYou();
+  window.scrollTo({top:0});
+}
+function rerender(){ if(store.view==="now")renderNow(); if(store.view==="plan")renderDays(); }
+document.addEventListener("click",ev=>{
+  const b=ev.target.closest("button,[data-go]"); if(!b)return;
+  if(b.dataset.view){show(b.dataset.view);return;}
+  if(b.dataset.go){show(b.dataset.go);return;}
+  if(b.dataset.day){store.day=b.dataset.day;save();renderDays();return;}
+  if(b.dataset.city){store.city=b.dataset.city;save();renderTips();return;}
+  if(b.dataset.cat){store.cat=b.dataset.cat;save();renderTips();return;}
+  if(b.dataset.jump){const it=T.items.find(i=>i.id===b.dataset.jump);store.day=it.day;show("plan");const el=$("#it-"+it.id);if(el){$("details",el).open=true;el.scrollIntoView({block:"center"});}return;}
+  const id=b.dataset.id, act=b.dataset.act; if(!act)return;
+  if(act==="done"){store.status[id]=st({id})==="done"?"open":"done";toast(store.status[id]==="done"?"Abgehakt":"Wieder offen");}
+  if(act==="skip"){store.status[id]=st({id})==="skip"?"open":"skip";toast(store.status[id]==="skip"?"Ausgelassen":"Wieder im Plan");}
+  if(act==="pick"){if(b.dataset.k===""){delete store.pick[id];toast("Original wiederhergestellt");}else{store.pick[id]=+b.dataset.k;toast("Plan B übernommen");}}
+  save(); rerender();
+  const el=$("#it-"+id); if(el&&act==="pick"){const d=$("details",el);if(d)d.open=true;}
+});
+document.addEventListener("change",ev=>{const c=ev.target.closest("[data-ck]");if(!c)return;store.check[c.dataset.ck]=c.checked;save();});
+
+/* reminder: in-app nudge 10 min before next item */
+let nudged={};
+function tick(){
+  const n=now(); $("#clockPill").textContent=(demoOffset?"Demo · ":"")+fmtHM(n);
+  const nx=nextItem(n,currentItem(n));
+  if(nx && nx.s-n<=10*60000 && nx.s-n>0 && !nudged[nx.id]){nudged[nx.id]=1; toast(`In ${dur(nx.s-n)}: ${eff(nx).title}`); try{navigator.vibrate&&navigator.vibrate(120);}catch(e){} }
+  if(store.view==="now") renderNow();
+}
+
+/* boot */
+paintHero();
+show(store.view&&["now","plan","tips","you"].includes(store.view)?store.view:"now");
+loadWeather();
+setInterval(tick,30000);
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)tick();});
+let rz; window.addEventListener("resize",()=>{clearTimeout(rz);rz=setTimeout(()=>{paintHero();if(store.view==="you")paintGift();},150);});
+matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",()=>{paintHero();if(store.view==="you")paintGift();});
+$("#newArt").addEventListener("click",()=>{giftSeed=(giftSeed||1)+Math.floor(Math.random()*1000)+1;paintGift();});
+})();
+</script>
+
+</body>
+</html>

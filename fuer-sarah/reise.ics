@@ -1,0 +1,687 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sarah49//Gent-Bruegge//DE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Sarah 49 · Gent & Brügge
+BEGIN:VEVENT
+UID:f0@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261113T110000Z
+DTEND:20261113T130000Z
+SUMMARY:Vor der Abfahrt
+LOCATION:Zuhause
+DESCRIPTION:Fünf Dinge\, die den Trip entspannt machen.\n\nApp: https://a
+ lexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Vor der Abfahrt
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f1@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261113T130000Z
+DTEND:20261113T161500Z
+SUMMARY:Abfahrt nach Gent
+LOCATION:Vlaanderenstraat 26\, 9000 Gent
+DESCRIPTION:Rund 2:45 bis 3:15 Stunden über Venlo\, Eindhoven und Antwerp
+ en. Navi direkt auf die Hotelgarage stellen\, nicht auf die Hoteladresse.
+ \n\nTipp: Freitags staut es am Antwerpener Ring. Zeigt Google Maps rund u
+ m den Kennedytunnel Rot\, nehmt den Liefkenshoektunnel (mautpflichtig\, e
+ in paar Euro). Das spart oft 30 Minuten.\n\nAlternativen: Kaffeepause unt
+ erwegs\n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Vlaan
+ derenstraat%2026%2C%209000%20Gent&travelmode=driving\n\nApp: https://alex
+ anderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Abfahrt nach Gent
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f2@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261113T161500Z
+DTEND:20261113T170000Z
+SUMMARY:Check-in Yalo Urban Boutique Hotel
+LOCATION:Yalo Urban Boutique Hotel\, Brabantdam 33\, 9000 Gent
+DESCRIPTION:Check-in ab 16 Uhr. Das Hotel hat eine eigene kostenpflichtige
+  Tiefgarage\, Zufahrt über die Vlaanderenstraat 26. Ab hier ist alles zu
+  Fuß erreichbar\, das Auto bleibt bis Sonntag stehen.\n\nTipp: Ausweichg
+ aragen in Laufweite: Parking De Reep und Parking Zuid (4 bis 6 Minuten zu
+  Fuß).\n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Yalo
+ %20Urban%20Boutique%20Hotel%2C%20Brabantdam%2033%2C%209000%20Gent&travelm
+ ode=walking\n\nApp: https://alexanderwskowronek-cloud.github.io/fuer-sara
+ h/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Check-in Yalo Urban Boutique Hotel
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f3@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261113T170000Z
+DTEND:20261113T181500Z
+SUMMARY:Erster Spaziergang: Gent bei Nacht
+LOCATION:Sint-Michielsbrug\, Gent
+DESCRIPTION:Gent hat einen eigenen Lichtplan: Türme\, Giebel und Brücken
+  werden abends gezielt angestrahlt. Von der Sint-Michielsbrug seht ihr di
+ e drei Türme von Sint-Niklaas\, Belfried und Sint-Baafs in einer Linie.\
+ n\nTipp: Rund 15 Minuten vom Hotel. Weiter auf der Graslei am Wasser entl
+ ang zurück Richtung Abendessen.\n\nRoute: https://www.google.com/maps/di
+ r/?api=1&destination=Sint-Michielsbrug%2C%20Gent&travelmode=walking\n\nAp
+ p: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Erster Spaziergang: Gent bei Nacht
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f4@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261113T181500Z
+DTEND:20261113T201500Z
+SUMMARY:Abendessen im Holy Food Market
+LOCATION:Holy Food Market\, Beverhoutplein\, Gent
+DESCRIPTION:Eine alte Kapelle voller Food-Stände: jeder isst\, worauf er 
+ Lust hat\, ohne Reservierung. Locker für den ersten Abend.\n\nAlternativ
+ en: Pakhuis\, Roots\, Belga Queen\n\nRoute: https://www.google.com/maps/d
+ ir/?api=1&destination=Holy%20Food%20Market%2C%20Beverhoutplein%2C%20Gent&
+ travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.github.io/fu
+ er-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Abendessen im Holy Food Market
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f5@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261113T203000Z
+DTEND:20261113T224000Z
+SUMMARY:Belgisches Bier am Wasser
+LOCATION:Het Waterhuis aan de Bierkant\, Groentenmarkt\, Gent
+DESCRIPTION:Gemütliche Bierkneipe an der Leie mit großer Fass- und Flasc
+ henauswahl.\n\nAlternativen: Dulle Griet\, ’t Dreupelkot\n\nRoute: http
+ s://www.google.com/maps/dir/?api=1&destination=Het%20Waterhuis%20aan%20de
+ %20Bierkant%2C%20Groentenmarkt%2C%20Gent&travelmode=walking\n\nApp: https
+ ://alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Belgisches Bier am Wasser
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:f6@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261113T225000Z
+DTEND:20261113T225900Z
+SUMMARY:Mitternacht: Sarah wird 49
+LOCATION:Graslei\, Gent
+DESCRIPTION:Um 0:00 Uhr mit Sekt anstoßen. Draußen an der beleuchteten G
+ raslei oder gemütlich im Zimmer mit Kerze.\n\nTipp: Am Wasser ist es nac
+ hts ruhig und die Fassaden sind angestrahlt. Jacke mitnehmen\, Mitte Nove
+ mber sind es nachts um die 5 °C.\n\nRoute: https://www.google.com/maps/d
+ ir/?api=1&destination=Graslei%2C%20Gent&travelmode=walking\n\nApp: https:
+ //alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Mitternacht: Sarah wird 49
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s1@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261114T074500Z
+DTEND:20261114T084500Z
+SUMMARY:Geburtstagsfrühstück
+LOCATION:Yalo Urban Boutique Hotel\, Brabantdam 33\, 9000 Gent
+DESCRIPTION:Ganz in Ruhe in den Tag starten. Heute gibt es keine Eile.\n\n
+ Alternativen: Café Labath\, Mokabon\n\nRoute: https://www.google.com/map
+ s/dir/?api=1&destination=Yalo%20Urban%20Boutique%20Hotel%2C%20Brabantdam%
+ 2033%2C%209000%20Gent&travelmode=walking\n\nApp: https://alexanderwskowro
+ nek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Geburtstagsfrühstück
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s2@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261114T090000Z
+DTEND:20261114T104500Z
+SUMMARY:S.M.A.K. · Museum für zeitgenössische Kunst
+LOCATION:S.M.A.K.\, Jan Hoetplein 1\, 9000 Gent
+DESCRIPTION:Belgiens wichtigstes Haus für Gegenwartskunst. Im November la
+ ufen Ana Lupas (große Einzelausstellung der rumänischen Künstlerin)\, 
+ Bendt Eyckermans (erste Museumsschau in Belgien) und das Jubiläum „Cha
+ mbres d’Amis 40“\, die Rückschau auf das legendäre Projekt von 1986
+ \, bei dem Kunst in Genter Wohnungen gezeigt wurde.\n\nTipp: Morgens ist 
+ es am leersten. Tickets online kaufen spart die Schlange.\n\nRoute: https
+ ://www.google.com/maps/dir/?api=1&destination=S.M.A.K.%2C%20Jan%20Hoetple
+ in%201%2C%209000%20Gent&travelmode=walking\n\nApp: https://alexanderwskow
+ ronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:S.M.A.K. · Museum für zeitgenössische Kunst
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s3@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261114T104500Z
+DTEND:20261114T114500Z
+SUMMARY:MSK · Museum der Schönen Künste
+LOCATION:MSK Gent\, Fernand Scribedreef 1\, 9000 Gent
+DESCRIPTION:Von Bosch bis zur belgischen Moderne. Besonderheit: Hier werde
+ n die Tafeln des Genter Altars restauriert\, hinter Glas könnt ihr den R
+ estauratoren zuschauen. Am Nachmittag seht ihr dann den Altar selbst.\n\n
+ Alternativen: Design Museum Gent\n\nRoute: https://www.google.com/maps/di
+ r/?api=1&destination=MSK%20Gent%2C%20Fernand%20Scribedreef%201%2C%209000%
+ 20Gent&travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.githu
+ b.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:MSK · Museum der Schönen Künste
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s4@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261114T120000Z
+DTEND:20261114T130500Z
+SUMMARY:Mittagessen
+LOCATION:Pakhuis\, Schuurkenstraat\, Gent
+DESCRIPTION:Brasserie im ehemaligen Lagerhaus: Fischsuppe\, Garnelenkroket
+ ten\, Flämisches. Mit dem Rad oder Tram zurück ins Zentrum\, dann liegt
+  die Kathedrale nur 5 Minuten entfernt.\n\nAlternativen: Balls & Glory\, 
+ Le Botaniste\n\nRoute: https://www.google.com/maps/dir/?api=1&destination
+ =Pakhuis%2C%20Schuurkenstraat%2C%20Gent&travelmode=walking\n\nApp: https:
+ //alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Mittagessen
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s5@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261114T131500Z
+DTEND:20261114T143000Z
+SUMMARY:Der Genter Altar · Van Eyck
+LOCATION:Sint-Baafskathedraal\, Gent
+DESCRIPTION:„Die Anbetung des Lammes“ von 1432\, eines der wichtigsten
+  Gemälde der Welt. Einige der oberen Tafeln sind gerade im MSK in Restau
+ rierung und hier als hochwertige Reproduktion zu sehen. Die habt ihr am V
+ ormittag im Original gesehen.\n\nTipp: Zeitfenster vorab online buchen\, 
+ am Wochenende ist es oft ausverkauft. Das Ticket mit AR-Tour lohnt sich.\
+ n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Sint-Baafska
+ thedraal%2C%20Gent&travelmode=walking\n\nApp: https://alexanderwskowronek
+ -cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Der Genter Altar · Van Eyck
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s6@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261114T144000Z
+DTEND:20261114T153000Z
+SUMMARY:Belfried: Gent von oben
+LOCATION:Belfort Gent\, Sint-Baafsplein
+DESCRIPTION:Zur goldenen Stunde über den Dächern stehen. Ein Aufzug fäh
+ rt fast bis oben.\n\nAlternativen: Werregarenstraatje\, Gravensteen\n\nRo
+ ute: https://www.google.com/maps/dir/?api=1&destination=Belfort%20Gent%2C
+ %20Sint-Baafsplein&travelmode=walking\n\nApp: https://alexanderwskowronek
+ -cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Belfried: Gent von oben
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s7@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261114T153500Z
+DTEND:20261114T161500Z
+SUMMARY:Sonnenuntergang an der Sint-Michielsbrug
+LOCATION:Sint-Michielsbrug\, Gent
+DESCRIPTION:Sonnenuntergang ist gegen 16:55 Uhr. Danach gehen die Lichter 
+ an: das schönste Geburtstagsfoto des Wochenendes.\n\nTipp: Bestes Foto: 
+ von der Brücke Richtung Graslei\, wenn der Himmel noch blau ist.\n\nRout
+ e: https://www.google.com/maps/dir/?api=1&destination=Sint-Michielsbrug%2
+ C%20Gent&travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.git
+ hub.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Sonnenuntergang an der Sint-Michielsbrug
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s8@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261114T161500Z
+DTEND:20261114T170000Z
+SUMMARY:Geburtstags-Patisserie bei Joost Arijs
+LOCATION:Joost Arijs\, Vlaanderenstraat\, Gent
+DESCRIPTION:Einer der besten Pâtissiers und Chocolatiers Belgiens. Kleine
+  Törtchen wie Skulpturen. Perfekt als Geburtstagskuchen fürs Zimmer.\n\
+ nTipp: Schließt am frühen Abend. Wenn es knapp wird: vor dem Sonnenunte
+ rgang hingehen.\n\nAlternativen: Temmerman\n\nRoute: https://www.google.c
+ om/maps/dir/?api=1&destination=Joost%20Arijs%2C%20Vlaanderenstraat%2C%20G
+ ent&travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.github.i
+ o/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Geburtstags-Patisserie bei Joost Arijs
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s10@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261114T183000Z
+DTEND:20261114T210000Z
+SUMMARY:Geburtstagsdinner
+LOCATION:Vrijmoed\, Vlaanderenstraat\, Gent
+DESCRIPTION:Michelin-Stern\, präzise und modern\, ohne Steifheit. Der Hö
+ hepunkt des Tages.\n\nTipp: Nur mit Reservierung. Falls Vrijmoed voll ist
+ \, sind die Alternativen unten genauso gute Abende.\n\nAlternativen: De V
+ itrine\, Publiek\, Belga Queen\n\nRoute: https://www.google.com/maps/dir/
+ ?api=1&destination=Vrijmoed%2C%20Vlaanderenstraat%2C%20Gent&travelmode=wa
+ lking\n\nApp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Geburtstagsdinner
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s11@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261114T211500Z
+DTEND:20261114T225900Z
+SUMMARY:Live-Jazz im Hot Club de Gand
+LOCATION:Hot Club de Gand\, Gent
+DESCRIPTION:Gypsy-Jazz in einem versteckten Hinterhof. Man findet ihn nur\
+ , wenn man weiß\, wo die Gasse ist.\n\nAlternativen: Jigger’s\, Dulle 
+ Griet\n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Hot%20
+ Club%20de%20Gand%2C%20Gent&travelmode=walking\n\nApp: https://alexanderws
+ kowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Live-Jazz im Hot Club de Gand
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u1@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T080000Z
+DTEND:20261115T085000Z
+SUMMARY:Frühstück und Koffer packen
+LOCATION:Yalo Urban Boutique Hotel\, Brabantdam 33\, 9000 Gent
+DESCRIPTION:Check-out ist bis 12 Uhr. Gepäck schon mal fertig machen.\n\n
+ Route: https://www.google.com/maps/dir/?api=1&destination=Yalo%20Urban%20
+ Boutique%20Hotel%2C%20Brabantdam%2033%2C%209000%20Gent&travelmode=walking
+ \n\nApp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Frühstück und Koffer packen
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u2@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T090000Z
+DTEND:20261115T094500Z
+SUMMARY:Blumenmarkt auf dem Kouter
+LOCATION:Kouter\, Gent
+DESCRIPTION:Genter Sonntagsritual: Blumen kaufen und am Kiosk ein Glas Sek
+ t oder Weißwein trinken\, gern mit ein paar Austern. Nimm dir einen Gebu
+ rtstagsstrauß mit.\n\nTipp: Nur 5 Minuten vom Hotel.\n\nRoute: https://w
+ ww.google.com/maps/dir/?api=1&destination=Kouter%2C%20Gent&travelmode=wal
+ king\n\nApp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Blumenmarkt auf dem Kouter
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u3@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T095000Z
+DTEND:20261115T104000Z
+SUMMARY:Street-Art\, Senf und Gentse Neuzen
+LOCATION:Werregarenstraatje\, Gent
+DESCRIPTION:Die Graffiti-Gasse\, dann am Groentenmarkt die lila Cuberdons 
+ vom Wagen und Senf bei Tierenteyn-Verlent (seit 1790\, abgefüllt aus dem
+  Fass). Zurück durch die Gassen des Patershol.\n\nAlternativen: Gravenst
+ een\n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Werregar
+ enstraatje%2C%20Gent&travelmode=walking\n\nApp: https://alexanderwskowron
+ ek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Street-Art\, Senf und Gentse Neuzen
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u4@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T104500Z
+DTEND:20261115T110000Z
+SUMMARY:Check-out
+LOCATION:Vlaanderenstraat 26\, 9000 Gent
+DESCRIPTION:Auschecken\, Auto aus der Garage holen.\n\nRoute: https://www.
+ google.com/maps/dir/?api=1&destination=Vlaanderenstraat%2026%2C%209000%20
+ Gent&travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.github.
+ io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Check-out
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u5@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T110000Z
+DTEND:20261115T121000Z
+SUMMARY:Mittagessen in Gent
+LOCATION:Holy Food Market\, Beverhoutplein\, Gent
+DESCRIPTION:Noch einmal in Ruhe essen\, bevor es nach Brügge geht. Das Ho
+ tel in Brügge nimmt erst ab 14 Uhr Gäste auf.\n\nAlternativen: Snack un
+ d direkt los\n\nRoute: https://www.google.com/maps/dir/?api=1&destination
+ =Holy%20Food%20Market%2C%20Beverhoutplein%2C%20Gent&travelmode=walking\n\
+ nApp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Mittagessen in Gent
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u6@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T121500Z
+DTEND:20261115T131000Z
+SUMMARY:Fahrt nach Brügge
+LOCATION:Kanunnik Duclosstraat 1\, 8000 Brugge
+DESCRIPTION:Über die E40. Das Jonojé liegt am Stadtrand\, also kein Stre
+ ss mit der autofreien Altstadt.\n\nRoute: https://www.google.com/maps/dir
+ /?api=1&destination=Kanunnik%20Duclosstraat%201%2C%208000%20Brugge&travel
+ mode=driving\n\nApp: https://alexanderwskowronek-cloud.github.io/fuer-sar
+ ah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Fahrt nach Brügge
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u7@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T131000Z
+DTEND:20261115T134500Z
+SUMMARY:Check-in Jonojé Luxury Suites
+LOCATION:Jonojé Luxury Suites\, Kanunnik Duclosstraat 1\, 8000 Brugge
+DESCRIPTION:Check-in von 14 bis 21 Uhr. Rund 75 m² große Suiten mit frei
+ stehenden Lehmbadewannen\, selbst ein kleines Designstück.\n\nTipp: Ins 
+ Zentrum: Taxi rufen lassen oder mit dem Auto zum Parkplatz Centrum-Statio
+ n fahren. Dort ist das Parken günstig und der Bus in die Altstadt ist im
+  Preis enthalten.\n\nRoute: https://www.google.com/maps/dir/?api=1&destin
+ ation=Jonoj%C3%A9%20Luxury%20Suites%2C%20Kanunnik%20Duclosstraat%201%2C%2
+ 08000%20Brugge&travelmode=driving\n\nApp: https://alexanderwskowronek-clo
+ ud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Check-in Jonojé Luxury Suites
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u8@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T140000Z
+DTEND:20261115T153000Z
+SUMMARY:Groeningemuseum
+LOCATION:Groeningemuseum\, Dijver 12\, Brugge
+DESCRIPTION:Flämische Primitive: Van Eycks „Madonna des Kanonikus van d
+ er Paele“\, Memling\, Bosch. Danach belgische Moderne mit Magritte\, De
+ lvaux und Permeke\, also von Gold bis Abstraktion in einem Haus.\n\nTipp:
+  Sonntag bis 17 Uhr geöffnet\, montags geschlossen. Darum heute.\n\nAlte
+ rnativen: Sint-Janshospitaal\n\nRoute: https://www.google.com/maps/dir/?a
+ pi=1&destination=Groeningemuseum%2C%20Dijver%2012%2C%20Brugge&travelmode=
+ walking\n\nApp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Groeningemuseum
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u9@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T153000Z
+DTEND:20261115T163000Z
+SUMMARY:Blaue Stunde: Rozenhoedkaai\, Burg\, Markt
+LOCATION:Rozenhoedkaai\, Brugge
+DESCRIPTION:Der berühmteste Blick Brügges: Belfried über dem Kanal. Dan
+ n über den Burg zum Markt\, wenn die Lichter angehen.\n\nTipp: Der Weihn
+ achtsmarkt und das Lichtfestival Winter Glow starten erst am 20. November
+ . Dafür ist es jetzt angenehm leer.\n\nRoute: https://www.google.com/map
+ s/dir/?api=1&destination=Rozenhoedkaai%2C%20Brugge&travelmode=walking\n\n
+ App: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Blaue Stunde: Rozenhoedkaai\, Burg\, Markt
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u10@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T163000Z
+DTEND:20261115T171500Z
+SUMMARY:The Chocolate Line
+LOCATION:The Chocolate Line\, Simon Stevinplein\, Brugge
+DESCRIPTION:Dominique Persoone\, der „Shock-o-latier“: Pralinen mit un
+ gewöhnlichen Aromen wie Wasabi\, Speck oder Cola. Schokolade als Konzept
+ kunst.\n\nAlternativen: Dumon\n\nRoute: https://www.google.com/maps/dir/?
+ api=1&destination=The%20Chocolate%20Line%2C%20Simon%20Stevinplein%2C%20Br
+ ugge&travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.github.
+ io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:The Chocolate Line
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u11@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T171500Z
+DTEND:20261115T181500Z
+SUMMARY:Aperitif in De Garre
+LOCATION:De Garre\, Brugge
+DESCRIPTION:Winzige Kneipe in einem schmalen Durchgang. Hier gibt es die h
+ auseigene Tripel van de Garre (11 %) mit einem Stück Käse.\n\nAlternati
+ ven: Le Trappiste\, ’t Brugs Beertje\n\nRoute: https://www.google.com/m
+ aps/dir/?api=1&destination=De%20Garre%2C%20Brugge&travelmode=walking\n\nA
+ pp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Aperitif in De Garre
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u12@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T183000Z
+DTEND:20261115T203000Z
+SUMMARY:Abendessen in Brügge
+LOCATION:Assiette Blanche\, Brugge
+DESCRIPTION:Bei Einheimischen beliebt\, feine saisonale Küche ohne Touris
+ tenrummel.\n\nTipp: Sonntags haben viele gute Restaurants Ruhetag. Vorher
+  reservieren und Öffnung prüfen.\n\nAlternativen: Locàle\, De Vlaamsch
+ e Pot\, Cambrinus\n\nRoute: https://www.google.com/maps/dir/?api=1&destin
+ ation=Assiette%20Blanche%2C%20Brugge&travelmode=walking\n\nApp: https://a
+ lexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Abendessen in Brügge
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u13@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261115T203000Z
+DTEND:20261115T211500Z
+SUMMARY:Nachtspaziergang Groenerei
+LOCATION:Groenerei\, Brugge
+DESCRIPTION:Die stillste und romantischste Ecke Brügges\, nachts fast men
+ schenleer. Danach mit dem Taxi zurück ins Jonojé.\n\nRoute: https://www
+ .google.com/maps/dir/?api=1&destination=Groenerei%2C%20Brugge&travelmode=
+ walking\n\nApp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Nachtspaziergang Groenerei
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:m1@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261116T073000Z
+DTEND:20261116T083000Z
+SUMMARY:Frühstück und Check-out
+LOCATION:Jonojé Luxury Suites\, Kanunnik Duclosstraat 1\, 8000 Brugge
+DESCRIPTION:Gepäck ins Auto. Zum Parkplatz Centrum-Station fahren\, von d
+ ort sind es 7 Minuten zu Fuß zum Minnewater.\n\nTipp: Montags haben die 
+ Musea Brugge (Groeninge\, Sint-Janshospitaal) geschlossen. Darum liegt de
+ r Montag auf Atmosphäre und Ausblicken.\n\nRoute: https://www.google.com
+ /maps/dir/?api=1&destination=Jonoj%C3%A9%20Luxury%20Suites%2C%20Kanunnik%
+ 20Duclosstraat%201%2C%208000%20Brugge&travelmode=driving\n\nApp: https://
+ alexanderwskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Frühstück und Check-out
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:m2@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261116T084500Z
+DTEND:20261116T093000Z
+SUMMARY:Minnewater und Beginenhof
+LOCATION:Begijnhof\, Brugge
+DESCRIPTION:Weiße Häuser\, Bäume\, Stille: morgens\, bevor die Busgrupp
+ en kommen\, ist der Beginenhof am schönsten. Am Minnewater\, dem „See 
+ der Liebe“\, schwimmen die Schwäne.\n\nAlternativen: Brauerei De Halve
+  Maan\n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Begijn
+ hof%2C%20Brugge&travelmode=walking\n\nApp: https://alexanderwskowronek-cl
+ oud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Minnewater und Beginenhof
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:m3@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261116T094000Z
+DTEND:20261116T101000Z
+SUMMARY:Bootsfahrt über die Grachten
+LOCATION:Rozenhoedkaai\, Brugge
+DESCRIPTION:30 Minuten Brügge vom Wasser aus\, unter tiefen Brücken hind
+ urch. Im November wetterabhängig\, also einfach am Steg fragen.\n\nRoute
+ : https://www.google.com/maps/dir/?api=1&destination=Rozenhoedkaai%2C%20B
+ rugge&travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.github
+ .io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Bootsfahrt über die Grachten
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:m4@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261116T101500Z
+DTEND:20261116T110000Z
+SUMMARY:Belfried erklimmen
+LOCATION:Belfort\, Markt 7\, Brugge
+DESCRIPTION:Auch montags geöffnet. Oben der Blick bis zur Küste\, wenn e
+ s klar ist.\n\nAlternativen: Letzte Einkäufe\n\nRoute: https://www.googl
+ e.com/maps/dir/?api=1&destination=Belfort%2C%20Markt%207%2C%20Brugge&trav
+ elmode=walking\n\nApp: https://alexanderwskowronek-cloud.github.io/fuer-s
+ arah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Belfried erklimmen
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:m5@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261116T110000Z
+DTEND:20261116T120000Z
+SUMMARY:Mittag: Fritten oder Brunch
+LOCATION:Chez Vincent\, Sint-Salvatorskerkhof\, Brugge
+DESCRIPTION:Belgische Fritten\, zweimal frittiert\, mit hausgemachten Sauc
+ en. Gilt als eine der besten Frittenbuden der Stadt.\n\nAlternativen: Li 
+ O Lait\, Waffel bei Chez Albert\n\nRoute: https://www.google.com/maps/dir
+ /?api=1&destination=Chez%20Vincent%2C%20Sint-Salvatorskerkhof%2C%20Brugge
+ &travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.github.io/f
+ uer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Mittag: Fritten oder Brunch
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:m6@sarah49
+DTSTAMP:20261112T165130Z
+DTSTART:20261116T121500Z
+DTEND:20261116T153000Z
+SUMMARY:Heimfahrt nach Dinslaken
+LOCATION:Dinslaken
+DESCRIPTION:Direkt nach Hause bedeutet Ankunft gegen 16:30 Uhr. Oder ihr w
+ ählt unten einen Zwischenstopp.\n\nAlternativen: Stopp in Antwerpen (ca.
+  2 Std.)\, Stopp in Sluis\, NL (ca. 1\,5 Std.)\, Stopp in Eindhoven\, Str
+ ijp-S\n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Dinsla
+ ken&travelmode=driving\n\nApp: https://alexanderwskowronek-cloud.github.i
+ o/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Heimfahrt nach Dinslaken
+END:VALARM
+END:VEVENT
+END:VCALENDAR
