@@ -6,7 +6,7 @@ METHOD:PUBLISH
 X-WR-CALNAME:Geburtstagswochenende in Belgien
 BEGIN:VEVENT
 UID:f0@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261113T110000Z
 DTEND:20261113T130000Z
 SUMMARY:Vor der Abfahrt
@@ -21,7 +21,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:f1@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261113T130000Z
 DTEND:20261113T161500Z
 SUMMARY:Abfahrt nach Gent
@@ -43,7 +43,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:f2@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261113T161500Z
 DTEND:20261113T170000Z
 SUMMARY:Check-in Yalo Urban Boutique Hotel
@@ -64,7 +64,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:f3@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261113T170000Z
 DTEND:20261113T181500Z
 SUMMARY:Erster Spaziergang: Gent bei Nacht
@@ -85,17 +85,17 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:f4@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261113T181500Z
 DTEND:20261113T201500Z
 SUMMARY:Abendessen im Holy Food Market
 LOCATION:Holy Food Market\, Beverhoutplein\, Gent
 DESCRIPTION:Eine alte Kapelle voller Food-Stände: jeder isst\, worauf er 
  Lust hat\, ohne Reservierung. Locker für den ersten Abend.\n\nAlternativ
- en: Pakhuis\, Roots\, Belga Queen\n\nRoute: https://www.google.com/maps/d
- ir/?api=1&destination=Holy%20Food%20Market%2C%20Beverhoutplein%2C%20Gent&
- travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.github.io/fu
- er-sarah/
+ en: Pakhuis\, Roots\, Amigo\, Yalo Restaurant\, Guerilla\, Le Chouchou\, 
+ Pakhuis\, Belga Queen\n\nRoute: https://www.google.com/maps/dir/?api=1&de
+ stination=Holy%20Food%20Market%2C%20Beverhoutplein%2C%20Gent&travelmode=w
+ alking\n\nApp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-PT15M
@@ -104,28 +104,30 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:f5@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261113T203000Z
 DTEND:20261113T224000Z
-SUMMARY:Belgisches Bier am Wasser
-LOCATION:Het Waterhuis aan de Bierkant\, Groentenmarkt\, Gent
-DESCRIPTION:Gemütliche Bierkneipe an der Leie mit großer Fass- und Flasc
- henauswahl.\n\nAlternativen: Dulle Griet\, ’t Dreupelkot\n\nRoute: http
- s://www.google.com/maps/dir/?api=1&destination=Het%20Waterhuis%20aan%20de
- %20Bierkant%2C%20Groentenmarkt%2C%20Gent&travelmode=walking\n\nApp: https
- ://alexanderwskowronek-cloud.github.io/fuer-sarah/
+SUMMARY:Ein Glas Wein bei Edelrot
+LOCATION:Edelrot\, Belfortstraat\, Gent
+DESCRIPTION:Kleine\, gemütliche Bar mit einer großen Auswahl an Naturwei
+ nen\, dazu Kleinigkeiten zum Teilen. Freitags bis spät geöffnet.\n\nTip
+ p: Die Adresse hat sich in den letzten Jahren geändert. Vor dem Losgehen
+  kurz in Google Maps prüfen.\n\nAlternativen: Wijnbar ONA\, Win\, Hey Fr
+ ankie\, Yalo Bar\n\nRoute: https://www.google.com/maps/dir/?api=1&destina
+ tion=Edelrot%2C%20Belfortstraat%2C%20Gent&travelmode=walking\n\nApp: http
+ s://alexanderwskowronek-cloud.github.io/fuer-sarah/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-PT15M
-DESCRIPTION:Belgisches Bier am Wasser
+DESCRIPTION:Ein Glas Wein bei Edelrot
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:f6@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261113T225000Z
 DTEND:20261113T225900Z
-SUMMARY:Mitternacht: Sarah wird 49
+SUMMARY:Mitternacht: Sarah hat gleich Geburtstag
 LOCATION:Graslei\, Gent
 DESCRIPTION:Um 0:00 Uhr mit Sekt anstoßen. Draußen an der beleuchteten G
  raslei oder gemütlich im Zimmer mit Kerze.\n\nTipp: Am Wasser ist es nac
@@ -136,12 +138,12 @@ DESCRIPTION:Um 0:00 Uhr mit Sekt anstoßen. Draußen an der beleuchteten G
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-PT15M
-DESCRIPTION:Mitternacht: Sarah wird 49
+DESCRIPTION:Mitternacht: Sarah hat gleich Geburtstag
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:s1@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261114T074500Z
 DTEND:20261114T084500Z
 SUMMARY:Geburtstagsfrühstück
@@ -159,7 +161,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:s2@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261114T090000Z
 DTEND:20261114T104500Z
 SUMMARY:S.M.A.K. · Museum für zeitgenössische Kunst
@@ -181,7 +183,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:s3@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261114T104500Z
 DTEND:20261114T114500Z
 SUMMARY:MSK · Museum der Schönen Künste
@@ -201,7 +203,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:s4@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261114T120000Z
 DTEND:20261114T130500Z
 SUMMARY:Mittagessen
@@ -221,7 +223,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:s5@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261114T131500Z
 DTEND:20261114T143000Z
 SUMMARY:Der Genter Altar · Van Eyck
@@ -242,7 +244,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:s6@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261114T144000Z
 DTEND:20261114T153000Z
 SUMMARY:Belfried: Gent von oben
@@ -260,7 +262,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:s7@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261114T153500Z
 DTEND:20261114T161500Z
 SUMMARY:Sonnenuntergang an der Sint-Michielsbrug
@@ -279,7 +281,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:s8@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261114T161500Z
 DTEND:20261114T170000Z
 SUMMARY:Geburtstags-Patisserie bei Joost Arijs
@@ -298,47 +300,72 @@ DESCRIPTION:Geburtstags-Patisserie bei Joost Arijs
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:s10@sarah49
-DTSTAMP:20261112T171334Z
-DTSTART:20261114T183000Z
-DTEND:20261114T210000Z
-SUMMARY:Geburtstagsdinner
-LOCATION:Vrijmoed\, Vlaanderenstraat\, Gent
-DESCRIPTION:Gents höchstdekorierte Küche: Michelin-Sterne\, gemüsebeton
- t und modern\, ohne Steifheit. Der Höhepunkt des Tages\, zwei Minuten vo
- m Hotel.\n\nTipp: Nur mit Reservierung. Die Alternativen unten sind genau
- so schöne Geburtstagsabende\, jeweils in einem anderen Stil.\n\nAlternat
- iven: Rizoom\, De Vitrine\, Boris & Maurice\, Publiek\, Bar Bask\, Belga 
- Queen\n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Vrijmo
- ed%2C%20Vlaanderenstraat%2C%20Gent&travelmode=walking\n\nApp: https://ale
- xanderwskowronek-cloud.github.io/fuer-sarah/
+UID:s9b@sarah49
+DTSTAMP:20261112T213705Z
+DTSTART:20261114T175000Z
+DTEND:20261114T182500Z
+SUMMARY:Aperitivo im Amaro
+LOCATION:Amaro\, Annonciadenstraat 21\, Gent
+DESCRIPTION:Ein Spritz oder ein Glas Wein zum Anstoßen vor dem Dinner. Kl
+ ein\, stilvoll\, mit italienischen Cocktails und guten Weinen.\n\nTipp: L
+ iegt im Westen der Innenstadt\, eine schöne Startrampe für den Abend. V
+ on hier spontan weiter ins Patershol oder zur Stapelplein.\n\nAlternative
+ n: Aperitif im Yalo\n\nRoute: https://www.google.com/maps/dir/?api=1&dest
+ ination=Amaro%2C%20Annonciadenstraat%2021%2C%20Gent&travelmode=walking\n\
+ nApp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-PT15M
-DESCRIPTION:Geburtstagsdinner
+DESCRIPTION:Aperitivo im Amaro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:s10@sarah49
+DTSTAMP:20261112T213705Z
+DTSTART:20261114T183000Z
+DTEND:20261114T210000Z
+SUMMARY:Geburtstagsdinner\, ganz spontan
+LOCATION:Patershol\, Gent
+DESCRIPTION:Kein fester Tisch\, sondern dorthin\, wo es sich richtig anfü
+ hlt. Startpunkt ist das Patershol\, das alte Viertel mit kleinen Restaura
+ nts hinter jeder Tür: einfach durch die Gassen schlendern und schauen\, 
+ wo Kerzen brennen und noch ein Tisch frei ist. Unten stehen gemütliche O
+ ptionen\, die auch ohne langen Vorlauf gut klappen.\n\nTipp: Samstags ist
+  Gent voll. Wer auf Nummer sicher gehen will\, ruft gegen 18 Uhr beim Fav
+ oriten an und fragt nach einem Tisch für zwei.\n\nAlternativen: Amigo\, 
+ Pakhuis\, De Vitrine\, Le Chouchou\, Roots\, Belga Queen\, Holy Food Mark
+ et\, Yalo Restaurant\n\nRoute: https://www.google.com/maps/dir/?api=1&des
+ tination=Patershol%2C%20Gent&travelmode=walking\n\nApp: https://alexander
+ wskowronek-cloud.github.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Geburtstagsdinner\, ganz spontan
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:s11@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261114T211500Z
 DTEND:20261114T225900Z
-SUMMARY:Live-Jazz im Hot Club de Gand
-LOCATION:Hot Club de Gand\, Gent
-DESCRIPTION:Gypsy-Jazz in einem versteckten Hinterhof. Man findet ihn nur\
- , wenn man weiß\, wo die Gasse ist.\n\nAlternativen: Jigger’s\, Dulle 
- Griet\n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Hot%20
- Club%20de%20Gand%2C%20Gent&travelmode=walking\n\nApp: https://alexanderws
- kowronek-cloud.github.io/fuer-sarah/
+SUMMARY:Geburtstagscocktail im Jigger’s
+LOCATION:Jigger's\, Oudburg\, Gent
+DESCRIPTION:Eine der besten Cocktailbars Belgiens: wenige Plätze\, Barkee
+ per\, die einen Drink nach eurem Geschmack bauen. Sag\, dass ihr einen Ge
+ burtstag feiert.\n\nTipp: Klein und am Samstag schnell voll. Heute schon 
+ reservieren.\n\nAlternativen: Yalo Bar\, Amigo\, Amaro\, Hot Club de Gand
+ \n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Jigger's%2C
+ %20Oudburg%2C%20Gent&travelmode=walking\n\nApp: https://alexanderwskowron
+ ek-cloud.github.io/fuer-sarah/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-PT15M
-DESCRIPTION:Live-Jazz im Hot Club de Gand
+DESCRIPTION:Geburtstagscocktail im Jigger’s
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u1@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261115T080000Z
 DTEND:20261115T085000Z
 SUMMARY:Frühstück und Koffer packen
@@ -355,7 +382,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u2@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261115T090000Z
 DTEND:20261115T094500Z
 SUMMARY:Blumenmarkt auf dem Kouter
@@ -373,7 +400,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u3@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261115T095000Z
 DTEND:20261115T104000Z
 SUMMARY:Street-Art\, Senf und Gentse Neuzen
@@ -392,7 +419,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u4@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261115T104500Z
 DTEND:20261115T110000Z
 SUMMARY:Check-out
@@ -409,7 +436,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u5@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261115T110000Z
 DTEND:20261115T121000Z
 SUMMARY:Mittagessen in Gent
@@ -427,7 +454,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u6@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261115T121500Z
 DTEND:20261115T131000Z
 SUMMARY:Fahrt nach Brügge
@@ -435,10 +462,11 @@ LOCATION:Kanunnik Duclosstraat 1\, 8000 Brugge
 DESCRIPTION:Über die E40. Das Jonojé liegt am Stadtrand\, also kein Stre
  ss mit der autofreien Altstadt.\n\nTipp: Passt genau in die Fahrtzeit: 
  „The Rest Is History“\, Folge 271 über Jan van Eyck (43 Min.\, engli
- sch). Danach seht ihr im Groeningemuseum seine Madonna.\n\nRoute: https:/
- /www.google.com/maps/dir/?api=1&destination=Kanunnik%20Duclosstraat%201%2
- C%208000%20Brugge&travelmode=driving\n\nApp: https://alexanderwskowronek-
- cloud.github.io/fuer-sarah/
+ sch). Danach seht ihr im Groeningemuseum seine Madonna.\n\nAlternativen: 
+ Umweg ans Meer: Ostende\, Umweg ans Meer: Knokke\, Kurz ans Meer: De Haan
+ \n\nRoute: https://www.google.com/maps/dir/?api=1&destination=Kanunnik%20
+ Duclosstraat%201%2C%208000%20Brugge&travelmode=driving\n\nApp: https://al
+ exanderwskowronek-cloud.github.io/fuer-sarah/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-PT15M
@@ -447,7 +475,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u7@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261115T131000Z
 DTEND:20261115T134500Z
 SUMMARY:Check-in Jonojé Luxury Suites
@@ -468,9 +496,9 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u8@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261115T140000Z
-DTEND:20261115T153000Z
+DTEND:20261115T151500Z
 SUMMARY:Groeningemuseum
 LOCATION:Groeningemuseum\, Dijver 12\, Brugge
 DESCRIPTION:Flämische Primitive: Van Eycks „Madonna des Kanonikus van d
@@ -487,29 +515,50 @@ DESCRIPTION:Groeningemuseum
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:u9@sarah49
-DTSTAMP:20261112T171334Z
-DTSTART:20261115T153000Z
-DTEND:20261115T163000Z
-SUMMARY:Blaue Stunde: Rozenhoedkaai\, Burg\, Markt
-LOCATION:Rozenhoedkaai\, Brugge
-DESCRIPTION:Der berühmteste Blick Brügges: Belfried über dem Kanal. Dan
- n über den Burg zum Markt\, wenn die Lichter angehen.\n\nTipp: Der Weihn
- achtsmarkt und das Lichtfestival Winter Glow starten erst am 20. November
- . Dafür ist es jetzt angenehm leer.\n\nRoute: https://www.google.com/map
- s/dir/?api=1&destination=Rozenhoedkaai%2C%20Brugge&travelmode=walking\n\n
+UID:u8b@sarah49
+DTSTAMP:20261112T213705Z
+DTSTART:20261115T152500Z
+DTEND:20261115T161000Z
+SUMMARY:Belfried Brügge zum Sonnenuntergang
+LOCATION:Belfort\, Markt 7\, Brugge
+DESCRIPTION:Oben auf dem 83 m hohen Turm zusehen\, wie die Sonne gegen 16:
+ 55 Uhr über den Dächern untergeht. Unterwegs kommt ihr an der Schatzkam
+ mer und dem riesigen Glockenspiel vorbei.\n\nTipp: Tickets mit Zeitfenste
+ r vorab online kaufen\, die Treppe ist eng und der Einlass begrenzt. Letz
+ ten Einlass vorher prüfen.\n\nRoute: https://www.google.com/maps/dir/?ap
+ i=1&destination=Belfort%2C%20Markt%207%2C%20Brugge&travelmode=walking\n\n
  App: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-PT15M
-DESCRIPTION:Blaue Stunde: Rozenhoedkaai\, Burg\, Markt
+DESCRIPTION:Belfried Brügge zum Sonnenuntergang
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:u9@sarah49
+DTSTAMP:20261112T213705Z
+DTSTART:20261115T161500Z
+DTEND:20261115T164500Z
+SUMMARY:Blaue Stunde: Rozenhoedkaai und Burg
+LOCATION:Rozenhoedkaai\, Brugge
+DESCRIPTION:Vom Belfried hinunter über den Burg zum Rozenhoedkaai: der be
+ rühmteste Blick Brügges\, der Turm über dem Kanal\, genau wenn die Lic
+ hter angehen.\n\nTipp: Der Weihnachtsmarkt und das Lichtfestival Winter G
+ low starten erst am 20. November. Dafür ist es jetzt angenehm leer.\n\nR
+ oute: https://www.google.com/maps/dir/?api=1&destination=Rozenhoedkaai%2C
+ %20Brugge&travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.gi
+ thub.io/fuer-sarah/
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15M
+DESCRIPTION:Blaue Stunde: Rozenhoedkaai und Burg
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u10@sarah49
-DTSTAMP:20261112T171334Z
-DTSTART:20261115T163000Z
-DTEND:20261115T171500Z
+DTSTAMP:20261112T213705Z
+DTSTART:20261115T165000Z
+DTEND:20261115T172000Z
 SUMMARY:The Chocolate Line
 LOCATION:The Chocolate Line\, Simon Stevinplein\, Brugge
 DESCRIPTION:Dominique Persoone\, der „Shock-o-latier“: Pralinen mit un
@@ -526,25 +575,26 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u11@sarah49
-DTSTAMP:20261112T171334Z
-DTSTART:20261115T171500Z
-DTEND:20261115T181500Z
-SUMMARY:Aperitif in De Garre
-LOCATION:De Garre\, Brugge
-DESCRIPTION:Winzige Kneipe in einem schmalen Durchgang. Hier gibt es die h
- auseigene Tripel van de Garre (11 %) mit einem Stück Käse.\n\nAlternati
- ven: Le Trappiste\, ’t Brugs Beertje\n\nRoute: https://www.google.com/m
- aps/dir/?api=1&destination=De%20Garre%2C%20Brugge&travelmode=walking\n\nA
- pp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
+DTSTAMP:20261112T213705Z
+DTSTART:20261115T172500Z
+DTEND:20261115T182000Z
+SUMMARY:Wein und Jazz im Est
+LOCATION:Wijnbar Est\, Braambergstraat 7\, Brugge
+DESCRIPTION:Gemütliche Weinbar mit Tapas\, sonntagabends oft mit Live-Jaz
+ z. Fünf Minuten vom Burg.\n\nTipp: Die Quellen sind sich bei den Sonntag
+ szeiten uneinig. Kurz in Google Maps prüfen.\n\nAlternativen: Bar Bulles
+ \, Blend Wijnbar\, Lucy\n\nRoute: https://www.google.com/maps/dir/?api=1&
+ destination=Wijnbar%20Est%2C%20Braambergstraat%207%2C%20Brugge&travelmode
+ =walking\n\nApp: https://alexanderwskowronek-cloud.github.io/fuer-sarah/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-PT15M
-DESCRIPTION:Aperitif in De Garre
+DESCRIPTION:Wein und Jazz im Est
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u12@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261115T183000Z
 DTEND:20261115T203000Z
 SUMMARY:Abendessen in Brügge
@@ -563,7 +613,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:u13@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261115T203000Z
 DTEND:20261115T211500Z
 SUMMARY:Nachtspaziergang Groenerei
@@ -580,7 +630,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m1@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261116T073000Z
 DTEND:20261116T083000Z
 SUMMARY:Frühstück und Check-out
@@ -600,7 +650,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m2@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261116T084500Z
 DTEND:20261116T093000Z
 SUMMARY:Minnewater und Beginenhof
@@ -619,7 +669,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m3@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261116T094000Z
 DTEND:20261116T101000Z
 SUMMARY:Bootsfahrt über die Grachten
@@ -637,25 +687,28 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m4@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261116T101500Z
 DTEND:20261116T110000Z
-SUMMARY:Belfried erklimmen
-LOCATION:Belfort\, Markt 7\, Brugge
-DESCRIPTION:Auch montags geöffnet. Oben der Blick bis zur Küste\, wenn e
- s klar ist.\n\nAlternativen: Letzte Einkäufe\, Sint-Anna-Viertel\n\nRout
- e: https://www.google.com/maps/dir/?api=1&destination=Belfort%2C%20Markt%
- 207%2C%20Brugge&travelmode=walking\n\nApp: https://alexanderwskowronek-cl
- oud.github.io/fuer-sarah/
+SUMMARY:Letzte Einkäufe
+LOCATION:Juttu\, Noordzandstraat\, Brugge
+DESCRIPTION:Jūttu (Concept Store mit jungen belgischen Labels)\, Goûts e
+ t Couleurs (nordisches Design)\, Diksmuids Boterhuis (Käse und Butter). 
+ Pralinen für zuhause bei Dumon.\n\nTipp: Manche kleinen Läden öffnen m
+ ontags spät oder gar nicht. Vorher in Google Maps nachsehen.\n\nAlternat
+ iven: Belfried bei Tageslicht\, Sint-Anna-Viertel\n\nRoute: https://www.g
+ oogle.com/maps/dir/?api=1&destination=Juttu%2C%20Noordzandstraat%2C%20Bru
+ gge&travelmode=walking\n\nApp: https://alexanderwskowronek-cloud.github.i
+ o/fuer-sarah/
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-PT15M
-DESCRIPTION:Belfried erklimmen
+DESCRIPTION:Letzte Einkäufe
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m5@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261116T110000Z
 DTEND:20261116T120000Z
 SUMMARY:Mittag: Fritten oder Brunch
@@ -674,7 +727,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:m6@sarah49
-DTSTAMP:20261112T171334Z
+DTSTAMP:20261112T213705Z
 DTSTART:20261116T121500Z
 DTEND:20261116T153000Z
 SUMMARY:Heimfahrt nach Dinslaken

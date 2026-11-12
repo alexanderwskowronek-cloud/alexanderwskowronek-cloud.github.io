@@ -11,7 +11,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Belgien">
-<meta name="theme-color" content="#1b2a6b">
+<meta name="theme-color" content="#002fa7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
@@ -23,11 +23,12 @@
   --ink:#16192a;
   --muted:#5b6070;
   --line:#dfe1dc;
-  --ultramarine:#2340a8;  /* Van-Eyck-Blau */
-  --gold:#d9a21b;         /* Ocker / Goldgrund */
-  --brick:#b5452e;        /* Backstein der Trapgiebel */
-  --canal:#1f5b57;        /* Grachtengrün */
-  --rose:#e9a7a0;
+  --ultramarine:#002fa7;  /* International Klein Blue */
+  --gold:#e4ff1a;         /* Neon-Gelb */
+  --brick:#ff2d87;        /* Neon-Pink */
+  --canal:#00c2b8;        /* Neon-Türkis */
+  --rose:#ff7a1a;         /* Neon-Orange */
+  --hero:#002fa7;
   --accent:var(--ultramarine);
   --accent-ink:#ffffff;
   --done:#2f7d4f;
@@ -39,13 +40,13 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --paper:#11131b;--card:#1a1d28;--ink:#eef0f6;--muted:#a3a8b8;--line:#2a2e3c;
-  --ultramarine:#7f97ff;--gold:#f0bf45;--brick:#e8735a;--canal:#4fb3a9;--rose:#f0b9b2;
-  --accent:#8ea3ff;--accent-ink:#0d1020;--done:#5ec98a;--chip:#232838;
+  --ultramarine:#5b82ff;--gold:#e4ff1a;--brick:#ff3d93;--canal:#19e0d4;--rose:#ff8a33;--hero:#002fa7;
+  --accent:#7d9bff;--accent-ink:#0d1020;--done:#5ec98a;--chip:#232838;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#11131b;--card:#1a1d28;--ink:#eef0f6;--muted:#a3a8b8;--line:#2a2e3c;
-  --ultramarine:#7f97ff;--gold:#f0bf45;--brick:#e8735a;--canal:#4fb3a9;--rose:#f0b9b2;
-  --accent:#8ea3ff;--accent-ink:#0d1020;--done:#5ec98a;--chip:#232838;
+  --ultramarine:#5b82ff;--gold:#e4ff1a;--brick:#ff3d93;--canal:#19e0d4;--rose:#ff8a33;--hero:#002fa7;
+  --accent:#7d9bff;--accent-ink:#0d1020;--done:#5ec98a;--chip:#232838;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -57,9 +58,10 @@ button{font:inherit;color:inherit}
 .wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 
 /* Header art */
-.hero{position:relative;overflow:hidden;background:#1b2a6b;color:#fff}
+.hero{position:relative;overflow:hidden;background:var(--hero);color:#fff}
 .hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hero .wrap{position:relative;padding-block:28px 22px;min-height:236px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,22,96,.86) 0%,rgba(0,22,96,.62) 48%,rgba(0,22,96,0) 82%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:28px 22px;min-height:236px;display:flex;flex-direction:column;justify-content:flex-end}
 .eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;opacity:.9}
 .hero h1{font:800 clamp(34px,10vw,58px)/.95 var(--f-display);hyphens:manual;letter-spacing:-.02em;margin:10px 0 8px;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.25)}
 .hero h1 em{font-style:normal;color:var(--gold)}
@@ -97,7 +99,7 @@ h3{font:700 18px/1.2 var(--f-display);margin:0}
 .day span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .day b{display:block;font:700 15px/1.1 var(--f-display)}
 .day span{font:500 11px/1.3 var(--f-mono);color:var(--muted)}
-.day[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.day[aria-selected="true"]{background:var(--hero);color:#fff;box-shadow:0 0 0 2px var(--gold),0 6px 18px rgba(0,47,167,.35)}
 .day[aria-selected="true"] span{color:var(--gold)}
 .dayhead{display:grid;gap:4px;margin:14px 0 6px}
 .dayhead h2{margin:0}
@@ -114,10 +116,10 @@ h3{font:700 18px/1.2 var(--f-display);margin:0}
 .item .place{font-size:13px;color:var(--muted);margin-top:2px}
 .badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
 .b{font:500 11px/1 var(--f-mono);letter-spacing:.04em;padding:5px 8px;border-radius:999px;background:var(--chip);color:var(--ink)}
-.b.must{background:var(--brick);color:#fff}
+.b.must{background:var(--brick);color:#16051a}
 .b.top{background:var(--gold);color:#1a1405}
 .b.opt{background:transparent;border:1px solid var(--line);color:var(--muted)}
-.b.bday{background:var(--rose);color:#3a1210}
+.b.bday{background:var(--rose);color:#1f0b00}
 .item .more{display:grid;gap:10px;margin-top:10px;font-size:15px}
 .item .more p{margin:0}
 .tip{background:var(--chip);border-radius:12px;padding:10px 12px;font-size:14px}
@@ -161,11 +163,15 @@ h3{font:700 18px/1.2 var(--f-display);margin:0}
 .wx{background:var(--card);box-shadow:var(--shadow);border-radius:12px;padding:8px 12px;font:500 13px/1.3 var(--f-mono)}
 
 /* Bottom nav */
-nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
-nav.tabs .in{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
-nav.tabs button{border:0;background:none;cursor:pointer;display:grid;justify-items:center;gap:3px;padding:10px 4px 9px;font:500 11px/1 var(--f-mono);color:var(--muted);letter-spacing:.04em}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--hero);border-top:3px solid var(--gold);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px);padding-right:env(safe-area-inset-right,0px)}
+nav.tabs .in{max-width:640px;margin:0 auto;display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+nav.tabs button{border:0;background:none;cursor:pointer;display:grid;justify-items:center;gap:3px;padding:10px 2px 9px;font:500 10px/1 var(--f-mono);color:rgba(255,255,255,.72);letter-spacing:0;min-width:0;position:relative}
+.kgroup{display:grid;gap:8px;margin-bottom:6px}
+.kgroup h3{font-size:15px;font-family:var(--f-mono);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:18px 0 2px}
 nav.tabs button svg{width:24px;height:24px}
-nav.tabs button[aria-current="page"]{color:var(--accent)}
+nav.tabs button[aria-current="page"]{color:#e4ff1a;text-shadow:0 0 10px rgba(228,255,26,.55)}
+nav.tabs button[aria-current="page"] svg{filter:drop-shadow(0 0 6px rgba(228,255,26,.7))}
+nav.tabs button[aria-current="page"]::before{content:"";position:absolute;top:-3px;left:22%;right:22%;height:3px;background:#ff2d87;box-shadow:0 0 10px #ff2d87}
 .toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:12px;font-size:14px;z-index:30;max-width:calc(100% - 32px)}
 @media (prefers-reduced-motion:no-preference){.now,.item,.tipc{transition:transform .15s ease}.btn:active{transform:scale(.97)}}
 </style>
@@ -205,6 +211,7 @@ nav.tabs button[aria-current="page"]{color:var(--accent)}
   </section>
 
   <!-- FÜR DICH -->
+  <!-- BRIEF -->
   <section class="view" id="v-you" hidden aria-labelledby="h-you">
     <h2 id="h-you">Für dich, Sarah</h2>
     <div class="letter" id="letter"></div>
@@ -212,9 +219,21 @@ nav.tabs button[aria-current="page"]{color:var(--accent)}
     <div class="artbox"><canvas id="giftArt" aria-label="Abstrakte Komposition, jeden Tag neu"></canvas></div>
     <div class="artcap" id="artCap"></div>
     <div class="actions" style="margin-top:10px"><button class="btn small" id="newArt" type="button">Neu komponieren</button></div>
-    <h2>Für unterwegs: Hören</h2>
+  </section>
+
+  <!-- UNTERWEGS -->
+  <section class="view" id="v-road" hidden aria-labelledby="h-road">
+    <h2 id="h-road">Unterwegs</h2>
+    <p class="sub">Podcasts fürs Auto, Audioguides für die Städte und alle Termine für den Kalender.</p>
+    <div id="calBox" style="margin-top:12px"></div>
+    <h2>Hören</h2>
     <div class="tips" id="audioList"></div>
-    <h2>Gut zu wissen</h2>
+  </section>
+
+  <!-- WISSEN -->
+  <section class="view" id="v-know" hidden aria-labelledby="h-know">
+    <h2 id="h-know">Gut zu wissen</h2>
+    <p class="sub">Praktisches, ein paar Geschichten und die wichtigsten Wörter auf Flämisch.</p>
     <div id="knowhow"></div>
   </section>
 </main>
@@ -224,7 +243,9 @@ nav.tabs button[aria-current="page"]{color:var(--accent)}
     <button type="button" data-view="now" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Jetzt</button>
     <button type="button" data-view="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Plan</button>
     <button type="button" data-view="tips"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Tipps</button>
-    <button type="button" data-view="you"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11h16v9H4zM3 7h18v4H3zM12 7v13M12 7c-2-4-6-3-5 0M12 7c2-4 6-3 5 0"/></svg>Für dich</button>
+    <button type="button" data-view="road"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></svg>Unterwegs</button>
+    <button type="button" data-view="know"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>Wissen</button>
+    <button type="button" data-view="you"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Brief</button>
   </div>
 </nav>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -242,7 +263,7 @@ window.TRIP = {
     /* ---------- FREITAG ---------- */
     {id:"f0",day:"fr",start:"12:00",end:"14:00",title:"Vor der Abfahrt",place:"Zuhause",prio:"must",tags:["logistik"],
      text:"Fünf Dinge, die den Trip entspannt machen.",
-     check:["Auto für die Umweltzone Gent registrieren (kostenlos, Pflicht für deutsche Kennzeichen)","Antwerpen hat auch eine Umweltzone: nur relevant, wenn ihr am Montag dort haltet","Zeitfenster für den Genter Altar am Samstag 14:15 gebucht","Tisch fürs Geburtstagsdinner am Samstag bestätigt","Sekt, zwei Gläser und eine Kerze für Mitternacht eingepackt"],
+     check:["Auto für die Umweltzone Gent registrieren (kostenlos, Pflicht für deutsche Kennzeichen)","Antwerpen hat auch eine Umweltzone: nur relevant, wenn ihr am Montag dort haltet","Zeitfenster für den Genter Altar am Samstag 14:15 gebucht","Lieblingsplätze für das spontane Geburtstagsdinner im Kopf (siehe Samstag)","Sekt, zwei Gläser und eine Kerze für Mitternacht eingepackt"],
      url:"https://stad.gent/nl/mobiliteit-openbare-werken/lage-emissiezone/deze-voertuigen-kan-je-registreren/registratie-lez-voertuig-met-buitenlandse-nummerplaat",urlLabel:"Umweltzone Gent"},
     {id:"f1",day:"fr",start:"14:00",end:"17:15",title:"Abfahrt nach Gent",place:"Dinslaken → Gent, ca. 230 km",q:"Vlaanderenstraat 26, 9000 Gent",mode:"driving",prio:"must",tags:["logistik"],
      text:"Rund 2:45 bis 3:15 Stunden über Venlo, Eindhoven und Antwerpen. Navi direkt auf die Hotelgarage stellen, nicht auf die Hoteladresse. Hörtipps für die Fahrt stehen unter „Für dich“.",
@@ -259,13 +280,21 @@ window.TRIP = {
      alts:[
       {title:"Pakhuis",text:"Große Brasserie in einem alten Lagerhaus, Klassiker der Genter Gastro. Reservieren.",q:"Pakhuis, Schuurkenstraat, Gent"},
       {title:"Roots",text:"Kleines Bistro im Patershol, ehrliche Küche zu fairen Preisen. Reservieren.",q:"Roots restaurant Patershol Gent"},
+      {title:"Amigo",text:"Bunte Sharing-Plates mit Einflüssen aus Mexiko und dem Nahen Osten, an der Stapelplein. Täglich zum Dinner geöffnet.",q:"Amigo, Sluizekenkaai 1, Gent"},
+      {title:"Yalo Restaurant",text:"Direkt im Hotel: saisonale Gerichte und Sharing-Plates im Rock-’n’-Roll-Look. Die bequemste Wahl nach der Anreise.",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent"},
+      {title:"Guerilla",text:"Street-Food und richtig gute Burger, z. B. „Tel-Aviv“. Locker, schnell, fair.",q:"Guerilla, Gent"},
+      {title:"Le Chouchou",text:"Euer eigener Tipp. Adresse und Öffnung bitte in Google Maps prüfen.",q:"Le Chouchou, Gent"},
+      {title:"Pakhuis",text:"Große Brasserie in einem alten Lagerhaus, Klassiker der Genter Gastro. Reservieren.",q:"Pakhuis, Schuurkenstraat, Gent"},
       {title:"Belga Queen",text:"Belgische Klassiker in einem Speicherhaus direkt an der Graslei.",q:"Belga Queen, Graslei, Gent"}]},
-    {id:"f5",day:"fr",start:"21:30",end:"23:40",title:"Belgisches Bier am Wasser",place:"Het Waterhuis aan de Bierkant",q:"Het Waterhuis aan de Bierkant, Groentenmarkt, Gent",mode:"walking",prio:"optional",tags:["food"],
-     text:"Gemütliche Bierkneipe an der Leie mit großer Fass- und Flaschenauswahl.",
+    {id:"f5",day:"fr",start:"21:30",end:"23:40",title:"Ein Glas Wein bei Edelrot",place:"Naturweinbar am Belfried",q:"Edelrot, Belfortstraat, Gent",mode:"walking",prio:"top",tags:["food"],
+     text:"Kleine, gemütliche Bar mit einer großen Auswahl an Naturweinen, dazu Kleinigkeiten zum Teilen. Freitags bis spät geöffnet.",
+     tip:"Die Adresse hat sich in den letzten Jahren geändert. Vor dem Losgehen kurz in Google Maps prüfen.",
      alts:[
-      {title:"Dulle Griet",text:"Über 250 Biere am Vrijdagmarkt. Wer den 1,2-Liter-„Max“ bestellt, gibt einen Schuh als Pfand ab.",q:"Dulle Griet, Vrijdagmarkt, Gent"},
-      {title:"’t Dreupelkot",text:"Winzige Jeneverbar mit über 100 Sorten, direkt am Wasser.",q:"t Dreupelkot, Groentenmarkt, Gent"}]},
-    {id:"f6",day:"fr",start:"23:50",end:"23:59",title:"Mitternacht: Sarah wird 49",place:"Graslei oder im Hotel",q:"Graslei, Gent",mode:"walking",prio:"must",tags:["bday"],
+      {title:"Wijnbar ONA",text:"Weinbar am Nederkouter, ganz nah am Hotel. Elegant und ruhig.",q:"Wijnbar ONA, Nederkouter, Gent"},
+      {title:"Win",text:"Naturweinbar, bei Gentern ein Geheimtipp.",q:"Win natural wine bar, Gent"},
+      {title:"Hey Frankie",text:"Lockere Weinbar mit Snacks, junges Publikum.",q:"Hey Frankie, Gent"},
+      {title:"Yalo Bar",text:"Zurück im Hotel noch ein Glas, ohne Weg nach Hause. Praktisch bis Mitternacht.",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent"}]},
+    {id:"f6",day:"fr",start:"23:50",end:"23:59",title:"Mitternacht: Sarah hat gleich Geburtstag",place:"Graslei oder im Hotel",q:"Graslei, Gent",mode:"walking",prio:"must",tags:["bday"],
      text:"Um 0:00 Uhr mit Sekt anstoßen. Draußen an der beleuchteten Graslei oder gemütlich im Zimmer mit Kerze.",
      tip:"Am Wasser ist es nachts ruhig und die Fassaden sind angestrahlt. Jacke mitnehmen, Mitte November sind es nachts um die 5 °C."},
 
@@ -305,23 +334,32 @@ window.TRIP = {
      text:"Einer der besten Pâtissiers und Chocolatiers Belgiens. Kleine Törtchen wie Skulpturen. Perfekt als Geburtstagskuchen fürs Zimmer.",
      tip:"Schließt am frühen Abend. Wenn es knapp wird: vor dem Sonnenuntergang hingehen.",
      alts:[{title:"Temmerman",text:"Altes Süßwarengeschäft am Kraanlei, hier gibt es die Gentse Neuzen (Cuberdons).",q:"Temmerman, Kraanlei, Gent"}]},
-    {id:"s9",day:"sa",start:"18:00",end:"19:15",title:"Durchatmen und umziehen",place:"Hotel",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent",mode:"walking",prio:"optional",tags:["logistik"],
+    {id:"s9",day:"sa",start:"18:00",end:"18:45",title:"Durchatmen und umziehen",place:"Hotel",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent",mode:"walking",prio:"optional",tags:["logistik"],
      text:"Kurz ausruhen, Torte probieren, schick machen."},
-    {id:"s10",day:"sa",start:"19:30",end:"22:00",title:"Geburtstagsdinner",place:"Vrijmoed · 2 Min. vom Hotel",q:"Vrijmoed, Vlaanderenstraat, Gent",mode:"walking",prio:"must",tags:["bday","food"],
-     text:"Gents höchstdekorierte Küche: Michelin-Sterne, gemüsebetont und modern, ohne Steifheit. Der Höhepunkt des Tages, zwei Minuten vom Hotel.",
-     tip:"Nur mit Reservierung. Die Alternativen unten sind genauso schöne Geburtstagsabende, jeweils in einem anderen Stil.",
+    {id:"s9b",day:"sa",start:"18:50",end:"19:25",title:"Aperitivo im Amaro",place:"Italienische Aperitivo-Bar, Annonciadenstraat",q:"Amaro, Annonciadenstraat 21, Gent",mode:"walking",prio:"optional",tags:["bday","food"],
+     text:"Ein Spritz oder ein Glas Wein zum Anstoßen vor dem Dinner. Klein, stilvoll, mit italienischen Cocktails und guten Weinen.",
+     tip:"Liegt im Westen der Innenstadt, eine schöne Startrampe für den Abend. Von hier spontan weiter ins Patershol oder zur Stapelplein.",
+     alts:[{title:"Aperitif im Yalo",text:"Ohne Weg: ein Glas im Hotel und dann spontan losziehen.",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent"}]},
+    {id:"s10",day:"sa",start:"19:30",end:"22:00",title:"Geburtstagsdinner, ganz spontan",place:"Gemütlich statt Sterneküche",q:"Patershol, Gent",mode:"walking",prio:"must",tags:["bday","food"],
+     text:"Kein fester Tisch, sondern dorthin, wo es sich richtig anfühlt. Startpunkt ist das Patershol, das alte Viertel mit kleinen Restaurants hinter jeder Tür: einfach durch die Gassen schlendern und schauen, wo Kerzen brennen und noch ein Tisch frei ist. Unten stehen gemütliche Optionen, die auch ohne langen Vorlauf gut klappen.",
+     tip:"Samstags ist Gent voll. Wer auf Nummer sicher gehen will, ruft gegen 18 Uhr beim Favoriten an und fragt nach einem Tisch für zwei.",
      alts:[
-      {title:"Rizoom",text:"Intimer Raum mit offenem Feuer und Fermentation. Gault&Millau „Ten to Taste Gent“. Modern und sehr persönlich.",q:"Rizoom, Gent"},
-      {title:"De Vitrine",text:"Brasserie von Spitzenkoch Kobe Desramaults am Brabantdam, um die Ecke vom Hotel. Lässiger, aber auf hohem Niveau.",q:"De Vitrine, Brabantdam, Gent"},
-      {title:"Boris & Maurice",text:"Französisch geprägtes Bistro im Patershol, Bib Gourmand. Romantisch, kerzenlichtig, nur mit Reservierung.",q:"Boris & Maurice, Gent"},
-      {title:"Publiek",text:"Michelin-Stern von Olly Ceulenaere: kreativ, warm, unprätentiös.",q:"Publiek, Ham, Gent"},
-      {title:"Bar Bask",text:"Baskischer Grill in einer ehemaligen Tankstelle an der Schelde, Bib Gourmand. Lebendig statt leise.",q:"Bar Bask, Gent"},
-      {title:"Belga Queen",text:"Klassisch belgisch mit Blick auf die Graslei. Großes Haus, kurzfristig am ehesten zu bekommen.",q:"Belga Queen, Graslei, Gent"}]},
-    {id:"s11",day:"sa",start:"22:15",end:"23:59",title:"Live-Jazz im Hot Club de Gand",place:"Winzige Gasse am Groentenmarkt",q:"Hot Club de Gand, Gent",mode:"walking",prio:"optional",tags:["bday"],
-     text:"Gypsy-Jazz in einem versteckten Hinterhof. Man findet ihn nur, wenn man weiß, wo die Gasse ist.",
+      {title:"Amigo",text:"Bunte Sharing-Plates und Cocktails an der Stapelplein, am Wochenende wird unten getanzt. Lebendig und herzlich.",q:"Amigo, Sluizekenkaai 1, Gent"},
+      {title:"Pakhuis",text:"Große Brasserie im alten Lagerhaus. Viele Plätze, darum spontan am ehesten etwas frei.",q:"Pakhuis, Schuurkenstraat, Gent"},
+      {title:"De Vitrine",text:"Lässige Brasserie am Brabantdam, um die Ecke vom Hotel. Bodenständig gut.",q:"De Vitrine, Brabantdam, Gent"},
+      {title:"Le Chouchou",text:"Euer eigener Tipp. Adresse und Öffnung bitte in Google Maps prüfen.",q:"Le Chouchou, Gent"},
+      {title:"Roots",text:"Kleines Bistro im Patershol, ehrliche Küche, faire Preise.",q:"Roots restaurant Patershol Gent"},
+      {title:"Belga Queen",text:"Belgische Klassiker mit Blick auf die Graslei. Großes Haus.",q:"Belga Queen, Graslei, Gent"},
+      {title:"Holy Food Market",text:"Die Food-Hall in der Kapelle: ohne Reservierung, jeder isst, worauf er Lust hat.",q:"Holy Food Market, Beverhoutplein, Gent"},
+      {title:"Yalo Restaurant",text:"Sharing-Plates im eigenen Hotel. Die entspannteste Variante, danach direkt an die Bar.",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent"}]},
+    {id:"s11",day:"sa",start:"22:15",end:"23:59",title:"Geburtstagscocktail im Jigger’s",place:"Oudburg · Klingeln an der Tür",q:"Jigger's, Oudburg, Gent",mode:"walking",prio:"top",tags:["bday"],
+     text:"Eine der besten Cocktailbars Belgiens: wenige Plätze, Barkeeper, die einen Drink nach eurem Geschmack bauen. Sag, dass ihr einen Geburtstag feiert.",
+     tip:"Klein und am Samstag schnell voll. Heute schon reservieren.",
      alts:[
-      {title:"Jigger’s",text:"Eine der besten Cocktailbars Belgiens. Klingeln, reservieren empfohlen.",q:"Jigger's, Oudburg, Gent"},
-      {title:"Dulle Griet",text:"Falls es doch Bier sein soll.",q:"Dulle Griet, Vrijdagmarkt, Gent"}]},
+      {title:"Yalo Bar",text:"Cocktailbar im eigenen Hotel, Rock-’n’-Roll-Ambiente, kein Heimweg. Die Dachterrasse ist im November zu, die Bar unten nicht.",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent"},
+      {title:"Amigo",text:"Cocktails mit eigenem Twist an der Stapelplein, unten ein kleiner Club. Wenn ihr noch tanzen wollt.",q:"Amigo, Sluizekenkaai 1, Gent"},
+      {title:"Amaro",text:"Italienische Cocktails, Spritz und Digestifs. Stilvoll und etwas ruhiger.",q:"Amaro, Annonciadenstraat 21, Gent"},
+      {title:"Hot Club de Gand",text:"Live-Gypsy-Jazz in einem versteckten Hinterhof am Groentenmarkt, mit Wein statt Cocktail.",q:"Hot Club de Gand, Gent"}]},
 
     /* ---------- SONNTAG ---------- */
     {id:"u1",day:"so",start:"09:00",end:"09:50",title:"Frühstück und Koffer packen",place:"Hotel",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent",mode:"walking",prio:"must",tags:["logistik"],
@@ -339,26 +377,36 @@ window.TRIP = {
      alts:[{title:"Snack und direkt los",text:"Belgische Fritten auf die Hand und früher nach Brügge, dann bleibt mehr Zeit im Groeningemuseum.",q:"frituur Gent centrum"}]},
     {id:"u6",day:"so",start:"13:15",end:"14:10",title:"Fahrt nach Brügge",place:"ca. 50 km, 45 bis 55 Min.",q:"Kanunnik Duclosstraat 1, 8000 Brugge",mode:"driving",prio:"must",tags:["logistik"],
      text:"Über die E40. Das Jonojé liegt am Stadtrand, also kein Stress mit der autofreien Altstadt.",
-     tip:"Passt genau in die Fahrtzeit: „The Rest Is History“, Folge 271 über Jan van Eyck (43 Min., englisch). Danach seht ihr im Groeningemuseum seine Madonna."},
+     tip:"Passt genau in die Fahrtzeit: „The Rest Is History“, Folge 271 über Jan van Eyck (43 Min., englisch). Danach seht ihr im Groeningemuseum seine Madonna.",
+     alts:[
+      {title:"Umweg ans Meer: Ostende",text:"Gent → Ostende ca. 1 Std. Dort Mu.ZEE, das Museum für belgische Moderne (Ensor, Spilliaert, Permeke), Spaziergang auf der Strandpromenade und Garnelenkroketten an den Fischständen am Hafen. Danach 25 Min. nach Brügge, Check-in im Jonojé bis 21 Uhr. Der Haken: Das Groeningemuseum fällt weg, denn montags ist es geschlossen.",q:"Mu.ZEE, Romestraat 11, Oostende",url:"https://www.muzee.be"},
+      {title:"Umweg ans Meer: Knokke",text:"Das schicke Seebad mit der größten Galeriendichte Belgiens. Viele Galerien und Läden haben sonntags geöffnet. Strandspaziergang, ein Glas Wein am Zeedijk, dann 25 Min. nach Brügge. Auch hier fällt das Groeningemuseum weg.",q:"Kustlaan, Knokke-Heist"},
+      {title:"Kurz ans Meer: De Haan",text:"Kleines Belle-Époque-Seebad, ruhig und hübsch. Eine Stunde Strand und Wind, dann weiter nach Brügge. Mit Glück reicht es danach noch für eine kurze Runde im Groeningemuseum (Einlass bis ca. 16:30 Uhr).",q:"De Haan, Belgie"}]},
     {id:"u7",day:"so",start:"14:10",end:"14:45",title:"Check-in Jonojé Luxury Suites",place:"Designsuiten von Studio LOHO",q:"Jonojé Luxury Suites, Kanunnik Duclosstraat 1, 8000 Brugge",mode:"driving",prio:"must",tags:["logistik"],
      text:"Check-in von 14 bis 21 Uhr. Rund 75 m² große Suiten mit freistehenden Lehmbadewannen, selbst ein kleines Designstück.",
      tip:"Ins Zentrum: Taxi rufen lassen oder mit dem Auto zum Parkplatz Centrum-Station fahren. Dort ist das Parken günstig und der Bus in die Altstadt ist im Preis enthalten."},
-    {id:"u8",day:"so",start:"15:00",end:"16:30",title:"Groeningemuseum",place:"Dijver 12",q:"Groeningemuseum, Dijver 12, Brugge",mode:"walking",prio:"must",tags:["kunst","klassiker"],
+    {id:"u8",day:"so",start:"15:00",end:"16:15",title:"Groeningemuseum",place:"Dijver 12",q:"Groeningemuseum, Dijver 12, Brugge",mode:"walking",prio:"must",tags:["kunst","klassiker"],
      text:"Flämische Primitive: Van Eycks „Madonna des Kanonikus van der Paele“, Memling, Bosch. Danach belgische Moderne mit Magritte, Delvaux und Permeke, also von Gold bis Abstraktion in einem Haus.",
      tip:"Sonntag bis 17 Uhr geöffnet, montags geschlossen. Darum heute.",
      url:"https://www.museabrugge.be",urlLabel:"museabrugge.be",
      alts:[{title:"Sint-Janshospitaal",text:"Mittelalterliches Spital mit den Memling-Werken, kleiner und ruhiger.",q:"Sint-Janshospitaal, Mariastraat, Brugge"}]},
-    {id:"u9",day:"so",start:"16:30",end:"17:30",title:"Blaue Stunde: Rozenhoedkaai, Burg, Markt",place:"Die Postkarten-Runde",q:"Rozenhoedkaai, Brugge",mode:"walking",prio:"must",tags:["klassiker"],
-     text:"Der berühmteste Blick Brügges: Belfried über dem Kanal. Dann über den Burg zum Markt, wenn die Lichter angehen.",
+    {id:"u8b",day:"so",start:"16:25",end:"17:10",title:"Belfried Brügge zum Sonnenuntergang",place:"366 Stufen am Markt",q:"Belfort, Markt 7, Brugge",mode:"walking",prio:"must",tags:["klassiker"],
+     text:"Oben auf dem 83 m hohen Turm zusehen, wie die Sonne gegen 16:55 Uhr über den Dächern untergeht. Unterwegs kommt ihr an der Schatzkammer und dem riesigen Glockenspiel vorbei.",
+     tip:"Tickets mit Zeitfenster vorab online kaufen, die Treppe ist eng und der Einlass begrenzt. Letzten Einlass vorher prüfen.",
+     url:"https://www.museabrugge.be",urlLabel:"Tickets"},
+    {id:"u9",day:"so",start:"17:15",end:"17:45",title:"Blaue Stunde: Rozenhoedkaai und Burg",place:"Die Postkarten-Runde",q:"Rozenhoedkaai, Brugge",mode:"walking",prio:"must",tags:["klassiker"],
+     text:"Vom Belfried hinunter über den Burg zum Rozenhoedkaai: der berühmteste Blick Brügges, der Turm über dem Kanal, genau wenn die Lichter angehen.",
      tip:"Der Weihnachtsmarkt und das Lichtfestival Winter Glow starten erst am 20. November. Dafür ist es jetzt angenehm leer."},
-    {id:"u10",day:"so",start:"17:30",end:"18:15",title:"The Chocolate Line",place:"Simon Stevinplein",q:"The Chocolate Line, Simon Stevinplein, Brugge",mode:"walking",prio:"top",tags:["food","shopping","kunst"],
+    {id:"u10",day:"so",start:"17:50",end:"18:20",title:"The Chocolate Line",place:"Simon Stevinplein",q:"The Chocolate Line, Simon Stevinplein, Brugge",mode:"walking",prio:"top",tags:["food","shopping","kunst"],
      text:"Dominique Persoone, der „Shock-o-latier“: Pralinen mit ungewöhnlichen Aromen wie Wasabi, Speck oder Cola. Schokolade als Konzeptkunst.",
      alts:[{title:"Dumon",text:"Klassische, handgemachte Pralinen. Familienbetrieb.",q:"Chocolatier Dumon, Brugge"}]},
-    {id:"u11",day:"so",start:"18:15",end:"19:15",title:"Aperitif in De Garre",place:"Versteckt in einer Gasse am Markt",q:"De Garre, Brugge",mode:"walking",prio:"top",tags:["food"],
-     text:"Winzige Kneipe in einem schmalen Durchgang. Hier gibt es die hauseigene Tripel van de Garre (11 %) mit einem Stück Käse.",
+    {id:"u11",day:"so",start:"18:25",end:"19:20",title:"Wein und Jazz im Est",place:"Weinbar in der Braambergstraat",q:"Wijnbar Est, Braambergstraat 7, Brugge",mode:"walking",prio:"top",tags:["food"],
+     text:"Gemütliche Weinbar mit Tapas, sonntagabends oft mit Live-Jazz. Fünf Minuten vom Burg.",
+     tip:"Die Quellen sind sich bei den Sonntagszeiten uneinig. Kurz in Google Maps prüfen.",
      alts:[
-      {title:"Le Trappiste",text:"Bierbar in einem Gewölbekeller aus dem 13. Jahrhundert.",q:"Le Trappiste, Kemelstraat, Brugge"},
-      {title:"’t Brugs Beertje",text:"Legendäres Bierlokal, sehr klein und sehr kundig.",q:"t Brugs Beertje, Brugge"}]},
+      {title:"Bar Bulles",text:"Champagnerbar im Hotel Le Foulage. Passt zum Geburtstagswochenende.",q:"Bar Bulles, Oostmeers, Brugge"},
+      {title:"Blend Wijnbar",text:"Kleine, intime Weinbar mit Fokus auf Riesling und Pinot. Sonntags geöffnet.",q:"Blend wijnbar, Brugge"},
+      {title:"Lucy",text:"Weinbar und Weinladen mit kleinen Gerichten in der Ezelstraat.",q:"Lucy wine bar, Ezelstraat 4, Brugge"}]},
     {id:"u12",day:"so",start:"19:30",end:"21:30",title:"Abendessen in Brügge",place:"Assiette Blanche, am Burg",q:"Assiette Blanche, Brugge",mode:"walking",prio:"must",tags:["food"],
      text:"Bei Einheimischen beliebt, feine saisonale Küche ohne Touristenrummel.",
      tip:"Sonntags haben viele gute Restaurants Ruhetag. Vorher reservieren und Öffnung prüfen.",
@@ -378,9 +426,10 @@ window.TRIP = {
      alts:[{title:"Brauerei De Halve Maan",text:"Führung durch die letzte Brauerei in der Altstadt, mit Dachblick. Ganz in der Nähe.",q:"De Halve Maan, Walplein 26, Brugge",url:"https://www.halvemaan.be"}]},
     {id:"m3",day:"mo",start:"10:40",end:"11:10",title:"Bootsfahrt über die Grachten",place:"Anleger am Rozenhoedkaai",q:"Rozenhoedkaai, Brugge",mode:"walking",prio:"top",tags:["klassiker"],
      text:"30 Minuten Brügge vom Wasser aus, unter tiefen Brücken hindurch. Im November wetterabhängig, also einfach am Steg fragen."},
-    {id:"m4",day:"mo",start:"11:15",end:"12:00",title:"Belfried erklimmen",place:"366 Stufen am Markt",q:"Belfort, Markt 7, Brugge",mode:"walking",prio:"optional",tags:["klassiker"],
-     text:"Auch montags geöffnet. Oben der Blick bis zur Küste, wenn es klar ist.",
-     alts:[{title:"Letzte Einkäufe",text:"Jūttu (Concept Store mit jungen belgischen Labels) in der Noordzandstraat, Goûts et Couleurs (nordisches Design), Diksmuids Boterhuis (Käse und Butter).",q:"Juttu, Noordzandstraat, Brugge"},
+    {id:"m4",day:"mo",start:"11:15",end:"12:00",title:"Letzte Einkäufe",place:"Noordzandstraat · Geldmuntstraat",q:"Juttu, Noordzandstraat, Brugge",mode:"walking",prio:"optional",tags:["shopping"],
+     text:"Jūttu (Concept Store mit jungen belgischen Labels), Goûts et Couleurs (nordisches Design), Diksmuids Boterhuis (Käse und Butter). Pralinen für zuhause bei Dumon.",
+     tip:"Manche kleinen Läden öffnen montags spät oder gar nicht. Vorher in Google Maps nachsehen.",
+     alts:[{title:"Belfried bei Tageslicht",text:"Falls es am Sonntag nicht geklappt hat: auch montags geöffnet, bei klarem Wetter mit Blick bis zur Küste.",q:"Belfort, Markt 7, Brugge"},
       {title:"Sint-Anna-Viertel",text:"Das Viertel der Einheimischen: Café Vlissinghe (Kneipe seit 1515), das Kantcentrum mit echter Brügger Spitze und die Windmühlen am Kruisvest.",q:"Café Vlissinghe, Blekersstraat, Brugge"}]},
     {id:"m5",day:"mo",start:"12:00",end:"13:00",title:"Mittag: Fritten oder Brunch",place:"Chez Vincent",q:"Chez Vincent, Sint-Salvatorskerkhof, Brugge",mode:"walking",prio:"top",tags:["food"],
      text:"Belgische Fritten, zweimal frittiert, mit hausgemachten Saucen. Gilt als eine der besten Frittenbuden der Stadt.",
@@ -399,13 +448,10 @@ window.TRIP = {
     {city:"Gent",cat:"Kunst",name:"Design Museum Gent",text:"Seit Oktober 2026 mit neuem Flügel wiedereröffnet. Belgiens größtes Designmuseum.",q:"Design Museum Gent",url:"https://www.designmuseumgent.be"},
     {city:"Gent",cat:"Kunst",name:"MSK Gent",text:"Bosch bis Moderne, plus das Restaurierungsatelier des Genter Altars.",q:"MSK Gent",url:"https://mskgent.be"},
     {city:"Gent",cat:"Kunst",name:"Werregarenstraatje",text:"Legale Graffiti-Gasse, jede Woche anders.",q:"Werregarenstraatje, Gent"},
-    {city:"Gent",cat:"Essen",name:"Vrijmoed",text:"Michelin-Sterne, gemüsebetont, direkt beim Hotel. Reservieren.",q:"Vrijmoed, Gent"},
-    {city:"Gent",cat:"Essen",name:"Rizoom",text:"Offenes Feuer, Fermentation, intimer Raum.",q:"Rizoom, Gent"},
     {city:"Gent",cat:"Essen",name:"Boris & Maurice",text:"Romantisches Bistro im Patershol, Bib Gourmand.",q:"Boris & Maurice, Gent"},
     {city:"Gent",cat:"Essen",name:"Bar Bask",text:"Baskischer Grill in alter Tankstelle an der Schelde.",q:"Bar Bask, Gent"},
     {city:"Gent",cat:"Essen",name:"Commotie",text:"Gault&Millau-Tipp im Patershol.",q:"Commotie, Gent"},
     {city:"Gent",cat:"Essen",name:"De Vitrine",text:"Brasserie von Kobe Desramaults am Brabantdam.",q:"De Vitrine, Brabantdam, Gent"},
-    {city:"Gent",cat:"Essen",name:"Publiek",text:"Michelin-Stern, kreativ und gemüsestark.",q:"Publiek, Gent"},
     {city:"Gent",cat:"Essen",name:"Holy Food Market",text:"Food-Hall in einer Kapelle aus dem 16. Jahrhundert.",q:"Holy Food Market, Gent"},
     {city:"Gent",cat:"Essen",name:"Roots",text:"Bistro im Patershol, ehrlich und fair.",q:"Roots restaurant Patershol Gent"},
     {city:"Gent",cat:"Süßes",name:"Joost Arijs",text:"Pâtisserie und Pralinen auf Kunstniveau.",q:"Joost Arijs, Gent"},
@@ -420,6 +466,17 @@ window.TRIP = {
     {city:"Gent",cat:"Läden",name:"Tierenteyn-Verlent",text:"Senf seit 1790, aus dem Holzfass abgefüllt.",q:"Tierenteyn-Verlent, Gent"},
     {city:"Gent",cat:"Läden",name:"Serpentstraat & Onderbergen",text:"Kleine Boutiquen und Concept Stores abseits der Veldstraat.",q:"Serpentstraat, Gent"},
     {city:"Gent",cat:"Läden",name:"Blumenmarkt Kouter",text:"Sonntagvormittag, mit Sekt am Kiosk.",q:"Kouter, Gent"},
+    {city:"Gent",cat:"Essen",name:"Amigo",text:"Sharing-Plates, Cocktails, am Wochenende Club im Keller. Stapelplein.",q:"Amigo, Sluizekenkaai 1, Gent"},
+    {city:"Gent",cat:"Essen",name:"Guerilla",text:"Street-Food und Burger, locker und fair.",q:"Guerilla, Gent"},
+    {city:"Gent",cat:"Essen",name:"Pakhuis",text:"Brasserie im alten Lagerhaus, Genter Klassiker.",q:"Pakhuis, Schuurkenstraat, Gent"},
+    {city:"Gent",cat:"Essen",name:"Le Chouchou",text:"Euer eigener Tipp. In Google Maps prüfen.",q:"Le Chouchou, Gent"},
+    {city:"Gent",cat:"Essen",name:"Yalo Restaurant & Bar",text:"Im Hotel: Sharing-Plates und Cocktails im Rock-’n’-Roll-Stil. Dachterrasse nur im Sommer.",q:"Yalo Urban Boutique Hotel, Brabantdam 33, 9000 Gent"},
+    {city:"Gent",cat:"Bars",name:"Edelrot",text:"Naturweinbar am Belfried, mit Kleinigkeiten.",q:"Edelrot, Belfortstraat, Gent"},
+    {city:"Gent",cat:"Bars",name:"Amaro",text:"Italienische Aperitivo-Bar: Spritz, Wein, Cocktails.",q:"Amaro, Annonciadenstraat 21, Gent"},
+    {city:"Gent",cat:"Bars",name:"Wijnbar ONA",text:"Elegante Weinbar am Nederkouter, nah am Hotel.",q:"Wijnbar ONA, Nederkouter, Gent"},
+    {city:"Brügge",cat:"Bars",name:"Wijnbar Est",text:"Weinbar mit Tapas, sonntags oft Live-Jazz.",q:"Wijnbar Est, Braambergstraat 7, Brugge"},
+    {city:"Brügge",cat:"Bars",name:"Bar Bulles",text:"Champagnerbar im Hotel Le Foulage.",q:"Bar Bulles, Oostmeers, Brugge"},
+    {city:"Brügge",cat:"Bars",name:"Blend Wijnbar",text:"Intime Weinbar, Riesling und Pinot.",q:"Blend wijnbar, Brugge"},
     {city:"Gent",cat:"Läden",name:"Billierose",text:"Gilt bei Gentern als schönster Concept Store der Stadt: Mode, Interior, Geschenke.",q:"Billierose, Gent"},
     {city:"Gent",cat:"Läden",name:"Au Nom Du Pied",text:"Mode-Concept-Store mit Pariser Flair.",q:"Au Nom Du Pied, Gent"},
     {city:"Gent",cat:"Läden",name:"Koperhuis",text:"Design- und Lifestyle-Laden, von Locals empfohlen.",q:"Koperhuis, Gent"},
@@ -431,6 +488,8 @@ window.TRIP = {
     {city:"Gent",cat:"Insider",name:"Lichtplan nach 22 Uhr",text:"Gent beleuchtet seine Gebäude nach einem eigenen Plan. Spät am Abend an der Korenlei ist es fast menschenleer.",q:"Korenlei, Gent"},
     {city:"Brügge",cat:"Kunst",name:"Groeningemuseum",text:"Van Eyck, Memling, Bosch, dann Magritte und Delvaux. Montags zu.",q:"Groeningemuseum, Brugge",url:"https://www.museabrugge.be"},
     {city:"Brügge",cat:"Kunst",name:"Sint-Janshospitaal",text:"Memling im mittelalterlichen Spital. Montags zu.",q:"Sint-Janshospitaal, Brugge"},
+    {city:"Brügge",cat:"Kunst",name:"Mu.ZEE Ostende (am Meer)",text:"Belgische Moderne am Meer: Ensor, Spilliaert, Permeke. 25 Min. von Brügge, montags geschlossen.",q:"Mu.ZEE, Oostende",url:"https://www.muzee.be"},
+    {city:"Brügge",cat:"Insider",name:"Galerien in Knokke",text:"Das Seebad hat die größte Galeriendichte Belgiens, viele sonntags offen. 25 Min. von Brügge.",q:"Kustlaan, Knokke-Heist"},
     {city:"Brügge",cat:"Kunst",name:"Arentshof",text:"Kleiner Garten mit den Bronzereitern von Rik Poot, frei zugänglich.",q:"Arentshof, Brugge"},
     {city:"Brügge",cat:"Kunst",name:"Concertgebouw",text:"Moderne Architektur aus Terrakotta-Ziegeln, mit Klang-Parcours und Dachterrasse.",q:"Concertgebouw Brugge"},
     {city:"Brügge",cat:"Essen",name:"Assiette Blanche",text:"Bei Einheimischen beliebt, am Burg.",q:"Assiette Blanche, Brugge"},
@@ -471,12 +530,34 @@ window.TRIP = {
     {when:"Audioguide Brügge",name:"Stadtrundgang aufs Handy",text:"Selbstgeführte Audio-Touren durch die Altstadt gibt es auf Deutsch für ein paar Euro, z. B. über Musement. Kopfhörer einpacken.",url:"https://www.musement.com/de/brugge/self-guided-audio-tour-of-historic-bruges-488623/"}
   ],
   knowhow:[
-    ["Umweltzone","Gent (und Antwerpen) haben eine Umweltzone. Ausländische Autos müssen vorher registriert werden, das ist kostenlos. Brügge hat keine Umweltzone."],
-    ["Parken Gent","Hotelgarage Yalo: Zufahrt Vlaanderenstraat 26. Nicht die Hoteladresse ins Navi eingeben."],
-    ["Parken Brügge","Die Altstadt ist fast autofrei. Am günstigsten: Parkplatz Centrum-Station, Busticket ins Zentrum ist inklusive."],
-    ["Montags","Die meisten Museen in Gent und Brügge haben montags geschlossen. Der Plan ist darauf ausgelegt."],
-    ["Licht","Sonnenaufgang gegen 8:10 Uhr, Sonnenuntergang gegen 16:55 Uhr. Blaue Stunde bis ca. 17:30 Uhr."],
-    ["Öffnungszeiten","Alle Zeiten sind sorgfältig geplant, Öffnungszeiten können sich aber ändern. Im Zweifel den Link zu Google Maps öffnen und dort nachsehen."]
+    {group:"Gent",items:[
+      ["Die Stadt","Rund 270.000 Einwohner, davon zehntausende Studierende. Im Mittelalter nach Paris eine der größten Städte nördlich der Alpen, reich geworden mit Tuchhandel."],
+      ["Die Stropdragers","Die Genter heißen „Stropdragers“, Schlingenträger. 1540 ließ Kaiser Karl V., selbst in Gent geboren, rebellierende Bürger mit einer Schlinge um den Hals um Vergebung bitten. Heute tragen die Genter das als Ehrenzeichen."],
+      ["Der gestohlene Richter","1934 wurde die Tafel „Die gerechten Richter“ aus dem Genter Altar gestohlen. Sie ist bis heute verschwunden, im Altar hängt eine Kopie. Schaut am Samstag mal genau hin."],
+      ["Lichtplan","Gent beleuchtet Gebäude, Brücken und Kais nach einem durchdachten Konzept mit warmem Licht. Abends lohnt jeder Umweg am Wasser entlang."],
+      ["Veggie-Hauptstadt","Gent hat als erste Stadt der Welt einen offiziellen Veggie-Tag eingeführt (Donnerstag). Vegetarisch essen ist hier überall einfach."],
+      ["Mobilität","Die Innenstadt ist in Sektoren geteilt. Mit dem Auto kommt man nicht direkt von einem Sektor in den nächsten. Deshalb bleibt das Auto in der Hotelgarage, alles ist zu Fuß erreichbar."]]},
+    {group:"Brügge",items:[
+      ["Die Stadt","Die ganze Altstadt ist UNESCO-Welterbe. Im 15. Jahrhundert war Brügge das Handelszentrum Nordeuropas, dann versandete der Zugang zum Meer und die Stadt blieb wie eingefroren."],
+      ["Venedig des Nordens","Die Grachten waren Handelswege. Heute fahren nur noch die Ausflugsboote, die Lizenzen dafür sind seit Jahrzehnten in denselben Familien."],
+      ["Schwäne am Minnewater","Der Legende nach musste Brügge zur Strafe für eine Hinrichtung im 15. Jahrhundert für immer Schwäne halten. Die Stadt tut das bis heute."],
+      ["Spitze","Echte Brügger Klöppelspitze ist teuer und selten. Was in Souvenirläden billig hängt, ist meist Import. Echte Ware gibt es im Kantcentrum."],
+      ["Parken","Die Altstadt ist fast autofrei. Am günstigsten ist der Parkplatz Centrum-Station, das Busticket ins Zentrum ist inklusive."]]},
+    {group:"Praktisch",items:[
+      ["Umweltzone","Gent und Antwerpen haben eine Umweltzone. Deutsche Autos vorher kostenlos registrieren. Brügge hat keine."],
+      ["Parken Gent","Hotelgarage Yalo: Zufahrt Vlaanderenstraat 26. Nicht die Hoteladresse ins Navi eingeben."],
+      ["Montags","Die meisten Museen haben montags geschlossen, viele kleine Läden sonntags. Der Plan ist darauf ausgelegt."],
+      ["Licht und Wetter","Sonnenaufgang gegen 8:10 Uhr, Sonnenuntergang gegen 16:55 Uhr. Tagsüber um die 8 bis 11 °C, oft Wind und Nieselregen. Feste Schuhe fürs Kopfsteinpflaster."],
+      ["Bezahlen","Karte und Handy gehen fast überall. Für Toiletten (oft 50 Cent bis 1 €) und die Cuberdon-Wagen etwas Kleingeld einstecken."],
+      ["Trinkgeld","Der Service ist im Preis enthalten. Wer zufrieden war, rundet auf oder gibt 5 bis 10 %."],
+      ["Wein statt Bier","Belgien ist Bierland, aber Gent und Brügge haben eine lebendige Weinszene, vor allem mit Naturweinen. Inzwischen gibt es sogar belgischen Wein und Sekt, fragt danach."],
+      ["Notfall","Notruf 112. Apotheken mit Notdienst findet man unter apotheek.be."],
+      ["Öffnungszeiten","Alle Zeiten sind sorgfältig geplant, können sich aber ändern. Im Zweifel bei Google Maps nachsehen."]]},
+    {group:"Flämisch für drei Tage",items:[
+      ["Sprache","In Gent und Brügge spricht man Niederländisch (Flämisch). Englisch und Deutsch gehen gut, Französisch kommt weniger gut an."],
+      ["Hallo · Danke · Bitte","Hallo / Goeiedag · Dank u wel · Alstublieft"],
+      ["Prost · Guten Appetit","Santé oder Schol · Smakelijk"],
+      ["Alles Gute zum Geburtstag","Gelukkige verjaardag! Das darf man ruhig der Bedienung beim Dinner verraten."]]}
   ]
 };
 </script>
@@ -646,9 +727,14 @@ function renderYou(){
   <p style="margin:0 0 12px">Ich mag unser Leben in allen Größen: Ausmisten und Sperrmüll, tiefe Gespräche über alles Mögliche, unser Spiel, uns Geschichten zu erzählen, gern auch zum zweiten oder dritten Mal. Ich mag unseren gemeinsamen Humor und dass wir trotzdem ganz verschiedene Interessen haben, digitale und sehr analoge. Genau so ergänzen wir uns.</p>
   <p style="margin:0">Ich bin glücklich, dich auf diese andere Weise kennengelernt zu haben, und freue mich auf die nächsten Jahre und Jahrzehnte mit dir, ab sofort. Möge dieses Wochenende ein weiteres Puzzlestück für unsere Zukunft sein und eine kleine Flucht aus dem Alltag, die du von der ersten bis zur letzten Minute genießt.</p>
   <div class="sig">Alles Gute zum 49., Honey.<br>Dein Alexander</div>`;
-  $("#audioList").innerHTML=T.audio.map(a=>`<div class="tipc"><div class="top"><h4>${esc(a.name)}</h4></div><span class="cat">${esc(a.when)}</span><p>${esc(a.text)}</p><div class="row"><a class="btn small" href="${esc(a.url)}" target="_blank" rel="noopener">${ico.link}Öffnen</a></div></div>`).join("");
-  $("#knowhow").innerHTML=`<div class="tipc" style="margin-bottom:10px"><h4>Erinnerungen aufs Handy</h4><p>Alle Programmpunkte als Kalendertermine, jeweils mit Erinnerung 15 Minuten vorher. Einmal öffnen und „Alle hinzufügen“ tippen.</p><div class="row"><a class="btn small primary" href="https://alexanderwskowronek-cloud.github.io/fuer-sarah/reise.ics" target="_blank" rel="noopener">${ico.link}In den Kalender</a></div></div><ol class="tl">${T.knowhow.map(([h,t])=>`<li class="item" style="grid-template-columns:1fr"><div class="c" style="padding:12px 14px"><h3>${esc(h)}</h3><div class="place" style="font-size:14px">${esc(t)}</div></div></li>`).join("")}</ol>`;
   paintGift();
+}
+function renderRoad(){
+  $("#calBox").innerHTML=`<div class="tipc"><h4>Erinnerungen aufs Handy</h4><p>Alle Programmpunkte als Kalendertermine, jeweils mit Erinnerung 15 Minuten vorher. Einmal öffnen und „Alle hinzufügen“ tippen.</p><div class="row"><a class="btn small primary" href="https://alexanderwskowronek-cloud.github.io/fuer-sarah/reise.ics" target="_blank" rel="noopener">${ico.link}In den Kalender</a></div></div>`;
+  $("#audioList").innerHTML=T.audio.map(a=>`<div class="tipc"><div class="top"><h4>${esc(a.name)}</h4></div><span class="cat">${esc(a.when)}</span><p>${esc(a.text)}</p><div class="row"><a class="btn small" href="${esc(a.url)}" target="_blank" rel="noopener">${ico.link}Öffnen</a></div></div>`).join("");
+}
+function renderKnow(){
+  $("#knowhow").innerHTML=T.knowhow.map(g=>`<div class="kgroup"><h3>${esc(g.group)}</h3>${g.items.map(([h,t])=>`<div class="tipc"><h4>${esc(h)}</h4><p>${esc(t)}</p></div>`).join("")}</div>`).join("");
 }
 
 /* ---------- generative art ---------- */
@@ -669,26 +755,28 @@ function gables(x,w,h,base,col,r){ // Flemish stepped gables skyline
   }
 }
 function compose(c,seed,{sky=true}={}){
-  const {x,w,h}=sizeCanvas(c), r=rng(seed), P=palette();
-  x.fillStyle=sky?"#1b2a6b":cssVar("--card"); x.fillRect(0,0,w,h);
-  if(!sky){x.fillStyle=cssVar("--paper");x.fillRect(0,0,w,h);}
-  // colour fields
-  const n=7+Math.floor(r()*5);
+  // Yves-Klein-Blau als Grund, Neonformen darauf, Treppengiebel als Silhouette
+  const {x,w,h}=sizeCanvas(c), r=rng(seed);
+  const NEON=["#e4ff1a","#ff2d87","#00e5d4","#ff7a1a","#b6ff3b","#ffffff"];
+  const g=x.createLinearGradient(0,0,0,h); g.addColorStop(0,"#0036c2"); g.addColorStop(1,"#002589");
+  x.fillStyle=g; x.fillRect(0,0,w,h);
+  const n=(sky?7:9)+Math.floor(r()*5);
   for(let i=0;i<n;i++){
-    const col=P[Math.floor(r()*P.length)]; x.globalAlpha=sky?0.55+r()*0.35:0.85; x.fillStyle=col;
+    const col=NEON[Math.floor(r()*(sky?NEON.length-1:NEON.length))];
+    x.globalAlpha=sky?0.7+r()*0.3:0.9; x.fillStyle=col; x.strokeStyle=col;
+    x.shadowColor=col; x.shadowBlur=sky?18:24;
     const k=r();
-    if(k<.4){x.beginPath();x.arc(r()*w,r()*h*.8,10+r()*Math.min(w,h)*.32,0,Math.PI*2);x.fill();}
-    else if(k<.75){x.save();x.translate(r()*w,r()*h);x.rotate((r()-.5)*.6);x.fillRect(-r()*80,-r()*40,40+r()*w*.35,14+r()*h*.3);x.restore();}
-    else{x.beginPath();x.arc(r()*w,h*(.3+r()*.5),30+r()*120,Math.PI,Math.PI*2);x.lineWidth=6+r()*10;x.strokeStyle=col;x.stroke();}
+    if(k<.35){x.beginPath();x.arc(r()*w,r()*h*.8,8+r()*Math.min(w,h)*.26,0,Math.PI*2);x.fill();}
+    else if(k<.6){x.save();x.translate(r()*w,r()*h);x.rotate((r()-.5)*.6);x.fillRect(-r()*80,-r()*40,30+r()*w*.3,10+r()*h*.22);x.restore();}
+    else{x.beginPath();x.arc(r()*w,h*(.3+r()*.5),30+r()*120,Math.PI,Math.PI*2);x.lineWidth=4+r()*7;x.stroke();}
   }
-  x.globalAlpha=1;
-  // thin lines like a Belgian abstract grid
-  x.strokeStyle=sky?"rgba(255,255,255,.35)":cssVar("--ink"); x.lineWidth=1.5;
+  x.globalAlpha=1; x.shadowBlur=0;
+  // feine Linien
+  x.strokeStyle="rgba(255,255,255,.4)"; x.lineWidth=1.2;
   for(let i=0;i<3;i++){const y=h*(.15+r()*.6);x.beginPath();x.moveTo(0,y);x.lineTo(w,y+(r()-.5)*40);x.stroke();}
-  // skyline
-  gables(x,w,h,sky?34:h*.12,sky?"rgba(10,14,40,.82)":cssVar("--ink"),r);
-  // canal reflection
-  if(sky){x.fillStyle="rgba(10,14,40,.9)";x.fillRect(0,h-6,w,6);}
+  // Skyline
+  gables(x,w,h,sky?34:h*.12,"rgba(0,10,48,.88)",r);
+  x.fillStyle="#e4ff1a"; x.shadowColor="#e4ff1a"; x.shadowBlur=10; x.fillRect(0,h-3,w,3); x.shadowBlur=0;
 }
 function paintHero(){
   const n=now(); const d=dayOfDate(n); const seed=(d?d.date:"2026-11-14").replace(/-/g,"")*1+(d&&d.id==="sa"?49:0);
@@ -724,7 +812,7 @@ function show(v){
   store.view=v; save();
   $$(".view").forEach(s=>s.hidden=s.id!=="v-"+v);
   $$("nav.tabs button").forEach(b=>{if(b.dataset.view===v)b.setAttribute("aria-current","page");else b.removeAttribute("aria-current");});
-  if(v==="now")renderNow(); if(v==="plan")renderDays(); if(v==="tips")renderTips(); if(v==="you")renderYou();
+  if(v==="now")renderNow(); if(v==="plan")renderDays(); if(v==="tips")renderTips(); if(v==="you")renderYou(); if(v==="road")renderRoad(); if(v==="know")renderKnow();
   window.scrollTo({top:0});
 }
 function rerender(){ if(store.view==="now")renderNow(); if(store.view==="plan")renderDays(); }
@@ -756,7 +844,7 @@ function tick(){
 
 /* boot */
 paintHero();
-show(store.view&&["now","plan","tips","you"].includes(store.view)?store.view:"now");
+show(store.view&&["now","plan","tips","road","know","you"].includes(store.view)?store.view:"now");
 loadWeather();
 setInterval(tick,30000);
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)tick();});
