@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /fuer-sarah/
+
+Sitemap: https://alexanderwskowronek-cloud.github.io/sitemap.xml
