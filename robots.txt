@@ -1,4 +1,28 @@
 User-agent: *
 Disallow: /fuer-sarah/
 
+User-agent: GPTBot
+Allow: /
+Disallow: /fuer-sarah/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /fuer-sarah/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /fuer-sarah/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /fuer-sarah/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /fuer-sarah/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /fuer-sarah/
+
 Sitemap: https://alexanderwskowronek-cloud.github.io/sitemap.xml
