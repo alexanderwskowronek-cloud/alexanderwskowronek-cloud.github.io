@@ -1,6 +1,6 @@
 # iOS-Apps eines unabhängigen Entwicklers
 
-> Diese Website gehört zu iOS-Apps eines unabhängigen Entwicklers aus Deutschland. Die Apps kommen ohne Konto und ohne Werbung aus und verarbeiten Daten auf dem Gerät. Jede App hat eine eigene Seite mit Support, Datenschutz und teils Ratgebern. Die Inhalte sind auf Deutsch, Stand November 2026.
+> Diese Website gehört zu iOS-Apps eines unabhängigen Entwicklers aus Deutschland. Die Apps brauchen kein Konto und verarbeiten Daten auf dem Gerät. Jede App hat eine eigene Seite mit Support, Datenschutz und teils Ratgebern. Die Inhalte sind auf Deutsch, Stand November 2026.
 
 Die Kontaktadresse für Support steht auf der Seite der jeweiligen App.
 
