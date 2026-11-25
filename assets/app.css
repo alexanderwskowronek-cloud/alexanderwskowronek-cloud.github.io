@@ -1,0 +1,93 @@
+/* Larkminds-Rahmen für App-Seiten (ergänzt style.css). Raster 8 pt.
+   Die App-Akzentfarbe (--app) bleibt dekorativ: Linie unter der App-Leiste. */
+
+.app-leiste { background: var(--firn); border-top: 1px solid var(--salbei); border-bottom: 3px solid var(--app, var(--latsche)); }
+.app-leiste .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; padding-block: 8px; }
+.app-name { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--latsche); text-decoration: none; min-height: 44px; }
+.app-name img { width: 32px; height: 32px; border-radius: 8px; box-shadow: 0 0 0 .5px rgb(0 0 0 / .12); }
+.app-nav { display: flex; flex-wrap: wrap; gap: 0 16px; font-size: .9375rem; margin-right: auto; }
+.app-nav a { color: var(--kleinblau); text-decoration: none; padding-block: 12px; }
+.app-nav a:hover, .app-nav a[aria-current="page"] { text-decoration: underline; }
+.knopf.store { min-height: 44px; font-size: 1rem; }
+
+.app-held { background: var(--firn); padding-block: 40px 32px; border-bottom: 1px solid var(--salbei); }
+.app-held .wrap { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 24px; align-items: start; }
+.app-held img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 0 0 .5px rgb(0 0 0 / .12), 0 4px 14px rgb(0 0 0 / .1); }
+.app-held h1 { margin: 8px 0 0; font: 600 clamp(2rem, 4.6vw, 3.5rem)/1.06 var(--font-display); letter-spacing: -.03em; color: var(--latsche); }
+.app-held .nutzen { margin: 16px 0 24px; font-size: clamp(1.0625rem, 1.5vw, 1.25rem); line-height: 1.45; color: var(--latsche-leise); max-width: 40rem; }
+@media (max-width: 30rem) { .app-held .wrap { grid-template-columns: 1fr; } .app-held img { width: 72px; height: 72px; border-radius: 16px; } }
+
+/* Inhalt der bisherigen Seiten, einheitlich gesetzt */
+.app-inhalt { padding-block: 32px 64px; max-width: 52rem; margin-inline: 0; color: var(--tinte); overflow-wrap: anywhere; }
+@media (min-width: 60rem) { .app-inhalt { margin-inline: auto; max-width: 52rem; } }
+.app-inhalt > :first-child { margin-top: 0; }
+.app-inhalt h1 { margin: 8px 0 16px; font: 600 clamp(2rem, 4.4vw, 3rem)/1.08 var(--font-display); letter-spacing: -.03em; color: var(--latsche); }
+.app-inhalt h2 { margin: 40px 0 8px; font: 600 clamp(1.375rem, 2.2vw, 1.75rem)/1.2 var(--font-display); letter-spacing: -.015em; color: var(--latsche); }
+.app-inhalt h3 { margin: 24px 0 8px; font: 600 1.125rem/1.3 var(--font-display); color: var(--latsche); }
+.app-inhalt h4 { margin: 16px 0 8px; color: var(--latsche); }
+.app-inhalt p, .app-inhalt li, .app-inhalt dd { color: var(--tinte-leise); }
+.app-inhalt p { margin: 8px 0 16px; }
+.app-inhalt ul, .app-inhalt ol { padding-left: 24px; margin: 8px 0 16px; }
+.app-inhalt li { margin: 4px 0; }
+.app-inhalt strong, .app-inhalt b { color: var(--tinte); }
+.app-inhalt a { color: var(--kleinblau); }
+.app-inhalt img, .app-inhalt video, .app-inhalt svg { max-width: 100%; height: auto; }
+.app-inhalt hr { border: 0; border-top: 1px solid var(--salbei); margin: 32px 0; }
+.app-inhalt code { font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+.app-inhalt blockquote { margin: 16px 0; padding: 8px 16px; border-left: 3px solid var(--salbei); }
+
+/* Bausteine der alten Seiten */
+.app-inhalt .lead, .app-inhalt .lede, .app-inhalt .sub, .app-inhalt .tagline, .app-inhalt .claim, .app-inhalt p.tag, .app-inhalt div.tag { font-size: 1.1875rem; line-height: 1.45; color: var(--latsche-leise); }
+.app-inhalt .crumbs, .app-inhalt nav[aria-label] { font-size: .875rem; color: var(--tinte-leise); margin: 0 0 8px; }
+.app-inhalt .stand, .app-inhalt .date, .app-inhalt .meta, .app-inhalt .quiet, .app-inhalt .legend, .app-inhalt .note, .app-inhalt .cta-note { font-size: .875rem; color: var(--tinte-leise); }
+.app-inhalt .card, .app-inhalt .karte, .app-inhalt .answer, .app-inhalt .honest, .app-inhalt .proof > div {
+  background: #FFFFFF; border: 1px solid var(--salbei); border-radius: 16px; padding: 16px 24px; margin: 16px 0; }
+.app-inhalt .card > :first-child, .app-inhalt .karte > :first-child, .app-inhalt .answer > :first-child { margin-top: 0; }
+.app-inhalt .answer { background: rgb(185 196 174 / .28); border-color: transparent; }
+.app-inhalt .answer p, .app-inhalt .answer li { color: var(--tinte); }
+.app-inhalt .grid, .app-inhalt .cards, .app-inhalt .guides, .app-inhalt .two, .app-inhalt .proof, .app-inhalt .facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 16px; margin: 16px 0; }
+.app-inhalt .facts { list-style: none; padding: 0; }
+.app-inhalt .grid > .card, .app-inhalt .cards > .card, .app-inhalt .proof > div { margin: 0; }
+.app-inhalt .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 16px; margin: 24px 0; }
+.app-inhalt figure { margin: 24px 0; }
+.app-inhalt figure img, .app-inhalt .shot img { border-radius: 16px; box-shadow: 0 0 0 .5px rgb(0 0 0 / .12); }
+.app-inhalt figcaption { font-size: .875rem; color: var(--tinte-leise); margin-top: 8px; }
+.app-inhalt span.tag, .app-inhalt .kicker { display: inline-block; font: 600 .8125rem/1.3 var(--font); letter-spacing: .08em; text-transform: uppercase; color: var(--latsche); }
+.app-inhalt .cta, .app-inhalt .btn, .app-inhalt .button, .app-inhalt .store-badge, .app-inhalt .secondary, .app-inhalt a.badge {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 22px; border: 1.5px solid var(--kleinblau);
+  background: transparent; color: var(--kleinblau); font-weight: 600; text-decoration: none; margin: 8px 8px 8px 0; }
+.app-inhalt .cta:hover, .app-inhalt .btn:hover, .app-inhalt .store-badge:hover { text-decoration: underline; }
+.app-inhalt .store-badge img { max-height: 40px; width: auto; }
+.app-inhalt .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.app-inhalt .tbl, .app-inhalt .table-scroll { overflow-x: auto; margin: 16px 0; -webkit-overflow-scrolling: touch; }
+.app-inhalt table { border-collapse: collapse; width: 100%; font-size: .9375rem; overflow-wrap: normal; }
+.app-inhalt th, .app-inhalt td { border-bottom: 1px solid var(--salbei); padding: 8px 12px; text-align: left; vertical-align: top; color: var(--tinte-leise); }
+.app-inhalt th { color: var(--tinte); font-weight: 600; }
+
+.app-inhalt details { border-bottom: 1px solid var(--salbei); }
+.app-inhalt details:first-of-type { border-top: 1px solid var(--salbei); }
+.app-inhalt summary { cursor: pointer; padding: 16px 32px 16px 0; font-weight: 600; color: var(--latsche); list-style: none; position: relative; min-height: 44px; }
+.app-inhalt summary::-webkit-details-marker { display: none; }
+.app-inhalt summary::after { content: "+"; position: absolute; right: 4px; top: 14px; font-size: 1.375rem; line-height: 1; }
+.app-inhalt details[open] summary::after { content: "–"; }
+.app-inhalt details > :not(summary) { margin-top: 0; }
+
+.app-inhalt .src, .app-inhalt .sources { font-size: .875rem; }
+.app-inhalt .src li, .app-inhalt .sources li { color: var(--tinte-leise); }
+.app-inhalt .moon svg, .app-inhalt .hero svg { max-width: 200px; }
+
+@media (max-width: 30rem) {
+  .app-leiste .wrap { gap: 0 16px; }
+  .app-nav { gap: 0 12px; font-size: .875rem; }
+  .knopf.store { width: 100%; justify-content: center; margin-bottom: 8px; }
+}
+
+@media print {
+  .top, .app-leiste, .foot, .skip { display: none; }
+  .app-inhalt { padding: 0; max-width: none; }
+}
+
+/* Breite Tabellen scrollen in sich, die Seite nicht */
+.app-inhalt table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
