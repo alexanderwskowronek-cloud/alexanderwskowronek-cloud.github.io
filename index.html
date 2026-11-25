@@ -1,244 +1,143 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="de" class="no-js">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dart Zähler App für iPhone und iPad – Dartzähler Pro</title>
-<meta name="description" content="Dartzähler Pro zählt 501, 301 und Cricket auf iPhone und iPad, sagt die Punkte an und zeigt den Weg zum Checkout.">
-<link rel="canonical" href="https://alexanderwskowronek-cloud.github.io/">
-<meta property="og:title" content="Dart Zähler App für iPhone und iPad – Dartzähler Pro">
-<meta property="og:description" content="Dartzähler Pro zählt 501, 301 und Cricket auf iPhone und iPad, sagt die Punkte an und zeigt den Weg zum Checkout.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Larkminds — Ruhige, präzise Apps für iPhone</title>
+<meta name="description" content="Larkminds entwickelt ruhige, präzise Apps für iPhone: Alpano, Dawnline, Pauker, Scory und Dartzähler Pro.">
+<meta name="theme-color" content="#F2F0EB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Larkminds">
+<meta property="og:description" content="Ruhige, präzise Apps für iPhone.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://alexanderwskowronek-cloud.github.io/">
 <meta property="og:locale" content="de_DE">
-<meta name="apple-itunes-app" content="app-id=6789283186">
+<meta property="og:url" content="https://alexanderwskowronek-cloud.github.io/">
+<link rel="canonical" href="https://alexanderwskowronek-cloud.github.io/">
+<link rel="alternate" hreflang="de" href="https://alexanderwskowronek-cloud.github.io/">
+<link rel="alternate" hreflang="en" href="https://alexanderwskowronek-cloud.github.io/en/">
+<link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/style.css">
+<script>document.documentElement.classList.remove("no-js")</script>
 <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "MobileApplication",
- "name": "Dart Zähler Pro: Darts Rechner",
- "operatingSystem": "iOS",
- "applicationCategory": "SportsApplication",
- "url": "https://apps.apple.com/de/app/id6789283186",
- "sameAs": "https://alexanderwskowronek-cloud.github.io/",
- "description": "Dart-Zähler für iPhone und iPad: X01 (301, 501, 701) und Cricket, Caller, Weg zum Checkout, Computergegner in fünf Stärken, vier Trainings und Statistik mit Trefferbild.",
- "inLanguage": "de",
- "publisher": {
-  "@type": "Organization",
-  "name": "Entwickler von Dartzähler Pro"
- },
- "author": {
-  "@type": "Organization",
-  "name": "Entwickler von Dartzähler Pro"
- },
- "alternateName": "Dartzähler Pro"
-}
+{"@context":"https://schema.org","@type":"Organization","name":"Larkminds","url":"https://alexanderwskowronek-cloud.github.io/"}
 </script>
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-  {
-   "@type": "Question",
-   "name": "Welche Spiele zählt Dartzähler Pro?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "X01 mit 301, 501 und 701 mit den üblichen Regeln fürs Anfangen und fürs Ausmachen, dazu Cricket ab zwei Spielern, Pfeil für Pfeil gezählt. Auch das WM-Format mit Sätzen ist dabei."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Zeigt die App den Weg zum Checkout?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Ja. Dartzähler Pro rechnet den Checkout aus und zeigt den Weg an, zum Beispiel T20, T19, D12 bei 141 Rest. Überwirfst du, steht das da, bevor der nächste Pfeil fliegt."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Wie gebe ich die Punkte ein?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Wie es dir passt: die ganze Aufnahme auf einmal, jeden Pfeil einzeln oder direkt auf das Board. Eine Aufnahme, die sich mit drei Pfeilen nicht werfen lässt, etwa 179, nimmt die App gar nicht erst an."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Wie viele Spieler passen auf ein Board?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Bis zu acht. Wenn niemand da ist, spielt ein Gegner aus dem Gerät gegen dich, in fünf Stärken."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Welche Trainings gibt es?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Vier: Bob's 27, Around the Clock, Shanghai und Checkout 121."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Was zeigt die Statistik?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Im X01 den Average über drei Pfeile, im Spiel und am Ende des Matches. Dazu, wie viele Doppel gesessen haben, an welchem Doppel du hängen bleibst, wie oft du ausgemacht hast, und ein Trefferbild vom Board. Wo die App etwas nicht weiß, schreibt sie nichts hin."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Läuft die App auf dem iPad?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Ja, auch im Querformat. Anzeige und Eingabe stehen nebeneinander, und der Weg zum Checkout ist aus zwei Metern lesbar."
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "Sammelt die App Daten?",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "Nein. Alles bleibt auf deinem Gerät, und du brauchst kein Konto und keine Anmeldung. Details stehen in der Datenschutzerklärung."
-   }
-  }
- ]
-}
-</script>
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
-  {
-   "@type": "ListItem",
-   "position": 1,
-   "name": "Dartzähler Pro",
-   "item": "https://alexanderwskowronek-cloud.github.io/"
-  }
- ]
-}
-</script>
-<style>
-:root{--bg:#0B0C0E;--card:#141619;--text:#F2F2F7;--muted:#A3A3AD;--accent:#30D158;--on:#04290F;--line:#23262B}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6}
-.wrap{max-width:760px;margin:0 auto;padding:0 16px}
-header{text-align:center;padding:64px 0 40px}
-nav.top{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;padding:18px 0 0;font-size:.95rem}
-.crumbs{font-size:.85rem;color:var(--muted);padding:22px 0 0}
-.crumbs a{color:var(--muted)}
-.badge{display:inline-block;background:rgba(48,209,88,.16);color:var(--accent);font-size:.8rem;font-weight:600;padding:6px 14px;border-radius:999px;margin-bottom:16px;letter-spacing:.04em;text-transform:uppercase}
-h1{font-size:2.1rem;letter-spacing:-.02em;line-height:1.15}
-article h1{margin:18px 0 10px}
-h1 span{color:var(--accent)}
-.tag{color:var(--muted);margin-top:14px;font-size:1.1rem}
-.cta{display:inline-block;background:var(--accent);color:var(--on);font-weight:700;padding:15px 32px;border-radius:14px;text-decoration:none;margin-top:28px;font-size:1.05rem}
-.cta:hover{filter:brightness(1.08)}
-.sub{color:var(--muted);font-size:.85rem;margin-top:10px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:8px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin:14px 0}
-.answer{background:var(--card);border-left:4px solid var(--accent);border-radius:12px;padding:18px 20px;margin:16px 0;color:var(--text)}
-h2{font-size:1.35rem;margin:40px 0 8px;letter-spacing:-.01em}
-h3{font-size:1.05rem;margin:22px 0 6px;color:var(--accent)}
-p,li{color:var(--muted)}
-p{margin:8px 0}
-ul,ol{padding-left:22px;margin:8px 0}
-li{margin:5px 0}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-strong{color:var(--text)}
-.stand{font-size:.85rem;color:var(--muted)}
-.tbl{overflow-x:auto;margin:12px 0}
-table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
-th,td{border-bottom:1px solid var(--line);padding:6px 10px;text-align:left;color:var(--muted)}
-th{color:var(--text);background:var(--card);position:sticky;top:0}
-td:first-child{color:var(--text);font-weight:600}
-.src{font-size:.9rem}
-.src li{margin:4px 0}
-footer{text-align:center;color:#8a8a94;font-size:.85rem;padding:48px 0 32px}
-footer a{color:#8a8a94}
-.center{text-align:center;padding:32px 0 8px}
-</style>
 </head>
 <body>
-<div class="wrap">
-<nav class="top"><a href="/">Dartzähler Pro</a><a href="/ratgeber/">Ratgeber</a><a href="/#faq">Häufige Fragen</a><a href="/#support">Support</a><a href="/privacy.html">Datenschutz</a></nav>
-<header>
-<h1>Der <span>Dart Zähler</span> für iPhone &amp; iPad</h1>
-<p class="tag">Du stehst am Oche, hast noch 141 Rest, und an der Tafel steht der Weg schon da: T20, T19, D12. Dartzähler Pro zählt mit, während ihr spielt, sagt die Punkte an und rechnet den Checkout aus.</p>
-<a class="cta" href="https://apps.apple.com/de/app/id6789283186">Im App Store laden</a>
-<p class="sub">Kein Konto nötig · keine Datensammlung</p>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="/" aria-label="Larkminds, Startseite">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 17h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M6 17a6 6 0 0 1 12 0" stroke="currentColor" stroke-width="1.6"/><circle cx="18.2" cy="6.4" r="1.9" fill="var(--accent)"/></svg>
+      Larkminds
+    </a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#apps">Apps</a>
+      <a class="opt" href="#gestaltung">Gestaltung</a>
+      <a href="/support.html">Support</a>
+      <a class="lang" href="/en/" hreflang="en" lang="en" aria-label="English">EN</a>
+    </nav>
+  </div>
 </header>
 
-<p>Dartzähler Pro (im App Store „Dart Zähler Pro: Darts Rechner“) ist eine Dart-Zähler-App für iPhone und iPad von einem unabhängigen Entwickler. Sie zählt X01 und Cricket mit, sagt die Punkte an und zeigt den Weg zum Checkout. Sie sieht aus wie die Tafel in der Kneipe: Kreide auf Schiefer, große Zahlen, lesbar von der Abwurflinie.</p>
+<main id="inhalt">
 
-<h2>Was kann Dartzähler Pro?</h2>
-<div class="grid">
-<div class="card"><h3>Weg zum Checkout</h3><p>Die App rechnet den Checkout aus und zeigt, wenn du überworfen hast, bevor der nächste Pfeil fliegt.</p></div>
-<div class="card"><h3>Caller</h3><p>Der Caller sagt die Punkte an, wie du es aus dem Fernsehen kennst. Ein gewonnenes Leg ruft er mit „Game shot“ aus.</p></div>
-<div class="card"><h3>Drei Eingabearten</h3><p>Die ganze Aufnahme, jeden Pfeil einzeln oder direkt auf das Board. Eine 179 nimmt die App nicht an, weil sie mit drei Pfeilen nicht geht.</p></div>
-<div class="card"><h3>Training &amp; Statistik</h3><p>Bob's 27, Around the Clock, Shanghai und Checkout 121. Dazu Average, Doppelquote, Trefferbild und der Abendbericht als Bild zum Teilen.</p></div>
-</div>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow reveal">Apps für iPhone</p>
+      <h1 class="reveal">Weniger App.<br><span>Mehr Werkzeug.</span></h1>
+      <p class="lead reveal">Larkminds baut ruhige, präzise Apps für iPhone, für Dinge, die man täglich braucht. Jede App tut eine Sache und die gut.</p>
+    </div>
+  </section>
 
-<h2>Spielmodi</h2>
-<div class="card">
-<ul>
-<li><strong>X01:</strong> 301, 501 und 701, auch im WM-Format mit Sätzen</li>
-<li><strong>Cricket:</strong> ab zwei Spielern, Pfeil für Pfeil gezählt</li>
-<li><strong>Bis zu acht Spieler</strong> an einem Board</li>
-<li><strong>Computergegner</strong> in fünf Stärken</li>
-<li><strong>iPad im Querformat:</strong> Anzeige und Eingabe nebeneinander</li>
-</ul>
-</div>
+  <section id="apps">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow reveal">Apps</p>
+        <h2 class="reveal">Fünf Werkzeuge. Jedes für eine Sache.</h2>
+        <p class="reveal">Keine Sammlung von Funktionen, sondern Werkzeuge, die du auch in Jahren noch gern öffnest. Ein Tipp auf eine Karte öffnet die Seite der App mit Hilfe und Datenschutz.</p>
+      </div>
+      <div class="apps">
+        <a class="app reveal" href="/alpano/support.html">
+          <img src="/assets/apps/alpano.webp" alt="" width="64" height="64" loading="lazy">
+          <h3>Alpano</h3>
+          <p>Richte die Kamera auf die Berge, und Alpano zeigt, welcher Gipfel das ist.</p>
+          <span class="meta"><span>Berge</span><span class="go">Mehr →</span></span>
+        </a>
+        <a class="app reveal" href="/dawnline/">
+          <img src="/assets/apps/dawnline.webp" alt="" width="64" height="64" loading="lazy">
+          <h3>Dawnline</h3>
+          <p>Zeigt, wie deine Schlafwerte zustande kommen und wie sicher sie sind.</p>
+          <span class="meta"><span>Schlaf</span><span class="go">Mehr →</span></span>
+        </a>
+        <a class="app reveal" href="/pauker-web/">
+          <img src="/assets/apps/pauker.webp" alt="" width="64" height="64" loading="lazy">
+          <h3>Pauker</h3>
+          <p>Ein Lehrerkalender für die Minuten zwischen zwei Stunden.</p>
+          <span class="meta"><span>Schule</span><span class="go">Mehr →</span></span>
+        </a>
+        <a class="app reveal" href="/scory-site/">
+          <img src="/assets/apps/scory.webp" alt="" width="64" height="64" loading="lazy">
+          <h3>Scory</h3>
+          <p>Der Tennis-Zählstand, gemacht für das Handgelenk. Ein Tipp pro Punkt.</p>
+          <span class="meta"><span>Tennis</span><span class="go">Mehr →</span></span>
+        </a>
+        <a class="app reveal" href="/dartzaehler/">
+          <img src="/assets/apps/dartzaehler.webp" alt="" width="64" height="64" loading="lazy">
+          <h3>Dartzähler Pro</h3>
+          <p>Zählt mit, während ihr spielt, und zeigt den Weg zum Checkout.</p>
+          <span class="meta"><span>Darts</span><span class="go">Mehr →</span></span>
+        </a>
+      </div>
+      <p class="soon reveal">Weitere Apps sind in Arbeit.</p>
+    </div>
+  </section>
 
-<h2>Dart-Ratgeber</h2>
-<div class="card">
-<ul>
-<li><a href="/ratgeber/checkout-tabelle-501/">Checkout-Tabelle 501: alle Wege von 170 bis 2</a></li>
-<li><a href="/ratgeber/dart-regeln-501-doppel-aus/">Dart-Regeln 501: Doppel-Aus und Bust</a></li>
-<li><a href="/ratgeber/cricket-dart-regeln/">Cricket: die Regeln einfach erklärt</a></li>
-<li><a href="/ratgeber/dartscheibe-aufhaengen/">Dartscheibe aufhängen: Höhe und Abstand</a></li>
-</ul>
-<p><a href="/ratgeber/">Alle Ratgeber</a></p>
-</div>
+  <section id="gestaltung">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow reveal">Gestaltung</p>
+        <h2 class="reveal">Gut ist, was bleibt, wenn man alles Unnötige weglässt.</h2>
+        <p class="reveal">Wir gestalten nicht, damit es nach Gestaltung aussieht. Jede Entscheidung muss sich an diesen acht Fragen messen lassen.</p>
+      </div>
+      <ol class="tenets">
+        <li class="reveal"><span class="n">01</span><div><h3>Hilft es?</h3><p>Jede Funktion muss sich ihren Platz verdienen. Was nicht hilft, kommt gar nicht erst in die App.</p></div></li>
+        <li class="reveal"><span class="n">02</span><div><h3>Versteht man es sofort?</h3><p>Wenn eine App eine Anleitung braucht, ist sie noch nicht fertig. Die Bedienung soll sich von selbst erklären.</p></div></li>
+        <li class="reveal"><span class="n">03</span><div><h3>Ist es ehrlich?</h3><p>Kein künstlicher Countdown, kein Kleingedrucktes. Was eine App kann, steht da, bevor du sie lädst.</p></div></li>
+        <li class="reveal"><span class="n">04</span><div><h3>Hält es sich zurück?</h3><p>Die App meldet sich, wenn du sie brauchst, und nicht, wenn wir dich brauchen. Keine Benachrichtigung, die dich nur zurückholen soll.</p></div></li>
+        <li class="reveal"><span class="n">05</span><div><h3>Ist es in fünf Jahren noch gut?</h3><p>Wir folgen keinem Trend, der nächstes Jahr alt aussieht. Updates machen die App besser, ohne sie jedes Mal neu zu erfinden.</p></div></li>
+        <li class="reveal"><span class="n">06</span><div><h3>Stimmt jedes Detail?</h3><p>VoiceOver, große Schrift, Dunkelmodus: Das ist für uns keine Kür. Erst wenn alles stimmt, ist die App fertig.</p></div></li>
+        <li class="reveal"><span class="n">07</span><div><h3>Geht es sparsamer?</h3><p>Wir halten die Apps klein und schonen den Akku. Jede Funktion muss den Speicher und die Rechenzeit wert sein, die sie kostet.</p></div></li>
+        <li class="reveal"><span class="n">08</span><div><h3>Kann noch etwas weg?</h3><p>Am Ende bleibt nur, was man nicht mehr weglassen kann. Dann ist die App fertig.</p></div></li>
+      </ol>
+    </div>
+  </section>
 
-<h2 id="faq">Häufige Fragen</h2>
-<div class="card">
-<h3>Welche Spiele zählt Dartzähler Pro?</h3>
-<p>X01 mit 301, 501 und 701 mit den üblichen Regeln fürs Anfangen und fürs Ausmachen, dazu Cricket ab zwei Spielern, Pfeil für Pfeil gezählt. Auch das WM-Format mit Sätzen ist dabei.</p>
-<h3>Zeigt die App den Weg zum Checkout?</h3>
-<p>Ja. Dartzähler Pro rechnet den Checkout aus und zeigt den Weg an, zum Beispiel T20, T19, D12 bei 141 Rest. Überwirfst du, steht das da, bevor der nächste Pfeil fliegt.</p>
-<h3>Wie gebe ich die Punkte ein?</h3>
-<p>Wie es dir passt: die ganze Aufnahme auf einmal, jeden Pfeil einzeln oder direkt auf das Board. Eine Aufnahme, die sich mit drei Pfeilen nicht werfen lässt, etwa 179, nimmt die App gar nicht erst an.</p>
-<h3>Wie viele Spieler passen auf ein Board?</h3>
-<p>Bis zu acht. Wenn niemand da ist, spielt ein Gegner aus dem Gerät gegen dich, in fünf Stärken.</p>
-<h3>Welche Trainings gibt es?</h3>
-<p>Vier: Bob&#x27;s 27, Around the Clock, Shanghai und Checkout 121.</p>
-<h3>Was zeigt die Statistik?</h3>
-<p>Im X01 den Average über drei Pfeile, im Spiel und am Ende des Matches. Dazu, wie viele Doppel gesessen haben, an welchem Doppel du hängen bleibst, wie oft du ausgemacht hast, und ein Trefferbild vom Board. Wo die App etwas nicht weiß, schreibt sie nichts hin.</p>
-<h3>Läuft die App auf dem iPad?</h3>
-<p>Ja, auch im Querformat. Anzeige und Eingabe stehen nebeneinander, und der Weg zum Checkout ist aus zwei Metern lesbar.</p>
-<h3>Sammelt die App Daten?</h3>
-<p>Nein. Alles bleibt auf deinem Gerät, und du brauchst kein Konto und keine Anmeldung. Details stehen in der Datenschutzerklärung.</p>
-</div>
+  <section id="support">
+    <div class="wrap">
+      <div class="head" id="faq">
+        <p class="eyebrow reveal">Kontakt</p>
+        <h2 class="reveal">Eine Frage? Schreib uns.</h2>
+      </div>
+      <div class="contact reveal">
+        <div><p class="label">Hilfe zu einer App</p><a href="mailto:alexander.w.skowronek@gmail.com">E-Mail schreiben</a><p>Nenne bitte App, Gerät und iOS-Version.</p></div>
+        <div><p class="label">Hilfeseiten</p><a href="/support.html">Support →</a><p>Häufige Fragen und die Hilfeseite jeder App.</p></div>
+        <div><p class="label">Dartzähler Pro</p><a href="/dartzaehler/#faq">Fragen und Antworten →</a><p>Spielmodi, Checkout, Statistik.</p></div>
+      </div>
+    </div>
+  </section>
 
-<div class="center">
-<a class="cta" href="https://apps.apple.com/de/app/id6789283186">Dartzähler Pro im App Store</a>
-</div>
+</main>
 
-<h2 id="support">Support</h2>
-<div class="card">
-<p>Fragen, Probleme oder Wünsche? Wenn dir etwas fehlt, schreib eine E-Mail.</p>
-<p>E-Mail: <a href="mailto:alexander.w.skowronek@gmail.com">alexander.w.skowronek@gmail.com</a></p>
-</div>
+<footer class="foot">
+  <div class="wrap">
+    <span>© 2026 Larkminds · Gestaltet und entwickelt in Deutschland</span>
+    <nav aria-label="Rechtliches"><a href="/impressum.html">Impressum</a><a href="/privacy.html">Datenschutz</a></nav>
+  </div>
+</footer>
 
-<div class="card">
-<p>Dartzähler Pro sammelt keine Daten. Details in der <a href="/privacy.html">Datenschutzerklärung</a>.</p>
-</div>
-
-<footer>© 2026 · <a href="/">Dartzähler Pro</a> · <a href="/ratgeber/">Ratgeber</a> · <a href="/#support">Support</a> · <a href="/privacy.html">Datenschutz</a> · <a href="/impressum.html">Impressum</a></footer>
-</div>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
