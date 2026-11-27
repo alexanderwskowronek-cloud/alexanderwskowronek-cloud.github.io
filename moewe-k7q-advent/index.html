@@ -208,15 +208,20 @@ nav.tabs button{border:0;background:none;cursor:pointer;display:grid;justify-ite
 .dfuture{margin-top:14px;border-left:3px solid var(--gold);padding:8px 12px;background:var(--chip);border-radius:0 12px 12px 0;font-size:15px}
 .photos{display:grid;gap:8px;margin-top:14px}
 .photos.two{grid-template-columns:1fr 1fr}
-.photos img{width:100%;border-radius:14px;display:block;object-fit:cover;aspect-ratio:4/5;background:var(--chip)}
+.photos figure,.jstrip figure{margin:0;min-width:0}
+.photos img,.photos video{width:100%;border-radius:14px;display:block;object-fit:cover;aspect-ratio:4/5;background:var(--chip)}
+.photos:not(.two) img,.photos:not(.two) video{aspect-ratio:auto;max-height:70vh}
 .photos canvas{width:100%;aspect-ratio:4/3;border-radius:14px;display:block}
+figcaption{font:500 11px/1.4 var(--f-mono);color:var(--muted);margin-top:5px}
+.dquote{margin:14px 0 0;padding:12px 14px;border-radius:14px;background:var(--hero);color:#fff;font:600 16px/1.45 var(--f-display);box-shadow:inset 4px 0 0 var(--brick)}
 .phnote{font:500 11px/1.4 var(--f-mono);color:var(--muted);margin-top:6px}
 .jchap{display:grid;gap:8px;margin-top:22px}
 .jchap .jd{font:500 12px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brick)}
 .jchap h3{font:800 24px/1.1 var(--f-display);margin:0}
 .jchap p{margin:0;color:var(--muted)}
 .jstrip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
-.jstrip img,.jstrip canvas{flex:0 0 78%;max-width:78%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;scroll-snap-align:center;background:var(--chip)}
+.jstrip figure{flex:0 0 78%;max-width:78%;scroll-snap-align:center}
+.jstrip img,.jstrip video,.jstrip canvas{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;display:block;background:var(--chip)}
 .kgroup{display:grid;gap:8px;margin-bottom:6px}
 .kgroup h3{font-size:15px;font-family:var(--f-mono);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:18px 0 2px}
 nav.tabs button svg{width:24px;height:24px}
@@ -250,7 +255,7 @@ nav.tabs button[aria-current="page"]::before{content:"";position:absolute;top:-3
   <!-- JOURNEY -->
   <section class="view" id="v-journey" hidden aria-labelledby="h-journey">
     <h2 id="h-journey">Möwe fliegt nach Flandern</h2>
-    <p class="sub">Unsere Reise in Bildern: Gent, Brügge und Knokke, 13. bis 16. November.</p>
+    <p class="sub">Unsere Reise in Bildern: Gent und Brügge, 13. bis 16. November. Zum Wischen nach links.</p>
     <div id="journeyList"></div>
   </section>
 
@@ -321,99 +326,107 @@ nav.tabs button[aria-current="page"]::before{content:"";position:absolute;top:-3
 <div class="toast" id="toast" role="status" hidden></div>
 
 <script id="advent-data">
-/* Adventskalender + Journey. Fotos: Dateien in img/ ablegen und hier in photos:[...] eintragen.
-   note: interne Notiz für Alexander, wird nicht angezeigt. */
+/* Adventskalender + Journey. Fotos liegen in img/. photos: Dateiname oder {src, cap}. .mp4 wird als Video gezeigt. */
 window.ADVENT = {
   year: 2026,
   doors: [
     {n:0, date:"2026-11-29", kind:"Vorwort", title:"Bevor das erste Türchen aufgeht",
-     text:"Liebe Möwe, Flandern ist vorbei, aber unsere Geschichte fliegt weiter. Ab dem 1. Dezember öffnet sich hier jeden Morgen ein Türchen: mit Dingen, die wir erlebt haben, mit Gedanken, die ich dir schon lange sagen wollte, und mit ein paar Plänen für das, was noch kommt. Manche Geschichten kennst du schon. Du weißt ja: Gute Geschichten darf man zweimal erzählen.",
-     future:"Heute ist der erste Advent. Zünden wir die erste Kerze zusammen an?", photos:[]},
-    {n:1, kind:"Geschichte", title:"Der Feierabendmarkt",
-     text:"Es fing ganz unspektakulär an, auf dem Feierabendmarkt in Dinslaken. Ein Getränk, ein Gespräch, und das Gefühl, dass da mehr ist, als man auf den ersten Blick sieht.",
-     future:"Im Frühling, wenn der Markt wieder losgeht, stoßen wir genau dort an.", photos:[], note:"Foto vom Feierabendmarkt / erstes gemeinsames Foto aus dem Chat"},
-    {n:2, kind:"Gedanke", title:"Hinter der Fassade",
-     text:"Wir dachten beide, wir wüssten schon ein bisschen voneinander. Und dann waren wir überrascht, wie viel Charakter, Tiefe und Humor hinter der Fassade des anderen steckt. Ich bin bis heute dabei, Neues an dir zu entdecken.",
-     photos:[], note:"Ein frühes Chat-Zitat, das diese Überraschung zeigt"},
-    {n:3, kind:"Geschichte", title:"Möwe. Oder Honey.",
-     text:"Wir haben das Kosenamen-Spiel oft gespielt. Schatz, Maus, Liebling: alles zu gewöhnlich für uns. Hängen geblieben sind Möwe und Honey. Zu einem Lebensweg wie unserem gehören eben eigene Namen.",
-     photos:[], note:"Chat-Ausschnitt, in dem Möwe zum ersten Mal fällt"},
-    {n:4, kind:"Reise", title:"Holland, ganz spontan",
-     text:"Unsere ersten Städtereisen nach Holland waren nie lange geplant. Einfach losfahren, durch fremde Straßen laufen und sich Zeit füreinander nehmen. Genau da habe ich gemerkt, wie gut wir zusammen unterwegs sind.",
-     photos:[], note:"Ort(e) und Fotos der Holland-Trips aus dem Chat ergänzen"},
-    {n:5, kind:"Gutschein", title:"Eine Geschichte, zum dritten Mal",
-     text:"Dieser Gutschein berechtigt dich, mir eine Geschichte zu erzählen, die ich schon kenne. Ich höre trotzdem zu, als wäre es das erste Mal. Mehrfach einlösbar.",
-     photos:[]},
-    {n:6, kind:"Nikolaus", title:"Süßes aus Gent",
-     text:"Erinnerst du dich an die lila Gentse Neuzen vom Groentenmarkt und die Törtchen bei Joost Arijs? Heute ist Nikolaus. Schau mal in deinen Stiefel.",
-     photos:[], note:"Kleine Süßigkeit vorbereiten (z. B. Pralinen, Cuberdons online bestellbar)"},
-    {n:7, kind:"Geschichte", title:"Ausmisten und Sperrmüll",
-     text:"Andere Paare gehen essen. Wir räumen Häuser aus, sortieren, entscheiden, was bleibt, und stellen den Rest an die Straße. Klingt unromantisch. Ist es aber nicht: Mit dir wird sogar Sperrmüll zu einem guten Tag.",
-     photos:[], note:"Foto vom Ausmisten / volle Ladung Sperrmüll"},
-    {n:8, kind:"Flandern", title:"Erste Nacht in Gent",
-     text:"Ankommen, durch das beleuchtete Gent laufen, die drei Türme in einer Reihe sehen. Und um Mitternacht auf deinen Geburtstag anstoßen.",
-     photos:[], note:"Fotos Freitagabend Gent"},
-    {n:9, kind:"Gedanke", title:"Digital und analog",
-     text:"Du und ich haben ziemlich unterschiedliche Interessen, manche digital, manche komplett analog. Ich glaube, genau deshalb ergänzen wir uns so gut. Du ziehst mich ins Echte, ich dich manchmal ins Neue.",
-     photos:[]},
-    {n:10, kind:"Flandern", title:"Dein Geburtstag in Gent",
-     text:"Moderne Kunst im S.M.A.K., der Genter Altar, der Sonnenuntergang an der Sint-Michielsbrug. Ein Tag, der sich genau so angefühlt hat, wie du bist: klassisch und modern zugleich.",
-     photos:[], note:"Fotos vom 14.11."},
-    {n:11, kind:"Gutschein", title:"Ein Museumstag deiner Wahl",
-     text:"Du suchst das Museum aus, ich fahre. Ob abstrakt, verrückt oder ganz klassisch: Hauptsache, wir stehen zusammen vor etwas, das uns überrascht.",
-     future:"Mein Tipp: das Museum Folkwang in Essen oder das Kröller-Müller in Holland.", photos:[]},
-    {n:12, kind:"Flandern", title:"Brügge von oben",
-     text:"366 Stufen auf den Belfried, und dann liegt Brügge zu unseren Füßen. Danach die blaue Stunde am Rozenhoedkaai.",
-     photos:[], note:"Fotos Brügge"},
-    {n:13, kind:"Gedanke", title:"Unser Humor",
-     text:"Das, was ich am meisten an uns mag: dass wir über dieselben Dinge lachen können. Auch über uns selbst. Besonders über uns selbst.",
-     photos:[], note:"Ein lustiger Chat-Moment als Zitat"},
-    {n:14, kind:"Ein Monat", title:"Heute vor einem Monat",
-     text:"Heute vor einem Monat bist du 49 geworden, in Gent, zwischen Van Eyck und Neonfarben. Auf das neue Lebensjahr, das jetzt schon einen Monat alt ist und sich gut anfühlt.",
-     photos:[]},
-    {n:15, kind:"Gutschein", title:"Ein flämischer Abend zu Hause",
-     text:"Ich koche Stoofvlees mit Fritten, dazu ein guter Wein statt Bier. Kerzen an, Musik an, Flandern im Wohnzimmer.",
-     photos:[]},
-    {n:16, kind:"Flandern", title:"Knokke und das Meer",
-     text:"Wind, Weite, die Nordsee im November. Ein paar Stunden Meer, bevor es wieder nach Hause ging.",
-     photos:[], note:"Fotos Knokke"},
-    {n:17, kind:"Zukunft", title:"Die nächste Reise",
-     text:"Wohin fliegt die Möwe als Nächstes? Mein Vorschlag: Nizza, die Heimatstadt von Yves Klein. Sein Blau, das Meer und die Sonne der Côte d'Azur.",
-     future:"Oder du schlägst eine Stadt vor. Ich fange schon mal an zu planen.", photos:[]},
-    {n:18, kind:"Gutschein", title:"Ein Neon-Nachmittag",
-     text:"Wir besorgen Leinwand und die knalligsten Farben, die es gibt, und malen zusammen ein abstraktes Bild. Ohne Plan, ohne Talent-Anspruch. Es kommt an die Wand.",
-     photos:[]},
-    {n:19, kind:"Gedanke", title:"Warum Möwe?",
-     text:"Möwen sind frei, ein bisschen frech, laut, wenn es sein muss, und immer da, wo es nach Meer riecht. Ich finde, das passt.",
-     photos:[]},
-    {n:20, kind:"Geschichte", title:"Unsere tiefen Gespräche",
-     text:"Über Gott und die Welt, über Vergangenes und Zukunft, über Dinge, die man nicht jedem erzählt. Ich liebe es, dass wir so miteinander reden können.",
-     photos:[], note:"Optional: ein besonderes Chat-Zitat"},
-    {n:21, kind:"Wintersonnenwende", title:"Der kürzeste Tag",
-     text:"Heute ist der kürzeste Tag des Jahres. Ab morgen wird es jeden Tag ein bisschen heller. Mit dir fühlt sich das ganz wörtlich an.",
-     future:"Heute Abend: Kerzen an, Handy aus.", photos:[]},
-    {n:22, kind:"Zukunft", title:"Unsere Liste für 2027",
-     text:"Ein paar Dinge, die ich mit dir erleben möchte: wieder spontan in eine fremde Stadt fahren, ein Museum, das uns beide sprachlos macht, ein Sommerabend am Meer, viele Geschichten, die wir uns dann zweimal erzählen.",
-     future:"Was steht auf deiner Liste?", photos:[]},
-    {n:23, kind:"Vorfreude", title:"Morgen ist Heiligabend",
-     text:"Noch einmal schlafen. Morgen öffnet sich das letzte Türchen, und das ist ein besonderes.",
-     photos:[]},
+     text:"Liebe Möwe, Flandern ist vorbei, aber unsere Geschichte fliegt weiter. Ab dem 1. Dezember öffnet sich hier jeden Morgen ein Türchen: mit Momenten aus unserem Chat, die ich nie vergessen möchte, mit ein paar Bildern und mit Plänen für das, was noch kommt. Manche Geschichten kennst du schon. Du weißt ja: Gute Geschichten darf man zweimal erzählen.",
+     future:"Heute ist der erste Advent. Zünden wir die erste Kerze zusammen an?",
+     photos:[{src:"img/so-02-belfried-selfie.jpg",cap:"Brügge, 15. November"}]},
+    {n:1, kind:"Wie alles anfing", title:"Feierabendmarkt und ein Weltverschwörer",
+     text:"Auf dem Feierabendmarkt in Dinslaken haben wir gemerkt, dass wir eigentlich kaum etwas voneinander wussten. Am 9. August kam meine erste Nachricht, mit dem Witz, du hältst mich bestimmt für so einen Weltverschwörer auf Telegram. Deine Antwort habe ich bis heute im Kopf.",
+     quote:"„Nein, so hätte ich dich nicht eingeschätzt, auch wenn wir nie super viel miteinander zu tun hatten.“ (Du, 9. August)", photos:[]},
+    {n:2, kind:"Dein Blau", title:"Majorelle bleu, oder auch Yves Klein Blau",
+     text:"Am 13. August hast du mir deine Flurwand gezeigt, inspiriert vom Jardin Majorelle in Marrakesch. Ich habe dazu Yves Kleins „IKB 73“ im Museum Ludwig gefunden. Seitdem ist dieses Blau unser Blau. Schau dich um: Diese ganze App ist darin gestrichen.",
+     quote:"„Majorelle bleu heißt mein blau, oder auch Yves Klein blau.“ (Du, 13. August)",
+     future:"Wir fahren nach Köln und stehen zusammen vor IKB 73.", photos:[]},
+    {n:3, kind:"Erster Abend", title:"Auf meiner Terrasse",
+     text:"Erst das Hin und Her über Getränke, Gin Tonic oder Sarti, ich habe Chandon nachgekauft. Dann von dir nur noch: „Adresse? Uhrzeit?“ Und plötzlich saßt du da.",
+     quote:"„Hätte nie gedacht mal auf deiner Terrasse zu sitzen.“ (Du, 15. August)", photos:[]},
+    {n:4, kind:"Insider", title:"Sarahsani Tortenmanufaktur",
+     text:"Du hast eine Sahnetorte gebacken, obwohl du selbst lieber Puddingteilchen magst. Ich hatte sofort einen Plan B für deine Karriere.",
+     quote:"„Wenn es also mal mit Schule nicht mehr Spaß macht … Sarahsani Tortenmanufaktur 😂“ (Ich, 15. August)",
+     future:"Gutschein: Ich backe dir Puddingteilchen. Ergebnis ohne Gewähr.", photos:[]},
+    {n:5, kind:"Erinnerung", title:"Sterne durchs Dachfenster",
+     text:"Im August habe ich vorgeschlagen, bei klarem Himmel oben Sterne zu schauen und uns im Liegen zu unterhalten. Ein paar Tage später hast du beim Zähneputzen in den Sternenhimmel geschaut und mir davon geschrieben.",
+     future:"Die nächste klare Winternacht: Decke, Dachfenster, Sterne. Und reden, bis einer einschläft.", photos:[]},
+    {n:6, kind:"Nikolaus", title:"Alles mit Nuss",
+     text:"Im August habe ich dich nach deiner Lieblingsschokolade gefragt. Deine Antwort: „Alles mit Nuss.“ In Gent standen wir dann bei Vandenbouhede vor der langen Theke und konnten uns kaum entscheiden. Heute ist Nikolaus. Schau mal in deinen Stiefel.",
+     photos:[{src:"img/sa-pralinen.mp4",poster:"img/sa-pralinen-poster.jpg",cap:"Gent, 14. November, 15:41 Uhr"},{src:"img/sa-05-sarah-praline.jpg",cap:"Der Moment der Wahrheit"}]},
+    {n:7, kind:"Musik", title:"Just the Two of Us",
+     text:"Am 23. August hast du mir „Just the Two of Us“ aus deiner Playlist geschickt. Und einen Satz, den ich mir sehr gut aufgehoben habe.",
+     quote:"„Du bist seit langem der wundervollste Mensch, der mir begegnet ist.“ (Du, 23. August)",
+     future:"Heute Abend: das Lied, wir beide, Wohnzimmer.", photos:[]},
+    {n:8, kind:"Running Gag", title:"Nur Luft und Liebe",
+     text:"Am 25. August habe ich gefragt: „Nur Luft und Liebe?“ Deine Antwort: „Jaaaaa.“ Im Oktober kam die Frage wieder, an einem Couchabend: Pommes oder Luft und Liebe? Ich finde, wir haben uns für beides entschieden.",
+     future:"Gutschein: ein Couchabend mit Pommes. Luft und Liebe gibt es gratis dazu.", photos:[]},
+    {n:9, kind:"Erste Reise", title:"Wohin mit dir",
+     text:"„Nimm dir mal am Wochenende nix vor.“ Am 27. August habe ich dir eine kleine Datei geschickt: „Wohin mit dir.html“. Daraus wurde Utrecht, unser Königspaar-Wochenende, 10 von 10. Schon damals habe ich dir Reisen in Webseiten verpackt. Manche Dinge ändern sich nicht.",
+     quote:"„Ich freue mich riesig auf dich, auf Utrecht und auf all das, was wir erleben.“ (Du, 28. August)", photos:[]},
+    {n:10, kind:"3. September", title:"Darf ich das sagen?",
+     text:"Eine Frage, die ich lange im Kopf hatte, bevor ich sie abgeschickt habe. Deine Antwort kam mit 25 Herzen.",
+     quote:"„Darf ich sagen, dass ich mich verliebt hab? 😇“ (Ich) · „Die bleibe ich!“ (Du)", photos:[]},
+    {n:11, kind:"Erste Male", title:"Wie Teenager",
+     text:"Unser erstes Telefonat am 4. September dauerte fünf Minuten. Danach hast du putzend durch den frisch gestrichenen Flur getanzt, und ich bin ins Bett getanzt.",
+     quote:"„Na ja, jedes erste Mal ist besonders 😂“ (Du, 4. September)", photos:[]},
+    {n:12, kind:"Insider", title:"Sushi ohne Chichi",
+     text:"Gurke, Avocado, Paprika, mehr braucht es nicht. Und ein paar Wochen später hast du auf dem Heimweg das Sushi aus meinem Kühlschrank gegessen. Ich habe es dir gegönnt.",
+     quote:"„Du bist verdammt verliebenswert 🩷🩷🩷“ (Du, 5. September)",
+     future:"Gutschein: Sushi-Abend, vegetarisch, ohne Chichi.", photos:[]},
+    {n:13, kind:"13. September", title:"Das Glücksbild",
+     text:"Ein Foto, das du fast in deinen Status gestellt hättest, weil es einfach nur Glück zeigt. Dazu zwei Sätze, die alles sagen.",
+     quote:"„Das Leben gefällt mir sehr.“ (Ich) · „Mir gefällt das Leben mit dir ebenfalls.“ (Du)", photos:[]},
+    {n:14, kind:"Heute vor einem Monat", title:"Dein Geburtstag in Gent",
+     text:"Heute vor einem Monat bist du 49 geworden. Gravensteen im strahlenden Blau, Pralinen bei Vandenbouhede, und am Abend ein Cocktail für dich und ein Wein für mich. Auf dein neues Lebensjahr, das jetzt schon einen Monat alt ist und sich sehr gut anfühlt.",
+     photos:[{src:"img/sa-01-gravensteen-selfie.jpg",cap:"Gravensteen, 14. November"},{src:"img/sa-07-prost.jpg",cap:"Proost!"}]},
+    {n:15, kind:"Kosename", title:"Kleine Möwe",
+     text:"Am 18. September stand es zum ersten Mal im Chat: „Guten Morgen, kleine Möwe.“ Am selben Tag warst du in der Küppersmühle. Später hast du selbst entschieden: Hase ist wie Bärchen, du bleibst die Gazelle oder Möwe. Und im Oktober kam noch die Klausurmöwe dazu.",
+     quote:"„Hase ist wie Bärchen… Ich bleibe die Gazelle oder Möwe 😂“ (Du, 25. September)",
+     future:"Die Küppersmühle nochmal, diesmal zu zweit.", photos:[]},
+    {n:16, kind:"Teamwork", title:"Meine +1 und Namensgeberin",
+     text:"Beim Tennisturnier im September warst du zum ersten Mal ganz offiziell meine +1. Und im November hast du mir geholfen, einen Namen für mein neues Projekt zu finden: erst Lark.Labs, dann larkminds. Dieser Kalender läuft übrigens auf larkminds.com.",
+     quote:"„Schlicht, stilvoll und klassisch.“ (Du, über das Logo)", photos:[]},
+    {n:17, kind:"Zuhause", title:"Graue Herren und Stahlblau",
+     text:"Ich habe dir meine Bilder gezeigt, „Graue Herren“ und „Das letzte Werk“. Seitdem richten „wir“ ein, mit Anführungszeichen: das USM-Regal in Stahlblau, weil es „nicht so knallt“, Gardinen, die ewig auf ihre Gleiter warten, und alte Festplatten mit deinem Urteil: „Ok Mülltonne.“",
+     quote:"„Der auf dem Bild rechts steht, ist der schönste Mann 🥰“ (Du, 27. September)",
+     future:"Wir suchen einen Platz für eines meiner Bilder bei dir. Und die Gardinen hängen bis Silvester. Versprochen.", photos:[]},
+    {n:18, kind:"Grüner Zettel", title:"Du musst nur tun, was draufsteht",
+     text:"Am 28. September: „Öffne gleich mal bitte 30 cm deine Rolllade im Wohnzimmer.“ Und dann: „Du musst nur tun, was auf den grünen Zetteln steht. Beidseitig beschriftet!“ Heute bin ich mal dran.",
+     future:"Grüner Zettel für dich: Ein ganzer Tag, an dem du entscheidest. Ich mache einfach, was draufsteht. Beidseitig.", photos:[]},
+    {n:19, kind:"Kosename", title:"Honey",
+     text:"Ein einziges Wort beim Abschied am 3. Oktober, an meiner Haustür. Ich wusste nicht, was es auslöst. Du hast es mir am Abend geschrieben.",
+     quote:"„Dein ‚Honey‘ bei unserer Verabschiedung an deiner Haustür hat mein Herz noch höher schlagen lassen.“ (Du, 3. Oktober)", photos:[]},
+    {n:20, kind:"Fernbeziehung", title:"Zwei Inseln, ein Hemd",
+     text:"Am 17. Oktober sind wir am selben Morgen vom selben Flughafen abgeflogen, ich nach Mallorca, du auf deine griechische Insel. Jeden Abend lange Videoanrufe, Kalinychta und Buenas noches. Und mein Hemd war heimlich mit dir unterwegs.",
+     quote:"„✈️ Ich winke dir zu 💋 Stehst du auf der Außenposition, gelb weiß?“ (Du, 17. Oktober)", photos:[]},
+    {n:21, kind:"Kürzester Tag", title:"Es werde Licht",
+     text:"Heute ist der kürzeste Tag des Jahres. Ab morgen wird es wieder heller. Im November hast du bei meiner neuen Elektrik geschrieben: „Es werde Licht …“ Und am 24. November: „Kannst du den Mond sehen? Er ist jetzt schon riesig.“ Neon to the max, deine Lieblingsfarben 🩷💙.",
+     future:"Heute Abend: Kerzen an, Handy aus, Mond suchen.", photos:[]},
+    {n:22, kind:"Flandern", title:"Brügge und die Suite mit der Steinbadewanne",
+     text:"Brügge im Novembergrau, der Rozenhoedkaai, der Belfried über uns, und abends die Suite im Jonojé mit der Wanne aus Stein. Auf dem Heimweg hast du geschrieben, was ich genauso empfunden habe.",
+     quote:"„Das war schon wirklich besonders 🤩 Und nicht nur die Unterkunft, sondern das gesamte Wochenende mit dir ❤️‍🔥“ (Du, 16. November) · „So machen wir weiter 😘“ (Ich)",
+     photos:[{src:"img/so-03-rozenhoedkaai.jpg",cap:"Rozenhoedkaai"},{src:"img/so-05-jonoje-suite.jpg",cap:"Jonojé, Brügge"}]},
+    {n:23, kind:"Zukunft", title:"Unsere Liste für 2027",
+     text:"Wir denken sowieso dasselbe: Am 25. November haben wir unabhängig voneinander dieselben zwei Bilder ausgesucht. Wie hoch ist bitte die Chance? Also hier meine Liste, und ich bin sicher, deine sieht ähnlich aus: U2 im Sommer 2027, wenn sie kommen, „ich bin dabei, egal wo“. GLOW in Eindhoven. The Church in Arnhem. Sterne unterm Dachfenster. 4 Blocks zusammen. Einmal mit auf den Golfplatz. Und unsere Pärchen-To-do-Liste, bei der wir ja eh ein paar Schritte übersprungen haben.",
+     future:"Was fehlt auf der Liste? Schreib es mir.", photos:[]},
     {n:24, kind:"Heiligabend", title:"Ein Puzzlestück mehr",
-     text:"Liebe Möwe, in Flandern habe ich geschrieben, dass jedes Wochenende ein neues Puzzlestück für unsere Zukunft sein soll. Inzwischen ist daraus ein ganzes Bild geworden: Dinslaken, Holland, Gent, Brügge, das Meer, Sperrmüll, tiefe Gespräche und sehr viel Lachen. Ich freue mich auf die nächsten Jahre und Jahrzehnte mit dir. Frohe Weihnachten, Honey.",
-     sig:"Dein Alexander", photos:[], note:"Lieblingsfoto von euch beiden"}
+     text:"Liebe Möwe, im November habe ich geschrieben, dass jedes gemeinsame Wochenende ein neues Puzzlestück für unsere Zukunft sein soll. Inzwischen ist daraus ein ganzes Bild geworden: ein Feierabendmarkt, eine Terrasse, Utrecht, zwei Inseln, Gent, Brügge, Sushi ohne Chichi, Gardinen, die noch hängen müssen, und sehr viel Lachen. Danke für jedes einzelne Stück. Frohe Weihnachten, Honey.",
+     quote:"„Ich liebe es, wenn ich dich einfach nur anschaue und glücklich bin ❤️‍🔥“ (Du, 26. November). Ich auch.",
+     sig:"Dein Alexander", photos:[{src:"img/so-03-rozenhoedkaai.jpg",cap:"Wir."}]}
   ]
 };
 window.JOURNEY = [
   {id:"fr", date:"Fr, 13. November", place:"Dinslaken → Gent", title:"Abflug der Möwe",
-   text:"Abfahrt am Nachmittag, Ankunft im Yalo und der erste Spaziergang durch das beleuchtete Gent.", photos:[]},
-  {id:"sa", date:"Sa, 14. November", place:"Gent", title:"Geburtstag zwischen Van Eyck und Neon",
-   text:"S.M.A.K., der Genter Altar, Sonnenuntergang an der Sint-Michielsbrug und ein spontaner Abend.", photos:[]},
-  {id:"so", date:"So, 15. November", place:"Gent → Brügge", title:"Blumen, Türme, blaue Stunde",
-   text:"Blumenmarkt am Kouter, weiter nach Brügge, Belfried und Rozenhoedkaai.", photos:[]},
-  {id:"kn", date:"Knokke", place:"Nordsee", title:"Die Möwe am Meer",
-   text:"Wind, Strand und Galerien in Knokke.", photos:[]},
+   text:"„Bin mit einem riesigen Lächeln aufgewacht und freue mich immer noch sooo doll.“ Mittags ging es los, Richtung Gent und ins Yalo.", photos:[]},
+  {id:"sa", date:"Sa, 14. November", place:"Gent", title:"Dein Geburtstag in Gent",
+   text:"Gravensteen unter strahlend blauem Himmel, die Pralinentheke bei Vandenbouhede und abends Cocktail und Wein.",
+   photos:[{src:"img/sa-01-gravensteen-selfie.jpg",cap:"Gravensteen"},{src:"img/sa-02-gravensteen-sarah.jpg",cap:"Geburtstagskind"},{src:"img/sa-03-pralinen-theke.jpg",cap:"Die Qual der Wahl"},{src:"img/sa-pralinen.mp4",poster:"img/sa-pralinen-poster.jpg",cap:"Diese, diese und diese"},{src:"img/sa-05-sarah-praline.jpg",cap:"Verkostung"},{src:"img/sa-04-vandenbouhede.jpg",cap:"Vandenbouhede"},{src:"img/sa-07-prost.jpg",cap:"Proost!"},{src:"img/sa-06-wein-und-cocktail.jpg",cap:"Wein für ihn, Cocktail für sie"},{src:"img/sa-08-karte-juliana.jpg",cap:"Juliana: Tomate und Passionsfrucht"},{src:"img/sa-09-karte-neron.jpg",cap:"Néron: Ghent rolled its own"}]},
+  {id:"so", date:"So, 15. November", place:"Gent → Brügge", title:"Brügge im Novembergrau",
+   text:"Mittags durch Brügge, vorbei am Belfried und zum Rozenhoedkaai. Abends die Suite im Jonojé, mit Wanne aus Stein.",
+   photos:[{src:"img/so-01-bruegge-strasse.jpg",cap:"Richtung Belfried"},{src:"img/so-02-belfried-selfie.jpg",cap:"Unterm Belfried"},{src:"img/so-03-rozenhoedkaai.jpg",cap:"Rozenhoedkaai"},{src:"img/so-05-jonoje-suite.jpg",cap:"Jonojé"},{src:"img/so-04-jonoje-bad.jpg",cap:"Die Suite bei Nacht"}]},
   {id:"mo", date:"Mo, 16. November", place:"Brügge → Dinslaken", title:"Heimflug",
-   text:"Stilles Brügge am Morgen, dann Richtung Heimat.", photos:[]}
+   text:"„Das war schon wirklich besonders. Und nicht nur die Unterkunft, sondern das gesamte Wochenende mit dir.“ Und die Antwort: „So machen wir weiter.“", photos:[]}
 ];
 </script>
 
@@ -977,8 +990,14 @@ const doorColors=["#ff2d87","#e4ff1a","#00e5d4","#ff7a1a","#b6ff3b"];
 // feste, gemischte Reihenfolge wie bei einem echten Kalender; einige Türchen größer
 const ORDER=[0,17,5,12,1,22,9,14,3,20,7,24,11,2,19,6,15,10,23,4,13,8,18,21,16];
 const SIZE={0:"wide",24:"big",14:"tall",6:"tall",17:"wide"};
-function photoHTML(list,seed,cls){
-  if(list&&list.length){return `<div class="photos ${list.length>1?"two":""}">${list.map(p=>`<img src="${esc(p)}" alt="" loading="lazy">`).join("")}</div>`;}
+const pObj=p=>typeof p==="string"?{src:p}:p;
+function mediaTag(p){
+  p=pObj(p);
+  if(/\.mp4$/i.test(p.src)) return `<video src="${esc(p.src)}" ${p.poster?`poster="${esc(p.poster)}"`:""} muted autoplay loop playsinline preload="metadata" aria-label="${esc(p.cap||"Video")}"></video>`;
+  return `<img src="${esc(p.src)}" alt="${esc(p.cap||"")}" loading="lazy">`;
+}
+function photoHTML(list,seed){
+  if(list&&list.length){return `<div class="photos ${list.length>1?"two":""}">${list.map(p=>`<figure>${mediaTag(p)}${pObj(p).cap?`<figcaption>${esc(pObj(p).cap)}</figcaption>`:""}</figure>`).join("")}</div>`;}
   return `<div class="photos"><canvas data-art="${seed}" aria-hidden="true"></canvas></div>`;
 }
 function paintArts(root){$$("canvas[data-art]",root).forEach(c=>compose(c,+c.dataset.art,{sky:false}));}
@@ -1022,6 +1041,7 @@ function openDoor(n){
     <h3 id="doorTitle" style="font:800 26px/1.1 var(--f-display);margin:0">${esc(d.title)}</h3>
     ${photoHTML(d.photos,n*13+5)}
     <p class="dtext">${esc(d.text)}</p>
+    ${d.quote?`<blockquote class="dquote">${esc(d.quote)}</blockquote>`:""}
     ${d.future?`<div class="dfuture">${esc(d.future)}</div>`:""}
     ${d.sig?`<div class="sig" style="margin-top:14px;font:700 20px/1 var(--f-display)">${esc(d.sig)}</div>`:""}`;
   $("#doorSheet").hidden=false; document.body.style.overflow="hidden";
@@ -1039,8 +1059,7 @@ function renderJourney(){
     <div class="jd">${esc(c.date)} · ${esc(c.place)}</div>
     <h3>${esc(c.title)}</h3>
     <p>${esc(c.text)}</p>
-    <div class="jstrip">${c.photos&&c.photos.length?c.photos.map(p=>`<img src="${esc(p)}" alt="" loading="lazy">`).join(""):[0,1,2].map(k=>`<canvas data-art="${(i+1)*100+k}" aria-hidden="true"></canvas>`).join("")}</div>
-    ${c.photos&&c.photos.length?"":`<div class="phnote">Hier erscheinen eure Fotos.</div>`}
+    <div class="jstrip">${c.photos&&c.photos.length?c.photos.map(p=>`<figure>${mediaTag(p)}${pObj(p).cap?`<figcaption>${esc(pObj(p).cap)}</figcaption>`:""}</figure>`).join(""):[0,1].map(k=>`<figure><canvas data-art="${(i+1)*100+k}" aria-hidden="true"></canvas></figure>`).join("")}</div>
   </article>`).join("");
   paintArts($("#journeyList"));
 }
