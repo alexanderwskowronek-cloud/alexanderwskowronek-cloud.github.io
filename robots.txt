@@ -1,28 +1,35 @@
 User-agent: *
 Disallow: /fuer-sarah/
+Disallow: /moewe-k7q-advent/
 
 User-agent: GPTBot
 Allow: /
 Disallow: /fuer-sarah/
+Disallow: /moewe-k7q-advent/
 
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /fuer-sarah/
+Disallow: /moewe-k7q-advent/
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /fuer-sarah/
+Disallow: /moewe-k7q-advent/
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /fuer-sarah/
+Disallow: /moewe-k7q-advent/
 
 User-agent: Google-Extended
 Allow: /
 Disallow: /fuer-sarah/
+Disallow: /moewe-k7q-advent/
 
 User-agent: Applebot-Extended
 Allow: /
 Disallow: /fuer-sarah/
+Disallow: /moewe-k7q-advent/
 
 Sitemap: https://larkminds.com/sitemap.xml
